@@ -1,0 +1,29 @@
+body {
+  color: #cecece;
+  background-color: black;
+}
+#Blanco {
+  margin-left: 25%;
+  /*border: 1px dashed red;*/
+  width: 500px;
+  padding: 20px;
+  background-image: url(blanco.jpg);
+}
+#Byline {
+  font-size: 1.4em;
+  font-style: italic;
+  text-align: right;
+}
+p {
+  margin: 0;
+}
+h1 {
+  font-weight: bolder;
+}
+@media (max-width: 768px) {
+  #Blanco {
+    margin: 0;
+    width: 100%;
+    font-size: .8em;
+  }
+}
