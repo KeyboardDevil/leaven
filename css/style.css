@@ -786,7 +786,7 @@ Egg time!
 #Jillian:hover,
 #Tears:hover {
   color: darkred;
-  cursor: pointer;
+  cursor: help;
 }
 #Hop {
   display: none;
