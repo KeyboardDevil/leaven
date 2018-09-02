@@ -222,7 +222,7 @@
           <h2 class="section-title">Our Beer</h2>
           <div class="section-title-divider"></div>
           <h3 class="about-title">We make beer we like to drink, but don't worry... We'll make beer you like to drink too.</h3>
-          <p class="about-text">We make beer we like to drink, but don't worry...  We'll make beer you like to drink too. We always thought it was a fun process brewing new beers, trading different styles in and out to create a set of flagships. The goal here at Leaven is to become a neighborhood brewery with a hyper-local mindset. At this time we have no intention of distribution (KJ did enough of that at previous locations.) We're here to make beer for you, Riverview! Join us at the bar, tell us the styles you like. Let's start a great conversation about beer and figure out our core beers <strong>together</strong>.</p>
+          <p class="about-text">We make beer we like to drink, but don't worry...  We'll make beer <span id="Tears">you like</span> to drink too. We always thought it was a fun process brewing new beers, trading different styles in and out to create a set of flagships. The goal here at Leaven is to become a neighborhood brewery with a hyper-local mindset. At this time we have no intention of distribution (KJ did enough of that at previous locations.) We're here to make beer for you, Riverview! Join us at the bar, tell us the styles you like. Let's start a great conversation about beer and figure out our core beers <strong>together</strong>.</p>
           <p class="about-text">We aim to have 5 flagships which will be on at all times, and 5 rotational beers that will lend themselves to a more seasonal flair.</p>
 
           <h4>What's on Tap?</h4>
@@ -356,6 +356,7 @@
       // Kill the link treatment
       $("#Jillian").prop("id",null);
     });
+    $("#Tears").click(function(){window.location.href="https://www.leavenbrewing.com/tears"});
   </script>
 
 </body>
