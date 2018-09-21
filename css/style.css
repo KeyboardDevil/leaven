@@ -3,6 +3,22 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 15pt;
 }
+#Inde {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 200px;
+  margin: 20px;
+}
+
+@media (max-width: 768px) {
+  #Inde {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100px;
+  }
+}
 
 #LeavenVideo {
 	float:left;

@@ -122,6 +122,7 @@
         </div>
       </div>
     </div>
+    <img id="Inde" alt="Independent Beer" src="img/independent.gif">
   </section>
 
   <!-- Header Section -->
