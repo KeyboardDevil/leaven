@@ -18,6 +18,14 @@
   <link href="../css/style.css" rel="stylesheet">
   <link href="tears.css" rel="stylesheet">
   <script src="../js/instafeed.min.js"></script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-3474776-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-3474776-4');
+  </script>
 </head>
 
 <body>

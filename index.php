@@ -232,7 +232,6 @@
             // DB connection
             require 'cms/beersDB.php';
             // Get the current list
-            //$sql = 'SELECT image, name, abv, description FROM beers';
             $sql = 'SELECT * FROM beers WHERE active=1';
             $dbOutput = $conn->query($sql);
             if ($dbOutput -> num_rows > 0) {
@@ -345,7 +344,6 @@
   <script src="contactform/contactform.js"></script>
   <script>
     // 458 x 415 - 50 x 45
-    bFirst = true;
     $("#Jillian").click(function(){
       for(i=1; i<5; i++) {
         strID = "#Bird"+i;
