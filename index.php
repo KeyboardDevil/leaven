@@ -345,6 +345,7 @@
   <script>
     // 458 x 415 - 50 x 45
     $("#Jillian").click(function(){
+      ga('send','event',"Eggs","Actions","Birds");
       for(i=1; i<5; i++) {
         strID = "#Bird"+i;
         $(strID).width("80px");
@@ -355,7 +356,10 @@
       // Kill the link treatment
       $("#Jillian").prop("id",null);
     });
-    $("#Tears").click(function(){window.location.href="https://www.leavenbrewing.com/tears"});
+    $("#Tears").click(function(){
+      window.location.href="https://www.leavenbrewing.com/tears"
+      ga('send','event',"Eggs","Pages","Tears");
+    });
   </script>
 
 </body>
