@@ -114,7 +114,8 @@
         // Logic complete, redirect to index
         //echo "<script>window.location.href='index.php'</script>";
     ?>
-    <span class="hi"><img src="wave.gif">Hi Dom!</span>
+    <div class="hi"><img src="wave.gif">Thanks for updating the list Dom! <img class="hiImg" src="domCircle.gif"></div>
+    <p>&nbsp;</p>
     <h1>Update the Beer List</h1>
     <ul class="howto">
       <li><strong>Active</strong> beers will appear on the website, <strong>Inactive</strong> beers will <strong>not appear</strong> on the website.</li>

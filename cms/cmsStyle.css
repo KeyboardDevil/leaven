@@ -3,10 +3,16 @@
   color:red;
   font-size: 35pt;
   font-weight: bolder;
-  padding: 10px;
+  position: absolute;
+  right: 25px;
 }
 .hi img {
   padding-right: 15px;
+}
+@media (max-width: 1400px) {
+  .hi {
+    display: none;
+  }
 }
 .warning {
   font-size: 2em;
