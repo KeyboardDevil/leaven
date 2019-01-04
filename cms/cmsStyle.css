@@ -1,4 +1,13 @@
 /* Style for the CMS pages */
+.hi {
+  color:red;
+  font-size: 35pt;
+  font-weight: bolder;
+  padding: 10px;
+}
+.hi img {
+  padding-right: 15px;
+}
 .warning {
   font-size: 2em;
   text-align:center;

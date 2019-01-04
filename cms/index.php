@@ -114,8 +114,8 @@
         // Logic complete, redirect to index
         //echo "<script>window.location.href='index.php'</script>";
     ?>
-      <h2>Hi Dom!</h2>
-      </h1><h1>Update the Beer List</h1>
+    <span class="hi"><img src="wave.gif">Hi Dom!</span>
+    <h1>Update the Beer List</h1>
     <ul class="howto">
       <li><strong>Active</strong> beers will appear on the website, <strong>Inactive</strong> beers will <strong>not appear</strong> on the website.</li>
       <li>To <strong>DELETE</strong> a beer completely, you must first <strong>DEACTIVATE</strong> it.</li>
