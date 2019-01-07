@@ -306,7 +306,7 @@
             <p class="about-text"><img class="linkIcon" src="img/facebook.svg" alt="Facebook">Find us on <a class="bodyLink" href="https://www.facebook.com/leavenbrewing/">Facebook!</a></p>
             <p class="about-text"><img class="linkIcon" src="img/instagram.svg" alt="Instagram">Stalk us on <a class="bodyLink" href="https://www.instagram.com/leavenbrewing/">Instagram</a></p>
             <p class="about-text"><img class="linkIcon" src="img/twitter.svg" alt="Twitter">Watch us on <a class="bodyLink" href="https://twitter.com/LeavenBrewing">Twitter</a></p>
-            <p class="about-text"><img class="linkIcon" src="img/email.svg" alt="Email">Go "old school" and <a href="mailto:hello@leavebrewing.com" class="bodyLink">send us an email</a></p>
+            <p class="about-text"><img class="linkIcon" src="img/email.svg" alt="Email">Go "old school" and <a href="mailto:hello@leavenbrewing.com" class="bodyLink">send us an email</a></p>
           </div>
         </div>
       </div>
