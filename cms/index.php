@@ -286,7 +286,7 @@
 </div>
 </form>
 
-<p>&nbsp;</p>
+<p class="lastUpd">Code last updated: <?php echo date ("F d Y H:i", getlastmod()); ?></p>
 <h3>Go back to <a href="/index.php">LeavenBrewing</a></h3>
 <p>&nbsp;</p>
 

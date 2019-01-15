@@ -14,6 +14,12 @@
     display: none;
   }
 }
+.lastUpd {
+  font-size: 1em;
+  padding: 10px 0;
+  color: coral;
+  font-style: italic;
+}
 .warning {
   font-size: 2em;
   text-align:center;
