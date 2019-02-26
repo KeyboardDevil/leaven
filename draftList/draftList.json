@@ -1,0 +1,14 @@
+{
+  "HTTP Content-Type Header":"application/json",
+  "titleText":"Leaven Brewing draft list",
+  "uid": "leavenDrafts",
+  "updateDate": "2019-02-25T00:00:00.0Z",
+  "leavenDrafts": [
+    {"mainText": "Frank's stout, 12.1%",
+    "abv": "12.1 %"},
+    {"mainText": "Cheeky Monkey",
+    "abv": "8.5 %"},
+    {"mainText": "Adrian loves sours",
+    "abv": "4 %"}],
+  "redirectionUrl": "https://www.leavenbrewing.com"
+}
