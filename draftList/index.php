@@ -1,7 +1,7 @@
 <html>
 <?php
 //header("Content-Type: application/json");
-
+echo '<p>testing</p>';
 require '../cms/beersDB.php';
 $sql = 'SELECT name, abv FROM beers where active=1';
 $dbOutput = $conn->query($sql);
