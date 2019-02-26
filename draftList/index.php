@@ -1,3 +1,4 @@
+<html>
 <?php
 //header("Content-Type: application/json");
 
@@ -28,3 +29,4 @@ if ($json === false) {
 echo $json;
 */
 ?>
+</html>
