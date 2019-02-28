@@ -16,6 +16,7 @@ if ($dbOutput -> num_rows > 0) {
   $jsonData = array(
     "titleText"=>"Leaven Brewing draft list",
     "uid"=>"leavenDrafts",
+    // ### TODO: Get update date from db
     "updateDate"=>"2019-02-25T00:00:00.0Z",
     "leavenDrafts"=>$arrNames,
     "redirectionUrl"=>"https://www.leavenbrewing.com"
