@@ -2,14 +2,13 @@
 //header("Content-Type: application/json");
 
 require '../cms/beersDB.php';
-$sql = 'SELECT name, abv FROM beers WHERE active=1';
+$sql = 'SELECT name FROM beers WHERE active=1';
 $dbOutput = $conn->query($sql);
-
+echo '<h2>testing</h2>';
 if ($dbOutput -> num_rows > 0) {
   $output = '';
   while($row = $dbOutput ->fetch_assoc()) {
     $dbName = $row["name"];
-    $dbAbv = $row["abv"];
     $output = $output.$dbName.". ";
   }
   echo $output;
