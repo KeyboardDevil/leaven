@@ -4,29 +4,22 @@ header("Content-Type: application/json");
 require '../cms/beersDB.php';
 $sql = 'SELECT name FROM beers WHERE active=1';
 $dbOutput = $conn->query($sql);
-$jsonString = '';
+$arrNames = [];
 if ($dbOutput -> num_rows > 0) {
   $output = '';
   while($row = $dbOutput ->fetch_assoc()) {
     $dbName = $row["name"];
-    $output = $output.$dbName.". ";
+    $arrNames[] = array("draft" => $dbName); 
   }
-  //echo $output;
-  // build JSON string
-  $jsonData = '{
-  "HTTP Content-Type Header":"application/json",
-  "titleText":"Leaven Brewing draft list",
-  "uid": "leavenDrafts",
-  "updateDate": "2019-02-25T00:00:00.0Z",
-  "leavenDrafts": [
-    {"mainText": "Frank\'s stout",
-    "abv": "12.1 %"},
-    {"mainText": "Cheeky Monkey",
-    "abv": "8.5 %"},
-    {"mainText": "Adrian loves sours",
-    "abv": "4 %"}],
-  "redirectionUrl": "https://www.leavenbrewing.com"
-  }';
+  
+  // build JSON data
+  $jsonData = array(
+    "titleText"=>"Leaven Brewing draft list",
+    "uid"=>"leavenDrafts",
+    "updateDate"=>"2019-02-25T00:00:00.0Z",
+    "leavenDrafts"=>$arrNames,
+    "redirectionUrl"=>"https://www.leavenbrewing.com"
+  );
 }
 
 // format and return JSON
