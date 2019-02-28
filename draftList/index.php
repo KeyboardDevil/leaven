@@ -9,7 +9,7 @@ if ($dbOutput -> num_rows > 0) {
   $output = '';
   while($row = $dbOutput ->fetch_assoc()) {
     $dbName = $row["name"];
-    $arrNames[] = array("draft" => $dbName); 
+    $arrNames[] = array("draft" => html_entity_decode($dbName); 
   }
   
   // build JSON data
