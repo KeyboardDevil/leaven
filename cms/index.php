@@ -156,6 +156,7 @@
               foreach ($activeBeers as $beer) {
                 echo "<div class=\"row\">";
                 echo "<div class=\"col-md-3\">";
+                echo '<p><a class="editLink" href="edit.php?id='.$beer["beerid"].'">Edit this beer</a></p>';
                 echo "<input class=\"btn btn-warning deactivate-beer\" type=\"submit\" name=\"deactivate\" value=\"DEACTIVATE beer-".$beer["beerid"]."\">";
                 echo "</div>";
                 echo "<div class=\"col-md-9 beerList\">";

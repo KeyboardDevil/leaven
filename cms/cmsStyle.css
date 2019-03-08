@@ -136,3 +136,21 @@ th {
 .flex-section:hover {
   background-color: #5bc0de;
 }
+.editPage {
+  font-size: 2em;
+}
+.edit-beer {
+  color: cyan;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.edit-beer:hover {
+  color: white;
+}
+.edit-beer img {
+  height: auto;
+}
+.editLink {
+  font-size: 1.8em;
+  color: orange;
+}
