@@ -136,6 +136,9 @@ th {
 .flex-section:hover {
   background-color: #5bc0de;
 }
+.inactiveRow {
+  padding-bottom: 25px;
+}
 .editPage {
   font-size: 2em;
 }
@@ -152,5 +155,5 @@ th {
 }
 .editLink {
   font-size: 1.8em;
-  color: orange;
+  color: red;
 }
