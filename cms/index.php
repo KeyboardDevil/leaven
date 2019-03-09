@@ -23,11 +23,7 @@
   <body>
     <?php
     require 'pass.php';
-    if ($passValid) {
-      // Security cookie
-        setcookie('PassValid', 'true', time() + (86400 * 30), "cms");
-    }
-    if (!isset($_COOKIE["PassValid"])) {
+    if (!isset($_COOKIE["PassValid"]) && !$passValid) {
     ?>
       <div class="warning">
         <img src="../img/instaLogo.gif">
