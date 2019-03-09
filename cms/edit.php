@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!doctype html>
 <!-- ############
   Edit beer 0.1
@@ -22,7 +25,7 @@
   </head>
   <body class="editPage">
     <?php
-    if(isset($_COOKIE["PassValid"])) {
+    if(isset( $_SESSION['MagicKey'] )) {
       // Check and process the form
       $beerID = null;
       $image = null;
@@ -133,10 +136,10 @@
       ?>
 
       <script>
-        $("#CancelButton").click(function goBack() {window.history.go(-1);});
+        $("#CancelButton").click(function goHome() {window.location.href="index.php";});
       </script>
     <?php
-    } else { // end cookie check
+    } else { // end MagicKey check
       echo 'NOT AUTHORIZED! Return to the <a href="index.php">Login page</a>';
     }
     ?>

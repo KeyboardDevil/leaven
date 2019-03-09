@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!doctype html>
 <!-- ############
   Beer form 2.1
@@ -23,7 +26,7 @@
   <body>
     <?php
     require 'pass.php';
-    if (!$passValid) {
+    if (!isset( $_SESSION['MagicKey'] )) {
     ?>
       <div class="warning">
         <img src="../img/instaLogo.gif">
@@ -43,7 +46,7 @@
       $description = null;
       $active = null;
       $setActive = true;
-      if ($passValid) {
+      if (isset( $_SESSION['MagicKey'] )) {
         require 'beersDB.php';
         if (isset($_POST["newBeerImage"]) && isset($_POST["newBeerName"]) && isset($_POST["newBeerAbv"]) && isset($_POST["newBeerDescription"])) {
           $image = htmlentities($_POST["newBeerImage"]);
@@ -122,7 +125,6 @@
     </ul>
     <form method="post" action="index.php">
       <?php
-      echo "<input type=\"hidden\" name=\"password\" value=\"$password\">";
       // Get the current list and render the form
       $sql = 'SELECT ID, active, image, name, abv, description FROM beers';
       $dbOutput = $conn->query($sql);
@@ -292,7 +294,7 @@
 <p>&nbsp;</p>
 
 <?php
-  } // close $passValid check
+  } // close MagicKey check
 ?>
   <script>
     $( ".addImage" ).click(function doStuff() {
