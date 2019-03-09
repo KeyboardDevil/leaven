@@ -39,82 +39,79 @@
 
     <?php
     }
-      // Check and process the form
-      $image = null;
-      $name = null;
-      $abv = null;
-      $description = null;
-      $active = null;
-      $setActive = true;
-      if (isset( $_SESSION['MagicKey'] )) {
-        require 'beersDB.php';
-        if (isset($_POST["newBeerImage"]) && isset($_POST["newBeerName"]) && isset($_POST["newBeerAbv"]) && isset($_POST["newBeerDescription"])) {
-          $image = htmlentities($_POST["newBeerImage"]);
-          $name = htmlentities($_POST["newBeerName"]);
-          $abv = htmlentities($_POST["newBeerAbv"]);
-          $description = htmlentities($_POST["newBeerDescription"]);
-          $active = htmlentities($_POST["activeChoice"]);
-          if ($active == "inactive") {
-            $setActive = false;
-          }          
+    // Check and process the form
+    $image = null;
+    $name = null;
+    $abv = null;
+    $description = null;
+    $active = null;
+    $setActive = true;
+    if (isset( $_SESSION['MagicKey'] )) {
+      require 'beersDB.php';
+      if (isset($_POST["newBeerImage"]) && isset($_POST["newBeerName"]) && isset($_POST["newBeerAbv"]) && isset($_POST["newBeerDescription"])) {
+        $image = htmlentities($_POST["newBeerImage"]);
+        $name = htmlentities($_POST["newBeerName"]);
+        $abv = htmlentities($_POST["newBeerAbv"]);
+        $description = htmlentities($_POST["newBeerDescription"]);
+        $active = htmlentities($_POST["activeChoice"]);
+        if ($active == "inactive") {
+          $setActive = false;
+        }          
+      }
+      //##############
+      // DEACTIVATE beer
+      if (isset($_POST["deactivate"])) {
+        $deactivate = $_POST["deactivate"];
+        // Get beer ID
+        $beerDeactivated = explode("-",$deactivate,2);
+        $beerDeactivated = $beerDeactivated[1];
+        $deactivateSql = "UPDATE beers SET active=0 WHERE ID=$beerDeactivated";
+        if ($conn->query($deactivateSql) === TRUE) {
+          echo "<p>Deactivated beer ID: $beerDeactivated</p>";
+        } else {
+          echo "Error: " . $deactivateSql . "<br>" . $conn->error;
         }
-        //##############
-        // DEACTIVATE beer
-        if (isset($_POST["deactivate"])) {
-          $deactivate = $_POST["deactivate"];
-          // Get beer ID
-          $beerDeactivated = explode("-",$deactivate,2);
-          $beerDeactivated = $beerDeactivated[1];
-          $deactivateSql = "UPDATE beers SET active=0 WHERE ID=$beerDeactivated";
-          if ($conn->query($deactivateSql) === TRUE) {
-            echo "<p>Deactivated beer ID: $beerDeactivated</p>";
-          } else {
-            echo "Error: " . $deactivateSql . "<br>" . $conn->error;
-          }
+      }
+      //##############
+      // DELETE beer
+      if (isset($_POST["delete"])) {
+        $delete = $_POST["delete"];
+        // Get beer ID
+        $beerDeleted = explode("-",$delete,2);
+        $beerDeleted = $beerDeleted[1];
+        $deleteSql = "DELETE from beers WHERE ID=$beerDeleted";
+        if ($conn->query($deleteSql) === TRUE) {
+          echo "<p>DELETED beer ID: $beerDeleted</p>";
+        } else {
+          echo "Error: " . $deleteSql . "<br>" . $conn->error;
         }
-        //##############
-        // DELETE beer
-        if (isset($_POST["delete"])) {
-          $delete = $_POST["delete"];
-          // Get beer ID
-          $beerDeleted = explode("-",$delete,2);
-          $beerDeleted = $beerDeleted[1];
-          $deleteSql = "DELETE from beers WHERE ID=$beerDeleted";
-          if ($conn->query($deleteSql) === TRUE) {
-            echo "<p>DELETED beer ID: $beerDeleted</p>";
-          } else {
-            echo "Error: " . $deleteSql . "<br>" . $conn->error;
-          }
+      }
+      //##############
+      // ACTIVATE beer
+      if (isset($_POST["activate"])) {
+        $activate = $_POST["activate"];
+        // Get beer ID
+        $beerActivated = explode("-",$activate,2);
+        $beerActivated = $beerActivated[1];
+        $activateSql = "UPDATE beers SET active=1 WHERE ID=$beerActivated";
+        if ($conn->query($activateSql) === TRUE) {
+          echo "<p>Activated beer ID: $beerActivated</p>";
+        } else {
+          echo "Error: " . $activateSql . "<br>" . $conn->error;
         }
-        //##############
-        // ACTIVATE beer
-        if (isset($_POST["activate"])) {
-          $activate = $_POST["activate"];
-          // Get beer ID
-          $beerActivated = explode("-",$activate,2);
-          $beerActivated = $beerActivated[1];
-          $activateSql = "UPDATE beers SET active=1 WHERE ID=$beerActivated";
-          if ($conn->query($activateSql) === TRUE) {
-            echo "<p>Activated beer ID: $beerActivated</p>";
-          } else {
-            echo "Error: " . $activateSql . "<br>" . $conn->error;
-          }
+      }
+      //##############
+      // ADD a new beer
+      if ($image!='' && $name!='' && $abv!='' && $description!='') {
+        $stmt = $conn->prepare("INSERT INTO beers (image, name, abv, description, active) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssss", $image, $name, $abv, $description, $setActive);
+        $sql = 'INSERT INTO beers (image,name,abv,description,active) VALUES ("'.$image.'","'.$name.'","'.$abv.'","'. $description.'","'. $setActive.'")';
+        if ($conn->query($sql) === TRUE) {
+          echo "New beer created successfully";
+        } else {
+          echo "Error: " . $sql . "<br>" . $conn->error;
         }
-        //##############
-        // ADD a new beer
-        if ($image!='' && $name!='' && $abv!='' && $description!='') {
-          $stmt = $conn->prepare("INSERT INTO beers (image, name, abv, description, active) VALUES (?, ?, ?, ?, ?)");
-          $stmt->bind_param("sssss", $image, $name, $abv, $description, $setActive);
-          $sql = 'INSERT INTO beers (image,name,abv,description,active) VALUES ("'.$image.'","'.$name.'","'.$abv.'","'. $description.'","'. $setActive.'")';
-          if ($conn->query($sql) === TRUE) {
-            echo "New beer created successfully";
-            echo "<h1>".$setActive."</h1>";
-          } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-          }
-        }
-        // Logic complete, redirect to index
-        //echo "<script>window.location.href='index.php'</script>";
+      }
     ?>
     <div class="hi"><img src="wave.gif">Thanks for updating the list Dom! <img class="hiImg" src="domCircle.gif"></div>
     <p>&nbsp;</p>
@@ -234,17 +231,17 @@
         </div>
         <div class="add-section">
           <p class="add-header">Beer Name</p>
-          <input type="text" size="16" name="newBeerName">
+          <input type="text" size="25" name="newBeerName">
         </div>
         <div class="add-section">
           <p class="add-header">ABV &amp; Size</p>
-          <input type="text" size="16" name="newBeerAbv">
+          <input type="text" size="20" name="newBeerAbv">
         </div>
       </div>
       <div class="modal-body">
         <div class="add-section">
           <p class="add-header">Description</p>
-          <textarea name="newBeerDescription" rows="3" cols="63"></textarea>
+          <textarea name="newBeerDescription" rows="3" cols="80"></textarea>
         </div>
       </div>
       <div class="flex-it">
@@ -289,13 +286,13 @@
 </div>
 </form>
 
-<p class="lastUpd">Code last updated: <?php echo date ("F d Y H:i", getlastmod()); ?></p>
-<h3>Go back to <a href="/index.php">LeavenBrewing</a></h3>
-<p>&nbsp;</p>
+    <p class="lastUpd">Code last updated: <?php echo date ("F d Y H:i", getlastmod()); ?></p>
+    <h3>Go back to <a href="/index.php">LeavenBrewing</a></h3>
+    <p>&nbsp;</p>
 
-<?php
-  } // close MagicKey check
-?>
+    <?php
+      } // close MagicKey check
+    ?>
   <script>
     $( ".addImage" ).click(function doStuff() {
       var img = document.createElement("IMG");
