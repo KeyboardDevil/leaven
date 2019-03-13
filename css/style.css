@@ -573,6 +573,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 .gMaps {
   width:100%;
+  height: 400px;
 }
 
 /* Beer Section

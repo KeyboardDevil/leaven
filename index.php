@@ -211,6 +211,14 @@
         <div class="col-md-7">
           <p class="about-text call-out">So come on in and join us for a pint!  You can find us right in the heart of Riverview at:</p>
           <p class="about-text call-out big-address"><i class="fa fa-map-marker"></i>11238 Boyette Rd, Riverview, FL 33569</p>
+          <h3>Brewery Hours:</h3>
+          <ul>
+            <li>Wednesday 3:00 - 10:00 PM</li>
+            <li>Thursday 3:00 - 10:00 PM</li>
+            <li>Friday 3:00 - 10:00 PM</li>
+            <li>Satuday 12:00 PM - 12:00 AM</li>
+            <li>Sunday 12:00 PM - 8:00 PM</li>
+          </ul>
         </div>
       </div>
     </div>
