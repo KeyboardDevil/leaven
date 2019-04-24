@@ -213,10 +213,9 @@
           <p class="about-text call-out big-address"><i class="fa fa-map-marker"></i>11238 Boyette Rd, Riverview, FL 33569</p>
           <h3>Brewery Hours:</h3>
           <ul>
-            <li>Wednesday 3:00 - 10:00 PM</li>
-            <li>Thursday 3:00 - 10:00 PM</li>
-            <li>Friday 3:00 - 10:00 PM</li>
-            <li>Satuday 12:00 PM - 12:00 AM</li>
+            <li>Monday - Thursday 3:00 - 10:00 PM</li>
+            <li>Friday 3:00 - Midnight</li>
+            <li>Satuday 12:00 PM - Midnight</li>
             <li>Sunday 12:00 PM - 8:00 PM</li>
           </ul>
         </div>
