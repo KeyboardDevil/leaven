@@ -30,7 +30,7 @@ h1 {
   font-weight: bolder;
   font-size: 2.6em;
 }
-@media (max-width: 768px) {
+@media (max-width: 812px) {
   #Blanco {
     margin: 0;
     width: 100%;
