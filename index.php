@@ -215,7 +215,7 @@
           <ul>
             <li>Monday - Thursday 3:00 - 10:00 PM</li>
             <li>Friday 3:00 - Midnight</li>
-            <li>Satuday 12:00 PM - Midnight</li>
+            <li>Saturday 12:00 PM - Midnight</li>
             <li>Sunday 12:00 PM - 8:00 PM</li>
           </ul>
         </div>
@@ -284,12 +284,13 @@
         <script>
           var userFeed = new Instafeed({
             get: 'user',
-            userId: '3538884865',
-            accessToken: '3538884865.04a6d0c.ec0589bf210e4ff6afcc326e268e23b2',
+            userId: '188844258',
+            accessToken: '188844258.998593d.51520d817f2e4a5fa0c8514becd17285',
             template: '<a href="{{link}}"><img class="instaFeed" src="{{image}}" /></a>',
             limit: '12'
           });
           userFeed.run();
+// https://www.instagram.com/oauth/authorize/?client_id=998593d67b6740429accdf3b272d7698&redirect_uri=http://instafeedjs.com&response_type=token&scope=public_content
         </script>
         <!--Stick it in!-->
         <div id="instafeed"></div>
