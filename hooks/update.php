@@ -2,10 +2,10 @@
 function updateRepo($LOCAL_REPO)
 {
     // If there is already a repo, just run a git pull to grab the latest changes
-    $output = shell_exec("cd {$LOCAL_REPO} && git pull origin master");
+    $output = shell_exec("cd {$LOCAL_REPO} && git pull origin master 2>&1");
     echo "<br />output: $output";
     file_put_contents("webhook.log", "\n#############################\ngit pull origin master output:\n$output", FILE_APPEND);
-    $status = shell_exec("cd {$LOCAL_REPO} && git rev-parse --short HEAD");
+    $status = shell_exec("cd {$LOCAL_REPO} && git rev-parse --short HEAD 2>&1");
     echo "<br />status: $status";
     echo "<br />root: $LOCAL_ROOT";
     file_put_contents("webhook.log", "\nCurrent hash is $status\n#############################\n", FILE_APPEND);
