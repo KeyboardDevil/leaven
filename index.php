@@ -217,7 +217,7 @@
             <li>Friday 3:00 - Midnight</li>
             <li>Saturday 12:00 PM - Midnight</li>
             <li>Sunday 12:00 PM - 8:00 PM</li>
-          </ul> 
+          </ul>
         </div>
       </div>
     </div>
