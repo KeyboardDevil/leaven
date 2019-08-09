@@ -816,6 +816,11 @@ Egg time!
   display: none;
   z-index: 999;
 }
+@media (max-width: 1024px) {
+  #kjEgg {
+    right: 0px;
+  }
+}
 #Bird1{
   left:50px;
 }

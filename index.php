@@ -354,9 +354,8 @@
   <script src="contactform/contactform.js"></script>
   <script>
     // KJ
-    $("#LBlogo").click(function(){
+    $("#LBlogo").dblclick(function(){
       $("#kjEgg").slideDown('5000');
-      //$("#LBlogo").animate({opacity: .3});
     });
     // BIRDS 458 x 415 - 50 x 45
     $("#Jillian").click(function(){
