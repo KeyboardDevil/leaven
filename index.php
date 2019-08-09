@@ -114,7 +114,8 @@
     <div class="hero-container">
       <div class="wow fadeIn">
         <div class="hero-logo">
-          <img class="" src="img/LeavenLogoTrans.png" alt="Leaven Brewing">
+          <img src="img/kjDrink.png" id="kjEgg">
+          <img id="LBlogo" src="img/LeavenLogoTrans.png" alt="Leaven Brewing">
         </div>
         <h1>Riverview's first brewery!</h1>
         <div class="actions">
@@ -352,7 +353,12 @@
   <script src="js/custom.js"></script>
   <script src="contactform/contactform.js"></script>
   <script>
-    // 458 x 415 - 50 x 45
+    // KJ
+    $("#LBlogo").click(function(){
+      $("#kjEgg").slideDown('5000');
+      //$("#LBlogo").animate({opacity: .3});
+    });
+    // BIRDS 458 x 415 - 50 x 45
     $("#Jillian").click(function(){
       ga('send','event',"Eggs","Actions","Birds");
       for(i=1; i<5; i++) {

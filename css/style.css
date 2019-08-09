@@ -811,7 +811,7 @@ Egg time!
   z-index: 10;
   width: 150px;
 }
-#Bird1, #Bird2, #Bird3, #Bird4, #Bird5 {
+#Bird1, #Bird2, #Bird3, #Bird4, #Bird5, #kjEgg {
   position:absolute;
   display: none;
   z-index: 999;
