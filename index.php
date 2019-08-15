@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+    /* for good measure */
+    #Bird1, #Bird2, #Bird3, #Bird4, #Bird5, #kjEgg, #kjDance {
+      position:absolute;
+      display: none;
+      z-index: 999;
+    }
+  </style>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="brewery, leaven brewing, riverview brewery, florida brewery" name="keywords">
