@@ -322,6 +322,8 @@
       </div>
     </div>
   </section>
+  
+  <img src="img/kjDance.jpg" id="kjDance" />
 
 <!--  Footer-->
   <footer id="footer">
@@ -340,6 +342,7 @@
   </footer>
   <!-- #footer -->
 
+
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
   <script src="lib/jquery/jquery.min.js"></script>
@@ -354,6 +357,17 @@
   <script src="contactform/contactform.js"></script>
   <script>
     // KJ
+    $( ".copyright" ).on( "mousedown", function( event ) {
+      if (event.which == 3) {
+        $( "#kjDance" ).animate({
+          left: "+=600",
+          bottom: "+=600",
+          height: "toggle"
+        }, 3000, function() {
+          // Animation complete.
+        });
+      }
+    });
     $("#LBlogo").dblclick(function(){
       $("#kjEgg").slideDown('5000');
     });
