@@ -279,7 +279,7 @@
     <div class="row">
         <div class="col-md-12">
             <h2 class="section-title">Events</h2>
-          <p class="about-text">Those <a href="404.php">gosh darn kids</a> and their social media... Always uploading things on the inter webs, and book of faces. We have a lot going on here at Leaven Brewing, we’ll keep you informed on our Facebook and Instagram. Food trucks? We got those. Music? We got that too! Events? Those happen!</p>
+          <p class="about-text">Those gosh darn <a href="404.php">kids</a> and their social media... Always uploading things on the inter webs, and book of faces. We have a lot going on here at Leaven Brewing, we’ll keep you informed on our Facebook and Instagram. Food trucks? We got those. Music? We got that too! Events? Those happen!</p>
         </div>
     </div>
     <!-- Google cal -->
