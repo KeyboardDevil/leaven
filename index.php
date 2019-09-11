@@ -3,7 +3,7 @@
 <head>
   <style>
     /* for good measure */
-    #Bird1, #Bird2, #Bird3, #Bird4, #Bird5, #kjEgg, #kjDance {
+    .angryBirds, #kjEgg, #kjDance {
       position:absolute;
       display: none;
       z-index: 999;
@@ -60,7 +60,7 @@
     gtag('config', 'UA-3474776-4');
   </script>
   <title>Leaven Brewing</title>
-  <link rel="alternate" href="https://www.leavenbrewing.com" hreflang="en-us" />	
+  <link rel="alternate" href="https://www.leavenbrewing.com" hreflang="en-us" />
   
   <!-- Rich snippet data -->
   <script type="application/ld+json">
@@ -162,11 +162,11 @@
   <!-- #header -->
   
   <!-- bird egg, get it? #SorryNotSorry -->
-  <img src="img/bird.png" id="Bird1" alt="bird"/>
-  <img src="img/bird.png" id="Bird2" alt="bird"/>
-  <img src="img/bird.png" id="Bird3" alt="bird"/>
-  <img src="img/bird.png" id="Bird4" alt="bird"/>
-  <img src="img/bird.png" id="Bird5" alt="bird"/>
+  <img src="img/bird.png" id="Bird1" class="angryBirds" alt="bird"/>
+  <img src="img/bird.png" id="Bird2" class="angryBirds" alt="bird"/>
+  <img src="img/bird.png" id="Bird3" class="angryBirds" alt="bird"/>
+  <img src="img/bird.png" id="Bird4" class="angryBirds" alt="bird"/>
+  <img src="img/bird.png" id="Bird5" class="angryBirds" alt="bird"/>
   
   <!-- About Us-->
   <section id="about">
@@ -193,7 +193,7 @@
         </div>
         <div class="col-md-12 signature"><br />
           <h2>We are Leaven Brewing.</h2>
-          (and we're super excited to meet you)
+          (and <span id="UncleRyanEgg">we're super excited</span> to meet you)
         </div>
       </div>
     </div>
@@ -348,7 +348,7 @@
   <script src="js/custom.js"></script>
   <script src="contactform/contactform.js"></script>
   <script>
-    // KJ
+    // KJ footer
     $( ".copyright" ).on( "mousedown", function( event ) {
       if (event.which == 3) {
         $( "#kjDance" ).animate({
@@ -356,16 +356,16 @@
           bottom: "+=600",
           height: "toggle"
         }, 3000, function() {
-          // Animation complete.
         });
+        //$("#kjDance").click().remove();
       }
     });
+    // KJ header
     $("#LBlogo").dblclick(function(){
       $("#kjEgg").slideDown('5000');
     });
     // BIRDS 458 x 415 - 50 x 45
     $("#Jillian").click(function(){
-      ga('send','event',"Eggs","Actions","Birds");
       for(i=1; i<5; i++) {
         strID = "#Bird"+i;
         $(strID).width("80px");
@@ -376,9 +376,9 @@
       // Kill the link treatment
       $("#Jillian").prop("id",null);
     });
-    $("#Tears").click(function(){
-      window.location.href="https://www.leavenbrewing.com/tears"
-      ga('send','event',"Eggs","Pages","Tears");
+    // Ryan egg
+    $("#UncleRyanEgg").click(function(){
+      window.location.href='ryanFacts.php';
     });
   </script>
 

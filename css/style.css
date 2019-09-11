@@ -800,7 +800,28 @@ body.mobile-nav-active #mobile-nav-toggle {
 /*==================
 Egg time!
 ===================*/
+#UncleRyan {
+  margin-left: 330px;
+  width: 800px;
+}
+#RyanBack {
+  background: url("../img/ryanCircle.png") no-repeat left top;
+}
+@media (max-width:1024px) {
+  #RyanBack {
+    background: url("../img/ryanCircleSmall.png") no-repeat right top;
+  }
+  #UncleRyan {
+    margin: 5px;
+    padding-top: 18px;
+    width: 98%;
+  }
+  #UncleRyan h1 {
+    width: 255px;
+  }
+}
 #Jillian:hover,
+#UncleRyanEgg:hover,
 #Tears:hover {
   color: darkred;
   cursor: help;
