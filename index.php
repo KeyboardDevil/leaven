@@ -380,6 +380,9 @@
     $("#UncleRyanEgg").click(function(){
       window.location.href='ryanFacts.php';
     });
+    $("#Tears").click(function(){
+      window.location.href='tears/';
+    });
   </script>
 
 </body>
