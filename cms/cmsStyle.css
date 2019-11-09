@@ -12,8 +12,8 @@
   margin-top: 25px;
 }
 @media (max-width: 1400px) {
-  .hi {
-    display: none;
+  .hiImg {
+    width: 80%;
   }
 }
 .lastUpd {
