@@ -113,7 +113,7 @@
         }
       }
     ?>
-    <div class="hi"><img src="wave.gif">Thanks for updating the list Dom! <img class="hiImg" src="domCircle.gif"></div>
+    <div class="hi"><img src="wave.gif">Thanks for updating the list Trent! <!--<img class="hiImg" src="domCircle.gif">--></div>
     <p>&nbsp;</p>
     <h1>Update the Beer List</h1>
     <ul class="howto">
