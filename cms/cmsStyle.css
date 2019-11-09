@@ -6,8 +6,10 @@
   position: absolute;
   right: 25px;
 }
-.hi img {
-  padding-right: 15px;
+.hiImg {
+  display: block;
+  padding: 10px;
+  margin-top: 25px;
 }
 @media (max-width: 1400px) {
   .hi {

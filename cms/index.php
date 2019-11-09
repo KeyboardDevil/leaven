@@ -3,7 +3,7 @@
 ?>
 <!doctype html>
 <!-- ############
-  Beer form 2.1
+  Beer form 2.2
 ##############-->
 <html lang="en">
   <head>
@@ -113,7 +113,7 @@
         }
       }
     ?>
-    <div class="hi"><img src="wave.gif">Thanks for updating the list Trent! <!--<img class="hiImg" src="domCircle.gif">--></div>
+    <div class="hi"><img src="wave.gif">Thanks for updating the list Trent!</div>
     <p>&nbsp;</p>
     <h1>Update the Beer List</h1>
     <ul class="howto">
@@ -167,6 +167,7 @@
               }
               ?>
                 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">ADD a new beer</button>
+                <img class="hiImg" src="internetIsHard.jpg">
               </td>
               <td valign="top">
               <h3 class="beerSectionHeader">Inactive Beers</h3>
