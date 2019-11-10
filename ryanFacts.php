@@ -5,6 +5,8 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <!-- Site by Frank - www.KeyboardDevil.com -->
   <title>Leaven Brewing: Uncle Ryan Facts</title>
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
   <link rel="alternate" href="https://www.leavenbrewing.com" hreflang="en-us" />
   <link href="https://www.leavenbrewing.com/favicon.ico" rel="shortcut icon">
   <link href="https://fonts.googleapis.com/css?family=Acme|Shadows+Into+Light" rel="stylesheet">
@@ -36,6 +38,10 @@
   <div id="GetBack"><a href="https://www.leavenbrewing.com">Back to Leaven Brewing</a></div>
   <div id="RyanBack">
     <div id="UncleRyan">
+      <span class="easterEgg">You found an Easter Egg!</span> <img class="eEgg" src="img/eggBack.png">
+      <span class="eggHelp"><strong>What's an Easter Egg?!</strong><br/>
+      It's an unexpected or undocumented feature in a piece of computer software <strong>hidden</strong> by the programmer as a joke or bonus!<br/>
+      <strong>Congrats on finding one!</strong></span>
       <h1>The Legend of Uncle Ryan</h1>
       <ul>
         <li>Uncle Ryans shoe size is Q.</li>
@@ -97,6 +103,15 @@
       </ul>
     </div>
   </div>
-
+  
+  <script>
+    $('.eggHelp').hide();
+    $('.eEgg').mouseover(function(event) {
+      $('.eggHelp').show();
+  }).mouseout(function(){
+      $('.eggHelp').hide();
+  });
+  </script>
+  
 </body>
 </html>

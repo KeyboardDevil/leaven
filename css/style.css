@@ -800,6 +800,24 @@ body.mobile-nav-active #mobile-nav-toggle {
 /*==================
 Egg time!
 ===================*/
+.easterEgg {
+  font-size: 22px;
+  width: 500px;
+  color: red;
+}
+.eEgg {
+  padding-left: 10px;
+  cursor: help;
+}
+.eggHelp {
+  width: 350px;
+  padding: 12px;
+  position: absolute;
+  z-index: 100;
+  background-color: navy;
+  border: 2px solid white;
+  border-radius: 15px;
+}
 #UncleRyan {
   margin-left: 330px;
   width: 800px;

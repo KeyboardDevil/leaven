@@ -8,6 +8,8 @@
   <!-- Site by Frank - www.KeyboardDevil.com -->
   <!-- Poem by Mike - @Miguelblanco510 -->
   <title>Leaven Brewing: Tears for Beers</title>
+  <script src="../lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
   <link rel="alternate" href="https://www.leavenbrewing.com" hreflang="en-us" />	
 
   <link href="https://www.leavenbrewing.com/favicon.ico" rel="shortcut icon">
@@ -17,7 +19,6 @@
   <link href="lib/animate-css/animate.min.css" rel="stylesheet">
   <link href="../css/style.css" rel="stylesheet">
   <link href="tears.css" rel="stylesheet">
-  <script src="../js/instafeed.min.js"></script>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-3474776-4"></script>
   <script>
@@ -31,6 +32,10 @@
 <body>
 
   <div id="GetBack"><a href="https://www.leavenbrewing.com">Back to Leaven Brewing</a></div>
+  <span class="easterEgg">You found an Easter Egg!</span> <img class="eEgg" src="../img/eggBack.png">
+  <span class="eggHelp"><strong>What's an Easter Egg?!</strong><br/>
+  It's an unexpected or undocumented feature in a piece of computer software <strong>hidden</strong> by the programmer as a joke or bonus!<br/>
+  <strong>Congrats on finding one!</strong></span>
   <div id="Blanco">
     <h1>Tears for Beers</h1>
     <p>
@@ -57,6 +62,15 @@
     </p>
     <div id="Byline">-Blanco</div>
   </div>
+  
+  <script>
+    $('.eggHelp').hide();
+    $('.eEgg').mouseover(function(event) {
+        $('.eggHelp').show();
+    }).mouseout(function(){
+        $('.eggHelp').hide();
+    });
+  </script>
 
 </body>
 </html>
