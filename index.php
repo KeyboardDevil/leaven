@@ -209,7 +209,7 @@
           <h3>Here's where we make the beer!  Come on in and try a sip!</h3>
         </div>
         <div class="col-md-8">
-          <img id="OktoberEggImg" src="img/oktoberEgg.png"><p class="about-text">Meet <span class="brewface">Brewhouse Mc Brewface</span>, a big hunk of 304 stainless steel construction with glass manways, American made Baldor SS washdown pumps, and an available production of 5bbls. He likes long rinse cycles of brewer's no. 5 and can't resist a good <span id="OktoberEgg">caustic cycle</span>. Most brewhouses his size don't come with automatic rakes and plows, but Brewhouse McBrewface does.</p>
+          <p class="about-text">Meet <span class="brewface">Brewhouse Mc Brewface</span>, a big hunk of 304 stainless steel construction with glass manways, American made Baldor SS washdown pumps, and an available production of 5bbls. He likes long rinse cycles of brewer's no. 5 and can't resist a good caustic cycle. Most brewhouses his size don't come with automatic rakes and plows, but Brewhouse McBrewface does.</p>
         </div>
         <div class="col-md-4">
           <img src="img/brew.jpg" class="inlineAlt" alt="Brewhouse McBrewface" />
@@ -240,7 +240,7 @@
           <h2 class="section-title">Our Beer</h2>
           <div class="section-title-divider"></div>
           <h3 class="about-title">We make beer we like to drink, but don't worry... We'll make beer you like to drink too.</h3>
-          <p class="about-text">We make beer we like to drink, but don't worry...  We'll make beer <span id="Tears">you like</span> to drink too. We always thought it was a fun process brewing new beers, trading different styles in and out to create a set of flagships. The goal here at Leaven is to become a neighborhood brewery with a hyper-local mindset. At this time we have no intention of distribution (KJ did enough of that at previous locations.) We're here to make beer for you, Riverview! Join us at the bar, tell us the styles you like. Let's start a great conversation about beer and figure out our core beers <strong>together</strong>.</p>
+          <img id="OktoberEggImg" src="img/oktoberEgg.png"><p class="about-text">We make beer we like to drink, but don't worry...  We'll make beer <span id="Tears">you like</span> to drink too. We always thought it was a fun process brewing new beers, trading different styles in and out to create a set of flagships. The goal here at Leaven is to become a neighborhood brewery with a <span id="OktoberEgg">hyper-local</span> mindset. At this time we have no intention of distribution (KJ did enough of that at previous locations.) We're here to make beer for you, Riverview! Join us at the bar, tell us the styles you like. Let's start a great conversation about beer and figure out our core beers <strong>together</strong>.</p>
           <p class="about-text">We aim to have 5 flagships which will be on at all times, and 5 rotational beers that will lend themselves to a more seasonal flair.</p>
 
           <h4>What's on Tap?</h4>
