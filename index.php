@@ -209,7 +209,7 @@
           <h3>Here's where we make the beer!  Come on in and try a sip!</h3>
         </div>
         <div class="col-md-8">
-          <p class="about-text">Meet <span class="brewface">Brewhouse Mc Brewface</span>, a big hunk of 304 stainless steel construction with glass manways, American made Baldor SS washdown pumps, and an available production of 5bbls. He likes long rinse cycles of brewer's no. 5 and can't resist a good caustic cycle. Most brewhouses his size don't come with automatic rakes and plows, but Brewhouse McBrewface does.</p>
+          <img id="OktoberEggImg" src="img/oktoberEgg.png"><p class="about-text">Meet <span class="brewface">Brewhouse Mc Brewface</span>, a big hunk of 304 stainless steel construction with glass manways, American made Baldor SS washdown pumps, and an available production of 5bbls. He likes long rinse cycles of brewer's no. 5 and can't resist a good <span id="OktoberEgg">caustic cycle</span>. Most brewhouses his size don't come with automatic rakes and plows, but Brewhouse McBrewface does.</p>
         </div>
         <div class="col-md-4">
           <img src="img/brew.jpg" class="inlineAlt" alt="Brewhouse McBrewface" />
@@ -382,6 +382,10 @@
     });
     $("#Tears").click(function(){
       window.location.href='tears/';
+    });
+    $("#OktoberEgg").click(function(){
+      $("#OktoberEggImg").fadeIn("slow").delay(5000).fadeOut("slow");
+      
     });
   </script>
 

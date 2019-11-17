@@ -838,6 +838,7 @@ Egg time!
     width: 255px;
   }
 }
+#OktoberEgg:hover,
 #Jillian:hover,
 #UncleRyanEgg:hover,
 #Tears:hover {
@@ -850,7 +851,7 @@ Egg time!
   z-index: 10;
   width: 150px;
 }
-#Bird1, #Bird2, #Bird3, #Bird4, #Bird5, #kjEgg, #kjDance {
+#Bird1, #Bird2, #Bird3, #Bird4, #Bird5, #kjEgg, #kjDance, #OktoberEggImg {
   position:absolute;
   display: none;
   z-index: 999;
