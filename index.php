@@ -15,7 +15,7 @@
   <meta content="Leaven Brewing - Transforming Grain for the Better" name="description">
   <!-- Site by Frank - www.KeyboardDevil.com -->
   <!--
-  MMMMMNys+::::+++oyddyyyy+yyNMMMMMMMMMMMMMMMMMMMMMM
+  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
   NNNNdhhhhhhhhhhhhhhhhhhhhhhhdNNNNNNNNNNNNNNNNNNNMM
   NmmddddddddddddddddddddddddddddddddddddddddddmmNMM
   Nmms::::::::::::::::::::::::::::::::::::::::ommhdM
@@ -347,6 +347,9 @@
   <script src="lib/easing/easing.js"></script>
   <script src="js/custom.js"></script>
   <script src="contactform/contactform.js"></script>
+  <!--
+  Get out of my source code and go find the eggs on your own!!
+  -->
   <script>
     // KJ footer
     $( ".copyright" ).dblclick(function(){
