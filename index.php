@@ -349,16 +349,13 @@
   <script src="contactform/contactform.js"></script>
   <script>
     // KJ footer
-    $( ".copyright" ).on( "mousedown", function( event ) {
-      if (event.which == 3) {
-        $( "#kjDance" ).animate({
-          left: "+=600",
-          bottom: "+=600",
-          height: "toggle"
-        }, 3000, function() {
-        });
-        //$("#kjDance").click().remove();
-      }
+    $( ".copyright" ).dblclick(function(){
+      $( "#kjDance" ).animate({
+        left: "+=30%",
+        bottom: "+=600",
+        height: "toggle"
+      }, 3000, function() {
+      });
     });
     // KJ header
     $("#LBlogo").dblclick(function(){
