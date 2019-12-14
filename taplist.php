@@ -43,8 +43,9 @@ foreach ($json_taps as $beverage) {
   $percent_left_color = (max(0,min(255,511 * (1-$percent))) * 65536) + (max(0,min(255,511 * $percent)) * 256) + 40;
   
   echo "<h2>".$beverage_name."</h2>";
-  echo "<h3>Style: ".$beverage_style.'</h3>';
-  echo "<h3>ABV: ".$beverage_abv.'</h3>';
+  echo "<ul><li>Style: ".$beverage_style.'</li>';
+  echo "<li>ABV: ".$beverage_abv.'</li>';
+  echo "<li>Desc: ".$beverage_desc.'</li></ul>';
   
   echo '% Remaining: '.$percent_remaining.
     '<div class="percentbar" style="width:'.round(100 * $scale).'px;">'.
