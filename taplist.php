@@ -28,8 +28,9 @@ Template Name: Taplist Page
         $beverage_ibu = $beverage['MenuItemProductDetail']['Beverage']['Ibu'];
       }
       else {
-        $beverage_style = '';
-        $beverage_ibu = '';
+        $beverage_style = 'NONE';
+        $beverage_ibu = 'NONE';
+        $beverage_color = 'NONE';
       }
       $beverage_abv = $beverage['MenuItemProductDetail']['Beverage']['Abv'];
       $beverage_desc = $beverage['MenuItemProductDetail']['Beverage']['CustomDescription'];
