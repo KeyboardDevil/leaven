@@ -20,18 +20,10 @@ Template Name: Taplist Page
     foreach ($json_taps as $beverage) {
       $beverage_name = $beverage['MenuItemProductDetail']['Beverage']['BeverageName'];
       $beverage_price = $beverage['MenuItemProductDetail']['Prices'];
-      //echo $beverage_price["Price"];
       $beverage_type = $beverage['MenuItemProductDetail']['BeverageType'];
-      if($beverage_type=="Beer") {
-        $beverage_style = $beverage['MenuItemProductDetail']['Beverage']['BeerStyle']['StyleName'];
-        $beverage_color = $beverage['MenuItemProductDetail']['Beverage']['BeerStyle']['Color'];
-        $beverage_ibu = $beverage['MenuItemProductDetail']['Beverage']['Ibu'];
-      }
-      else {
-        $beverage_style = 'NONE';
-        $beverage_ibu = 'NONE';
-        $beverage_color = 'NONE';
-      }
+      $beverage_style = $beverage['MenuItemProductDetail']['Beverage']['BeerStyle']['StyleName'];
+      $beverage_color = $beverage['MenuItemProductDetail']['Beverage']['BeerStyle']['Color'];
+      $beverage_ibu = $beverage['MenuItemProductDetail']['Beverage']['Ibu'];
       $beverage_abv = $beverage['MenuItemProductDetail']['Beverage']['Abv'];
       $beverage_desc = $beverage['MenuItemProductDetail']['Beverage']['CustomDescription'];
       $beverage_servSize = $beverage['MenuItemProductDetail']['Prices']['0']['DisplayName']; 
@@ -59,7 +51,7 @@ Template Name: Taplist Page
       echo "<h2>".$beverage_name."</h2>";
       echo "<ul><li>Style: ".$beverage_style.'</li>';
       echo "<li>ABV: ".$beverage_abv.'%</li>';
-      if($beverage_ibu){echo "<li>IBU: ".$beverage_ibu.'</li>';}
+      echo "<li>IBU: ".$beverage_ibu.'</li>';
       echo "<li>Serving size: ".$beverage_servSize."</li>";
       echo "<li>Price: $".$beverage_price."</li>";
       echo "<li>Glassware: ".$beverage_glass."</li>";
