@@ -1,0 +1,53 @@
+html {
+    min-height: 100%;
+}
+body {
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+}
+@font-face {
+    font-family: Futura-Round;
+    src: url("fonts/FuturaRound-Bold.woff") format("woff"), url("fonts/FuturaRound-Bold.ttf")  format("truetype");
+}
+@font-face {
+    font-family: Kapra-Neue;
+    src: url("fonts/KapraNeue-MediumCondensed.woff") format("woff"), url("fonts/KapraNeue-MediumCondensed.ttf")  format("truetype");
+}
+/* RESET */
+h1,h2,h3 {
+    margin: 0;
+    padding: 0;
+}
+h1,h3 {
+    font-family: Kapra-Neue;
+}
+h1 {
+    font-size:125px;
+    text-transform: uppercase;
+    margin-bottom: -25px;
+}
+h2 {
+    font-family: Futura-Round;
+    color: #f7c118;
+    font-size: 22px;
+}
+h3 {
+    font-size: 40px;
+    color: #f7c118;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 25px;
+}
+.beer {
+    width:50%;
+    text-align: center;
+}
+#MenuFooter {
+  background-image: url("img/menuFooter.gif");
+  height: 10em;
+  background-position: center;
+  background-size: cover;
+}
