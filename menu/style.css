@@ -26,6 +26,9 @@ h1 {
     font-size:125px;
     text-transform: uppercase;
     margin-bottom: -25px;
+    max-height: 150px;
+    width: 100%;
+    overflow: hidden;
 }
 h2 {
     font-family: Futura-Round;

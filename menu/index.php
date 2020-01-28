@@ -6,26 +6,19 @@
     <title>Menu</title>
   </head>
   <body>
-    <!--<div class="row">
-      <div class="beer">
-        <h1>Beer Name</h1>
-        <h2>Beer style • beer ABV</h2>
-        <h3>Beer description</h3>
-      </div>
-    </div>-->
     <?php
-      // DB connection
       require '../cms/beersDB.php';
-      // Get the current list
       $iCount = 0;
       $sql = 'SELECT * FROM beers WHERE active=1';
       $dbOutput = $conn->query($sql);
-      if ($dbOutput -> num_rows > 0) {
+      $rowCount = $dbOutput -> num_rows;
+      if ($rowCount > 0) {
         while($row = $dbOutput ->fetch_assoc()) {
           $dbName = $row["name"];
           $dbAbv = $row["abv"];
           $dbShortDesc = $row["shortdescription"];
           $renderRow = false;
+          // Let's render this son of a bitch!
           if ($iCount%2==0) {$renderRow = true;}
           if($renderRow) {
             echo"<div class=\"row\">\n";
@@ -35,11 +28,11 @@
           echo "<h2>$dbAbv</h2>\n";
           echo "<h3>$dbShortDesc</h3>\n";
           echo "</div>\n";
-          if(!$renderRow) { // if false, end of row, close it
+          if(!$renderRow) { // if false, end of row, close that bastard
             echo"</div>\n";
           }
           $iCount++;
-          // after 6 beers, BREAK
+          // After 6 beers, BREAK YO SELF FOOL!
           if($iCount>5){break;}
         }
       }
