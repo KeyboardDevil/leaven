@@ -115,10 +115,11 @@
         }
       }
     ?>
-    <div class="hi"><img src="wave.gif">Thanks for updating the list Trent!</div>
+    <div class="hi"><img src="wave.gif">Thanks for updating the list, Trent!</div>
     <p>&nbsp;</p>
     <h1>Update the Beer List</h1>
     <ul class="howto">
+      <li>The <span class="beerShortDescription">yellow field</span> is what will show on the digital menu!</li>
       <li><strong>Active</strong> beers will appear on the website, <strong>Inactive</strong> beers will <strong>not appear</strong> on the website.</li>
       <li>To <strong>DELETE</strong> a beer completely, you must first <strong>DEACTIVATE</strong> it.</li>
     </ul>
