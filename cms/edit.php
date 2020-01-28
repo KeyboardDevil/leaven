@@ -32,6 +32,7 @@
       $name = null;
       $abv = null;
       $description = null;
+      $shortdescription = null;
       $active = null;
       $setActive = true;
       $returnMode = false;
@@ -48,8 +49,9 @@
         $name = htmlentities($_POST["BeerName"], ENT_QUOTES);
         $abv = htmlentities($_POST["BeerAbv"], ENT_QUOTES);
         $description = htmlentities($_POST["BeerDescription"], ENT_QUOTES);
+        $shortdescription = htmlentities($_POST["BeerShortDescription"], ENT_QUOTES);
         // update DB
-        $sql = "UPDATE beers SET name = '$name', abv = '$abv', description = '$description' WHERE id='$beerID'";
+        $sql = "UPDATE beers SET name = '$name', abv = '$abv', description = '$description', shortdescription = '$shortdescription' WHERE id='$beerID'";
         if ($conn->query($sql) === TRUE) {
           echo "<h1>Record updated successfully!</h1>";
           echo '<h2><a href="index.php">Go Back to Beer List</a>';
@@ -71,6 +73,7 @@
               $name = $row["name"];
               $abv = $row["abv"];
               $description = $row["description"];
+              $shortdescription = $row["shortdescription"];
               $selectedImage = '<img src="../img/beers'.$row["image"].'.png" class="replaceImg">';
               echo '<h1>Edit beer: '.$name.'</h1>';
               ?>
@@ -120,6 +123,10 @@
               <tr>
                 <td><h2>Description</h2></td>
                 <td><textarea name="BeerDescription" rows="4" cols="85"><?php echo ($description); ?></textarea></td>
+              </tr>
+              <tr>
+                <td><h2>MENU Description</h2></td>
+                <td><textarea name="BeerShortDescription" rows="4" cols="85"><?php echo ($shortdescription); ?></textarea></td>
               </tr>
             </table>
             <input type="hidden" name="id" value="<?php echo($beerID); ?>">
