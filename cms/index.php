@@ -189,7 +189,7 @@
                 echo "<h3>".$beer["beername"]."</h3>";
                 echo "<h4>".$beer["beerabv"]."</h4>";
                 echo "<p class=\"beerDescription\">".$beer["beerdesc"]."</p>";
-                echo "<p class=\"beerShortDescription\">".$beer["beershortdesc"]."</p>";
+                echo "<p class=\"beerShortDescription\">MENU description:<br/>".$beer["beershortdesc"]."</p>";
                 echo "</div>";
                 echo "</div>";
               }
