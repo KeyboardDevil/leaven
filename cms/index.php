@@ -172,7 +172,8 @@
               }
               ?>
                 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">ADD a new beer</button>
-                <img class="hiImg" src="internetIsHard.jpg">
+                <!--<img class="hiImg" src="internetIsHard.jpg">-->
+                <img class="hiImg" src="allDogs.jpg">
               </td>
               <td valign="top">
               <h3 class="beerSectionHeader">Inactive Beers</h3>
