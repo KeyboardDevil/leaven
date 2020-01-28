@@ -39,6 +39,14 @@
 .beerDescription {
   margin: 0;
   }
+.beerShortDescription {
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #f7c118;
+  border-radius: 5px;
+  padding: 3px 8px;
+  color: black;
+}
 h1 {
   margin:12px;
   font-weight:bold;

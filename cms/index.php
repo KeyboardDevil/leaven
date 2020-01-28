@@ -44,6 +44,7 @@
     $name = null;
     $abv = null;
     $description = null;
+    $shortdescription = null;
     $active = null;
     $setActive = true;
     if (isset( $_SESSION['MagicKey'] )) {
@@ -53,6 +54,7 @@
         $name = htmlentities($_POST["newBeerName"]);
         $abv = htmlentities($_POST["newBeerAbv"]);
         $description = htmlentities($_POST["newBeerDescription"]);
+        $shortdescription = htmlentities($_POST["newBeerShortDescription"]);
         $active = htmlentities($_POST["activeChoice"]);
         if ($active == "inactive") {
           $setActive = false;
@@ -103,9 +105,9 @@
       //##############
       // ADD a new beer
       if ($image!='' && $name!='' && $abv!='' && $description!='') {
-        $stmt = $conn->prepare("INSERT INTO beers (image, name, abv, description, active) VALUES (?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO beers (image, name, abv, description, shortdescription, active) VALUES (?, ?, ?, ?, ?)");
         $stmt->bind_param("sssss", $image, $name, $abv, $description, $setActive);
-        $sql = 'INSERT INTO beers (image,name,abv,description,active) VALUES ("'.$image.'","'.$name.'","'.$abv.'","'. $description.'","'. $setActive.'")';
+        $sql = 'INSERT INTO beers (image,name,abv,description,active) VALUES ("'.$image.'","'.$name.'","'.$abv.'","'. $description.'","'. $shortdescription.'","'. $setActive.'")';
         if ($conn->query($sql) === TRUE) {
           echo "New beer created successfully";
         } else {
@@ -123,7 +125,7 @@
     <form method="post" action="index.php">
       <?php
       // Get the current list and render the form
-      $sql = 'SELECT ID, active, image, name, abv, description FROM beers';
+      $sql = 'SELECT ID, active, image, name, abv, description, shortdescription FROM beers';
       $dbOutput = $conn->query($sql);
       ?>
       <?php
@@ -136,13 +138,14 @@
           $dbName = $row["name"];
           $dbAbv = $row["abv"];
           $dbDesc = $row["description"];
+          $dbShortDesc = $row["shortdescription"];
           $dbActive = $row["active"];
           // stuff the arrays
           if ($dbActive) {
-            $activeBeers[] = array("beerid"=>$dbID, "beerimage"=>$dbImage,"beername"=>$dbName,"beerabv"=>$dbAbv,"beerdesc"=>$dbDesc);
+            $activeBeers[] = array("beerid"=>$dbID, "beerimage"=>$dbImage,"beername"=>$dbName,"beerabv"=>$dbAbv,"beerdesc"=>$dbDesc,"beershortdesc"=>$dbShortDesc);
           }
           else {
-            $inactiveBeers[] = array("beerid"=>$dbID, "beerimage"=>$dbImage,"beername"=>$dbName,"beerabv"=>$dbAbv,"beerdesc"=>$dbDesc);
+            $inactiveBeers[] = array("beerid"=>$dbID, "beerimage"=>$dbImage,"beername"=>$dbName,"beerabv"=>$dbAbv,"beerdesc"=>$dbDesc,"beershortdesc"=>$dbShortDesc);
           }
         }
         ?>
@@ -162,6 +165,7 @@
                 echo "<h3>".$beer["beername"]."</h3>";
                 echo "<h4>".$beer["beerabv"]."</h4>";
                 echo "<p class=\"beerDescription\">".$beer["beerdesc"]."</p>";
+                echo "<p class=\"beerShortDescription\">MENU description:<br/>".$beer["beershortdesc"]."</p>";
                 echo "</div>";
                 echo "</div>";
               }
@@ -184,6 +188,7 @@
                 echo "<h3>".$beer["beername"]."</h3>";
                 echo "<h4>".$beer["beerabv"]."</h4>";
                 echo "<p class=\"beerDescription\">".$beer["beerdesc"]."</p>";
+                echo "<p class=\"beerShortDescription\">".$beer["beershortdesc"]."</p>";
                 echo "</div>";
                 echo "</div>";
               }
@@ -243,6 +248,11 @@
         <div class="add-section">
           <p class="add-header">Description</p>
           <textarea name="newBeerDescription" rows="3" cols="80"></textarea>
+        </div>
+      </div>
+      <div class="add-section">
+          <p class="add-header">MENU Description</p>
+          <textarea name="newBeerShortDescription" rows="1" cols="80"></textarea>
         </div>
       </div>
       <div class="flex-it">
