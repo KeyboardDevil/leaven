@@ -37,8 +37,6 @@
         }
       }
     ?>
-    <div id="MenuFooter">
-      <!-- footer -->
-    </div>
+    <img id="MenuFooter" src="img/menuFooter.gif">
   </body>
 </html>

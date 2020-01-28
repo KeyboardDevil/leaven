@@ -29,8 +29,7 @@
             echo "<h2>$dbAbv</h2>\n";
             echo "<h3>$dbShortDesc</h3>\n";
             echo "</div>\n";
-            if(!$renderRow) {echo"</div>\n";}
-            if($iRow == ($rowCount-1)){echo"</div>\n";}
+            if(!$renderRow || $iRow == ($rowCount-1)) {echo"</div>\n";}
           }
           $iRow++;
           $iCount++;
@@ -39,8 +38,6 @@
         }
       }
     ?>
-    <div id="MenuFooter">
-      <!-- footer -->
-    </div>
+    <img id="MenuFooter" src="img/menuFooter.gif">
   </body>
 </html>
