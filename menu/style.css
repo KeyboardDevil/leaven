@@ -12,6 +12,26 @@ body {
   font-family: Kapra-Neue;
   src: url("fonts/KapraNeue-MediumCondensed.woff") format("woff"), url("fonts/KapraNeue-MediumCondensed.ttf")  format("truetype");
 }
+#ScreenChoice {
+  padding-bottom: 1em;
+}
+.whichScreen {
+  width: 15em;
+  height: 4em;
+  font-family: futura-Round;
+  background-color: darkred;
+  color: white;
+  border-radius: 10px;
+  border: dashed 2px;
+  font-size: 25px;
+  margin: 0 125px;
+}
+.whichScreen:hover {
+  background-color: #f7c118;
+  border: solid 3px;
+  color: black;
+  cursor: pointer;
+}
 /* RESET */
 h1,h2,h3 {
   margin: 0;
