@@ -3,3 +3,4 @@ Disallow: /cms/
 Disallow: /hooks/
 Disallow: /.git/
 Disallow: /.gitignore
+Disallow: /menu/
