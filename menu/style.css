@@ -45,9 +45,9 @@ h1,h3 {
   font-family: Kapra-Neue;
 }
 h1 {
-  font-size:125px;
+  font-size:150px;
   text-transform: uppercase;
-  margin-bottom: -25px;
+  margin-bottom: 20px;
   max-height: 150px;
   width: 100%;
   overflow: hidden;
@@ -55,10 +55,10 @@ h1 {
 h2 {
   font-family: Futura-Round;
   color: #f7c118;
-  font-size: 22px;
+  font-size: 30px;
 }
 h3 {
-  font-size: 40px;
+  font-size: 45px;
   color: #f7c118;
 }
 .row {
