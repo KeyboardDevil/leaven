@@ -77,6 +77,7 @@
               // After 12 beers, we're out of room! BREAK YO SELF FOOL!
               if($iRow>12){break;}
             }
+            echo '<img src="img/devil.jpg" id="DevilLogo">';
           }
         }
       }

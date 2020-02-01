@@ -75,3 +75,9 @@ h3 {
   position: fixed;
   bottom: 0;
 }
+#DevilLogo {
+  position: absolute;
+  z-index: 99;
+  right: 20px;
+  bottom: 100px;
+}
