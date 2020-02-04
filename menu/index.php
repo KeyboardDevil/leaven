@@ -107,6 +107,10 @@
       bottom: 100px;
     }
   </style>
+  <script>
+    // Heckin' MONEY SHOT! Reload every 2 mins if internet is up ;)
+    setInterval(function(){ if (navigator.onLine) {window.location.href=window.location.href;} }, 120000);
+  </script>
 </head>
 
 <body>
@@ -119,12 +123,12 @@
     echo '<form name="Screen" method="get" action="index.php"><input type="submit" class="whichScreen" name="screenID" value="1">';
     echo '<input type="submit" class="whichScreen" name="screenID" value="2"></form>';
   } else {
-    echo '<meta http-equiv="refresh" content="120"/>';
     $screenID = $_GET["screenID"];
     $sql = 'SELECT * FROM beers WHERE active=1';
     $dbOutput = $conn->query($sql);
     $rowCount = $dbOutput->num_rows;
 
+    // Adrian!  Let the PHP run THROUGH YOU!  COME to the DARK SIDE!
     if ($screenID == 1) {
       $start = 0;
       $end = round(($rowCount / 2), 0, PHP_ROUND_HALF_DOWN);
