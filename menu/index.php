@@ -23,8 +23,13 @@
       src: url("fonts/KapraNeue-MediumCondensed.woff") format("woff"), url("fonts/KapraNeue-MediumCondensed.ttf") format("truetype");
     }
 
+    #LogoBack {
+      height: 900px;
+      background: url('img/kjBack.jpg') center no-repeat;
+    }
+
     #ScreenChoice {
-      padding-bottom: 1em;
+      padding-bottom: .4em;
       text-align: center;
     }
 
@@ -116,9 +121,11 @@
   $screenID = null;
   if (!isset($_GET["screenID"])) {
     // No screen selected
+    echo '<div id="LogoBack">';
     echo '<h1 id="ScreenChoice">Which screen is this?</h1>';
     echo '<form name="Screen" method="get" action="index.php"><input type="submit" class="whichScreen" name="screenID" value="1">';
     echo '<input type="submit" class="whichScreen" name="screenID" value="2"></form>';
+    echo '</div>';
   } else {
     $screenID = $_GET["screenID"];
     $sql = 'SELECT * FROM beers WHERE active=1';
