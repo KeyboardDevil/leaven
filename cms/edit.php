@@ -125,8 +125,8 @@
                 <td><textarea name="BeerDescription" rows="4" cols="85"><?php echo ($description); ?></textarea></td>
               </tr>
               <tr>
-                <td><h2>MENU Description</h2></td>
-                <td><textarea name="BeerShortDescription" rows="4" cols="85"><?php echo ($shortdescription); ?></textarea></td>
+                <td><h2>MENU Description</h2>(max 60 chars)</td>
+                <td><textarea name="BeerShortDescription" maxlength="60" rows="1" cols="55"><?php echo ($shortdescription); ?></textarea></td>
               </tr>
             </table>
             <input type="hidden" name="id" value="<?php echo($beerID); ?>">
