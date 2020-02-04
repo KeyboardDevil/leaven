@@ -105,9 +105,9 @@
       //##############
       // ADD a new beer
       if ($image!='' && $name!='' && $abv!='' && $description!='') {
-        $stmt = $conn->prepare("INSERT INTO beers (image, name, abv, description, shortdescription, active) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssss", $image, $name, $abv, $description, $setActive);
-        $sql = 'INSERT INTO beers (image,name,abv,description,active) VALUES ("'.$image.'","'.$name.'","'.$abv.'","'. $description.'","'. $shortdescription.'","'. $setActive.'")';
+        $stmt = $conn->prepare("INSERT INTO beers (image, name, abv, description, shortdescription, active) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssss", $image, $name, $abv, $description, $shortdescription, $setActive);
+        $sql = 'INSERT INTO beers (image,name,abv,description,shortdescription,active) VALUES ("'.$image.'","'.$name.'","'.$abv.'","'. $description.'","'. $shortdescription.'","'. $setActive.'")';
         if ($conn->query($sql) === TRUE) {
           echo "New beer created successfully";
         } else {
