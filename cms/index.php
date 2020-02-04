@@ -252,6 +252,7 @@
           <textarea name="newBeerDescription" rows="3" cols="80"></textarea>
         </div>
       </div>
+      <div class="modal-body">
       <div class="add-section">
           <p class="add-header">MENU Description</p>
           <textarea name="newBeerShortDescription" rows="1" cols="80"></textarea>
