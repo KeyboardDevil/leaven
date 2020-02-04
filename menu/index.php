@@ -39,27 +39,24 @@
       background-color: darkred;
       color: white;
       border-radius: 10px;
-      border: dashed 2px;
+      border: dashed 3px;
       font-size: 25px;
       margin: 0 125px;
     }
 
     .whichScreen:hover {
       background-color: #f7c118;
-      border: solid 3px;
+      border: solid 3px darkred;
       color: black;
       cursor: pointer;
     }
 
-    h1,
-    h2,
-    h3 {
+    h1,h2,h3 {
       margin: 0;
       padding: 0;
     }
 
-    h1,
-    h3 {
+    h1,h3 {
       font-family: Kapra-Neue;
     }
 
