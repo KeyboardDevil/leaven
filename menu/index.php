@@ -135,7 +135,7 @@
     // Adrian!  Let the PHP run THROUGH YOU!  COME to the DARK SIDE!
     if ($screenID == 1) {
       $start = 0;
-      $end = round(($rowCount / 2), 0, PHP_ROUND_HALF_DOWN);
+      $end = round(($rowCount / 2), 0, PHP_ROUND_HALF_UP);
     } else {
       $start = round(($rowCount / 2), 0, PHP_ROUND_HALF_UP);
       $end = $rowCount;
