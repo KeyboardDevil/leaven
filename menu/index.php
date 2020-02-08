@@ -110,8 +110,8 @@
     }
   </style>
   <script>
-    // Heckin' MONEY SHOT! Reload every 2 mins if internet is up ;)
-    setInterval(function(){ if (navigator.onLine) {window.location.href=window.location.href;} }, 120000);
+    // Heckin' MONEY SHOT! Reload every 15 mins if internet is up ;)
+    setInterval(function(){ if (navigator.onLine) {window.location.href=window.location.href;} }, 900000);
   </script>
 </head>
 
