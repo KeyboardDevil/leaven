@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="StyleSheet" href="style.css" />
   <title>Menu</title>
   <style>
     body {
@@ -218,7 +217,7 @@
 <script>
   // MONEY SHOT! Reload every 15 mins if internet is up ;)
   // if internet is down, show OFFLINE image
-  setInterval(function(){ if (navigator.onLine) {window.location.href=window.location.href;} else{ document.getElementById('Offline').setAttribute("style","display:block;"); }}, 900000);
+  setInterval(function(){if(navigator.onLine){window.location.href=window.location.href;}else{document.getElementById('Offline').setAttribute("style","display:block;");}},900000);
 </script>
 
 </html>
