@@ -135,10 +135,14 @@
       left: 10px;
       z-index: 99;
     }
+    /* hide everything */
+    #Menu {
+      display: none;
+    }
   </style>
 </head>
 
-<body>
+<body id="Menu">
   <?php
   require '../cms/beersDB.php';
   $screenID = null;
@@ -219,6 +223,8 @@
   // MONEY SHOT! Reload every 15 mins if internet is up ;)
   // if internet is down, show OFFLINE image
   setInterval(function(){ if (navigator.onLine) {window.location.href=window.location.href;} else{ document.getElementById('Offline').setAttribute("style","display:block;"); }}, 900000);
+  // Now unhide the page, otherwise you see the fonts flicker from default to custom
+  document.getElementById('Menu').setAttribute("style","display:block;");
 </script>
 
 
