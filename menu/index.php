@@ -130,15 +130,12 @@
     }
     #Offline {
       position: absolute;
-      bottom: 10px;
-      right: 10px;
       display: none;
+      bottom: 80px;
+      left: 10px;
+      z-index: 99;
     }
   </style>
-  <script>
-    // Heckin' MONEY SHOT! Reload every 15 mins if internet is up ;)
-    setInterval(function(){ if (navigator.onLine) {window.location.href=window.location.href;} }, 900000);
-  </script>
 </head>
 
 <body>
@@ -206,7 +203,7 @@
   }
   ?>
   </div>
-  <!-- <img src="img/offline.gif" id="Offline"> -->
+  <img src="img/offline.gif" id="Offline">
   <div id="MenuFooter">
     <div class="footerPanel">
       <span class="footerSmall">facebook / instagram</span> <span class="menuBig">&nbsp; @Leavenbrewing</span>
@@ -217,5 +214,12 @@
     </div>
   </div>
 </body>
+
+<script>
+  // MONEY SHOT! Reload every 15 mins if internet is up ;)
+  // if internet is down, show OFFLINE image
+  setInterval(function(){ if (navigator.onLine) {window.location.href=window.location.href;} else{ document.getElementById('Offline').setAttribute("style","display:block;"); }}, 900000);
+</script>
+
 
 </html>
