@@ -14,6 +14,7 @@
       src: url("fonts/KapraNeue-MediumCondensed.woff") format("woff"), url("fonts/KapraNeue-MediumCondensed.ttf") format("truetype");
     }
     body {
+      font-family: Futura-Round;
       background-color: black;
       color: white;
       text-transform: uppercase;
