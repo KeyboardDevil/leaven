@@ -5,6 +5,14 @@
   <meta charset="UTF-8">
   <title>Menu</title>
   <style>
+    @font-face {
+      font-family: Futura-Round;
+      src: url("fonts/FuturaRound-Bold.woff") format("woff"), url("fonts/FuturaRound-Bold.ttf") format("truetype");
+    }
+    @font-face {
+      font-family: Kapra-Neue;
+      src: url("fonts/KapraNeue-MediumCondensed.woff") format("woff"), url("fonts/KapraNeue-MediumCondensed.ttf") format("truetype");
+    }
     body {
       background-color: black;
       color: white;
@@ -13,14 +21,6 @@
     }
     a, a:visited, a:active {
       color: white;
-    }
-    @font-face {
-      font-family: Futura-Round;
-      src: url("fonts/FuturaRound-Bold.woff") format("woff"), url("fonts/FuturaRound-Bold.ttf") format("truetype");
-    }
-    @font-face {
-      font-family: Kapra-Neue;
-      src: url("fonts/KapraNeue-MediumCondensed.woff") format("woff"), url("fonts/KapraNeue-MediumCondensed.ttf") format("truetype");
     }
     #LogoBack {
       height: 900px;
