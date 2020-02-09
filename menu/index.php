@@ -12,31 +12,29 @@
       text-transform: uppercase;
       margin-top: 35px;
     }
-
+    a, a:visited, a:active {
+      color: white;
+    }
     @font-face {
       font-family: Futura-Round;
       src: url("fonts/FuturaRound-Bold.woff") format("woff"), url("fonts/FuturaRound-Bold.ttf") format("truetype");
     }
-
     @font-face {
       font-family: Kapra-Neue;
       src: url("fonts/KapraNeue-MediumCondensed.woff") format("woff"), url("fonts/KapraNeue-MediumCondensed.ttf") format("truetype");
     }
-
     #LogoBack {
       height: 900px;
       background: url('img/kjBack.jpg') center no-repeat;
     }
-
     #ScreenChoice {
       padding-bottom: .4em;
       text-align: center;
     }
-
     form {
       text-align: center;
+      margin-top: 2em;
     }
-
     .whichScreen {
       width: 15em;
       height: 4em;
@@ -48,23 +46,19 @@
       font-size: 25px;
       margin: 0 125px;
     }
-
     .whichScreen:hover {
       background-color: #f7c118;
       border: solid 3px darkred;
       color: black;
       cursor: pointer;
     }
-
     h1,h2,h3 {
       margin: 0;
       padding: 0;
     }
-
     h1,h3 {
       font-family: Kapra-Neue;
     }
-
     h1 {
       font-size: 155px;
       text-transform: uppercase;
@@ -73,40 +67,72 @@
       width: 100%;
       overflow: hidden;
     }
-
     h2 {
       font-family: Futura-Round;
       color: #f7c118;
       font-size: 30px;
     }
-
     h3 {
       font-size: 45px;
       color: #f7c118;
     }
-
     .row {
       display: flex;
       flex-direction: row;
       padding-bottom: 25px;
     }
-
     .beer {
       width: 50%;
       text-align: center;
     }
-
+    #MenuEditLink {
+      font-size: 40px;
+      font-family: Kapra-Neue;
+      color: white;
+    }
+    #MenuEditLink:hover {
+      color: #f7c118;
+    }
     #MenuFooter {
-      max-width: 100%;
+      display: flex;
+      min-width: 100%;
+      height: 78px;
+      color: black;
       position: fixed;
       bottom: 0;
+      background: #f7c118;
     }
-
+    .footerPanel {
+      width: 50%;
+      line-height: 70px;
+      font-family: Futura-Round;
+      font-size: 24px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .footerSmall {
+      line-height: 68px;
+    }
+    .menuBig {
+      font-size: 34px;
+    }
+    .footerLogo {
+      position: fixed;
+      bottom: 0;
+      left: 890px;
+    }
     #DevilLogo {
       position: absolute;
       z-index: 99;
       right: 20px;
-      bottom: 100px;
+      bottom: 90px;
+      opacity: 0.5;
+    }
+    #Offline {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      display: none;
     }
   </style>
   <script>
@@ -122,9 +148,12 @@
   if (!isset($_GET["screenID"])) {
     // No screen selected
     echo '<div id="LogoBack">';
-    echo '<h1 id="ScreenChoice">Which screen is this?</h1>';
+    echo '<div id="ScreenChoice">';
+    echo '<h1>Which screen is this?</h1>';
+    echo '<span id="MenuEditLink"><a href="../cms/">Edit the beer list</a></span>';
     echo '<form name="Screen" method="get" action="index.php"><input type="submit" class="whichScreen" name="screenID" value="1">';
     echo '<input type="submit" class="whichScreen" name="screenID" value="2"></form>';
+    echo '</div>';
     echo '</div>';
   } else {
     $screenID = $_GET["screenID"];
@@ -161,23 +190,32 @@
           echo "<h2>$dbAbv</h2>\n";
           echo "<h3>$dbShortDesc</h3>\n";
           echo "</div>\n";
-          if (!$renderRow) { // if false, end of row, close that bastard
+          if (!$renderRow) { // if false, end that row, close that bastard
             echo "</div>\n";
           }
         }
         $iCount++;
-        // After 6 beers, BREAK YO SELF FOOL!
         if (($iCount - $start) > 5) {
           break;
         }
       }
     }
     if ($screenID == 2) {
-      echo '<img src="img/devil.jpg" id="DevilLogo">';
+      echo '<img src="img/devil.gif" id="DevilLogo">';
     }
   }
   ?>
-  <img id="MenuFooter" src="img/menuFooter.gif">
+  </div>
+  <!-- <img src="img/offline.gif" id="Offline"> -->
+  <div id="MenuFooter">
+    <div class="footerPanel">
+      <span class="footerSmall">facebook / instagram</span> <span class="menuBig">&nbsp; @Leavenbrewing</span>
+    </div>
+    <img class="footerLogo" src="img/logo.png">
+    <div class="footerPanel">
+      <span class="menuBig">#Leavenbrewing</span>
+    </div>
+  </div>
 </body>
 
 </html>
