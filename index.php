@@ -388,6 +388,15 @@
     });
   </script>
 
+  <?php
+  $referer = 'none';
+  $bIsFamous = false;
+  if(isset($_SERVER['HTTP_REFERER'])){
+    $referer = $_SERVER['HTTP_REFERER'];
+    $bIsFamous = strpos($referer,'bestbreweryever');
+  } ?>
+  <h4><?php echo($referer); ?></h4>
+
 </body>
 
 </html>
