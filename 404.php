@@ -78,14 +78,12 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-12">
+          <img src="https://www.leavenbrewing.com/img/404Logo.png" alt="The Great Vanilla Goat!" class="imgFloater">
           <h3>What did you do?!</h3>
           <p class="about-text">Well, you broke it.  This is why we don't have nice things... Like beer.  OK beer is nice.  In fact, it's delicious! Well, OK. We have <strong>some</strong> nice things, but you still manged to <strong>break</strong> something.</p>
           <blockquote>This kind of technical failure can't go unanswered.  And that means...</blockquote>
           <h3>One of our geeks is getting <span class="fired">FIRED</span>... And <span class="you">you</span> get to choose who gets the ax!</h3>
-        </div>
-        <div class="col-md-2">
-          <img src="https://www.leavenbrewing.com/img/404Logo.png" alt="The Great Vanilla Goat!" class="imgFloater">
         </div>
       </div>
       <div class="row">
