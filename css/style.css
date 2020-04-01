@@ -924,9 +924,6 @@ blockquote {
     padding: 5px;
     opacity: 1;
   }
-  .imgFloater {
-    display: none;
-  }
 }
 .numVotes {
   color: black;
