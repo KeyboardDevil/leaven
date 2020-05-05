@@ -123,6 +123,7 @@
       <div class="wow fadeIn">
         <div class="hero-logo">
           <img src="img/kjDrink.png" id="kjEgg">
+          <a href="/crowler"><div id="CrowlerMsg">Pre-order beer... Here!</div></a>
           <img id="LBlogo" src="img/LeavenLogoTrans.png" alt="Leaven Brewing">
         </div>
         <h1>Riverview's first brewery!</h1>
