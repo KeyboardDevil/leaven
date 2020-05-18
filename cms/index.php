@@ -29,14 +29,13 @@
     if (!isset( $_SESSION['MagicKey'] )) {
     ?>
       <div class="warning">
-        <img src="../img/instaLogo.gif">
-        <h1>Welcome!</h1>
-        <p>You must enter the password to continue.</p>
+        <img src="beerMSlogin.gif"><br />
+        <img src="leavenLoginLogo.gif">
+        <h1>Please enter password to continue.</h1>
         <form method="post" action="index.php">
           <input type="password" name="password" size="8"> <input type="submit" name="submit" value="Submit">
         </form>
       </div>
-
     <?php
     }
     // Check and process the form
@@ -115,14 +114,19 @@
         }
       }
     ?>
-    <div class="hi"><img src="wave.gif">Thanks for updating the list, Trent!</div>
-    <p>&nbsp;</p>
-    <h1>Update the Beer List</h1>
-    <ul class="howto">
-      <li>The <span class="beerShortDescription">yellow field</span> is what will show on the digital menu!</li>
-      <li><strong>Active</strong> beers will appear on the website, <strong>Inactive</strong> beers will <strong>not appear</strong> on the website.</li>
-      <li>To <strong>DELETE</strong> a beer completely, you must first <strong>DEACTIVATE</strong> it.</li>
-    </ul>
+    <div class="lefty">
+      <h1>Manage your beer list</h1>
+      <ul class="howto">
+        <li>The <span class="beerShortDescription">yellow field</span> is what will show on the digital menu</li>
+        <li><strong>Active</strong> beers will appear on both site and menu, <strong>Inactive</strong> beers will <strong>not appear</strong>.</li>
+        <li>To <strong>DELETE</strong> a beer completely, you must first <strong>DEACTIVATE</strong> it.</li>
+      </ul>
+    </div>
+    <div id="BeerMS">
+      <form action="index.php" method="POST"><input class="btn btn-danger" type="submit" name="logout" value="LOG OUT of BeerMS"></form><br />
+      <img src="beerMS.gif" alt="Powered by BeerMS">
+    </div>
+    <div class="clear"></div>
     <form method="post" action="index.php">
       <?php
       // Get the current list and render the form
@@ -153,12 +157,14 @@
         <!-- print the active beers -->
         <table border="1">
           <tr>
-            <td width="50%" valign="top"><h3 class="beerSectionHeader">Active Beers</h3>
+            <td width="50%" valign="top"><h3 class="beerSectionHeader activeHeader">Active Beers</h3>
+            <button type="button" class="btn btn-info btn-lg add-btn" data-toggle="modal" data-target="#myModal">ADD a new beer</button>
+            <div class="clear"></div>
               <?php
               foreach ($activeBeers as $beer) {
                 echo "<div class=\"row\">";
                 echo "<div class=\"col-md-3\">";
-                echo '<p><a class="editLink" href="edit.php?id='.$beer["beerid"].'">Edit this beer</a></p>';
+                echo '<a class="btn btn-primary editLink" href="edit.php?id='.$beer["beerid"].'">EDIT this beer</a>';
                 echo "<input class=\"btn btn-warning deactivate-beer\" type=\"submit\" name=\"deactivate\" value=\"DEACTIVATE beer-".$beer["beerid"]."\">";
                 echo "</div>";
                 echo "<div class=\"col-md-9 beerList\">";
@@ -171,9 +177,7 @@
                 echo "</div>";
               }
               ?>
-                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">ADD a new beer</button>
-                <!--<img class="hiImg" src="internetIsHard.jpg">-->
-                <img class="hiImg" src="allDogs.jpg">
+                <img class="hiImg" src="theZen.jpg">
               </td>
               <td valign="top">
               <h3 class="beerSectionHeader">Inactive Beers</h3>
@@ -181,7 +185,7 @@
               foreach ($inactiveBeers as $beer) {
                 echo "<div class=\"row inactiveRow\">";
                 echo "<div class=\"col-md-3\">";
-                echo '<p><a class="editLink" href="edit.php?id='.$beer["beerid"].'">Edit this beer</a></p>';
+                echo '<a class="btn btn-primary editLink" href="edit.php?id='.$beer["beerid"].'">EDIT this beer</a>';
                 echo "<input class=\"btn btn-success activate-beer\" type=\"submit\" name=\"activate\" value=\"ACTIVATE beer-".$beer["beerid"]."\">";
                 echo "<input class=\"btn btn-danger delete-beer\" type=\"submit\" name=\"delete\" value=\"DELETE beer-".$beer["beerid"]."\">";
                 echo "</div>";
@@ -226,11 +230,10 @@
     <!-- Modal -->
     <div id="myModal" class="modal fade" role="dialog">
       <div class="modal-dialog">
-
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button><h3 class="modalH">Add a NEW beer</h3>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">&times;</button><h3 class="modalH">Add a NEW beer</h3>
       </div>
       <div class="modal-body">
         <div class="add-section">
@@ -242,19 +245,19 @@
           <input type="text" size="25" name="newBeerName">
         </div>
         <div class="add-section">
-          <p class="add-header">ABV &amp; Size</p>
-          <input type="text" size="20" name="newBeerAbv">
+          <p class="add-header">Type &amp; ABV</p>
+          <input type="text" size="30" name="newBeerAbv">
         </div>
       </div>
       <div class="modal-body">
         <div class="add-section">
-          <p class="add-header">Description</p>
+          <p class="add-header">Website Description</p>
           <textarea name="newBeerDescription" rows="3" cols="80"></textarea>
         </div>
       </div>
       <div class="modal-body">
       <div class="add-section">
-          <p class="add-header">MENU Description</p>
+          <p class="add-header">Digital Menu Description</p>
           <textarea name="newBeerShortDescription" rows="1" cols="80"></textarea>
         </div>
       </div>

@@ -1,24 +1,26 @@
 /* Style for the CMS pages */
-.hi {
-  color:red;
-  font-size: 35pt;
-  font-weight: bolder;
-  position: absolute;
-  right: 25px;
-}
-.hiImg {
-  display: block;
-  padding: 10px;
-  margin-top: 25px;
-}
-@media (max-width: 1400px) {
-  .hi{
-    width: 50%;
-    font-size: 18px;
-    right: 5px;
+@media (min-width: 768px) {
+    #BeerMS {
+    float:right;
+    padding: 10px;
+    text-align: right;
+  }
+  .clear {
+    clear: both;
+  }
+  .activeHeader {
+    float: left;
+  }
+  .lefty {
+    float: left;
   }
   .hiImg {
-    width: 80%;
+    width: 70%;
+  }
+}
+@media (max-width: 768px) {
+  #BeerMS, .hiImg {
+    display:none;
   }
 }
 .lastUpd {
@@ -33,8 +35,8 @@
   margin-top: 10%;
 }
 .howto {
-  margin: 10px;
-  font-size: 1.3em;
+  margin: 30px 10px 5px 10px;
+  font-size: 1.5em;
 }
 .beerDescription {
   margin: 0;
@@ -42,7 +44,7 @@
 .beerShortDescription {
   font-weight: bold;
   text-transform: uppercase;
-  background-color: #f7c118;
+  background-color: yellow;
   border-radius: 5px;
   padding: 3px 8px;
   color: black;
@@ -71,6 +73,14 @@ input, select, textarea {
 .btn {
   color:black;
 }
+.add-btn {
+  float: right;
+  margin: 10px;
+  border: solid yellow 3px;
+}
+.btn-info {
+  background-color: aqua;
+}
 .important {
   font-weight: bold;
   color: yellow;
@@ -97,6 +107,8 @@ th {
 }
 .beerSectionHeader {
   margin-bottom:24px;
+  font-weight: bold;
+  font-size: 3em;
 }
 .modal-body {
   display: flex;
@@ -170,6 +182,8 @@ th {
   height: auto;
 }
 .editLink {
-  font-size: 1.8em;
-  color: red;
+  margin-bottom: 10px;
+}
+.btn {
+  font-size: 17px;
 }
