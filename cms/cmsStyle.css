@@ -8,9 +8,6 @@
   .clear {
     clear: both;
   }
-  .activeHeader {
-    float: left;
-  }
   .lefty {
     float: left;
   }
@@ -38,7 +35,7 @@ table {
 #InactiveBeerTable tr,
 #ActiveBeerTable tr {
   background-color: #26313c;
-  height: 255px;
+  height: 260px;
   border-bottom: 2px solid white;
 }
 .buttons {
@@ -53,7 +50,7 @@ table {
 .warning {
   font-size: 2em;
   text-align:center;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 .howto {
   margin: 30px 10px 5px 10px;
@@ -133,9 +130,14 @@ th {
   margin:10px;
 }
 .beerSectionHeader {
-  margin-bottom:24px;
+  margin: 0 0 16px 10px;
   font-weight: bold;
   font-size: 3em;
+}
+.devil {
+  position: absolute;
+  right: 20px;
+  opacity: 0.3;
 }
 .modal-body {
   display: flex;
@@ -210,4 +212,9 @@ th {
 }
 .btn {
   font-size: 17px;
+}
+.btn-login {
+  font-size: 20px;
+  margin: 0;
+  width: 120px;
 }

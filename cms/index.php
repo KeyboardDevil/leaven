@@ -10,7 +10,7 @@
     <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
     <META HTTP-EQUIV="EXPIRES" CONTENT="0">
     <link href="https://www.leavenbrewing.com/favicon.ico" rel="shortcut icon">
-    <title>Update the Beer List</title>
+    <title>BeerMS: Update Your Beer List</title>
     <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
     <script src="../lib/jquery/jquery.min.js"></script>
@@ -35,7 +35,7 @@
         <img src="leavenLoginLogo.gif">
         <h1>Please enter password to continue.</h1>
         <form method="post" action="index.php">
-          <input type="password" name="password" size="8"> <input type="submit" name="submit" value="Submit">
+          <input type="password" name="password" size="10"> <input type="submit" name="submit" value="Log In" class="btn btn-success btn-login">
         </form>
       </div>
     <?php
@@ -43,14 +43,14 @@
     // ################################
     // Check and process the form
     // ################################
-    $image = null;
-    $name = null;
-    $abv = null;
-    $description = null;
-    $shortdescription = null;
-    $active = null;
-    $setActive = true;
     if (isset( $_SESSION['MagicKey'] )) {
+      $image = null;
+      $name = null;
+      $abv = null;
+      $description = null;
+      $shortdescription = null;
+      $active = null;
+      $setActive = true;
       require 'beersDB.php';
       if (isset($_POST["newBeerImage"]) && isset($_POST["newBeerName"]) && isset($_POST["newBeerAbv"]) && isset($_POST["newBeerDescription"])) {
         $image = htmlentities($_POST["newBeerImage"]);
@@ -166,13 +166,12 @@
         <div id="BeerContainer">
           <div id="BeerActive">
             <h3 class="beerSectionHeader activeHeader">Active Beers</h3>
-            <div class="clear"></div>
             <table id="ActiveBeerTable">
               <?php
               foreach ($activeBeers as $beer) {
                 echo "<tr>\n";
                 echo "<td class=\"buttons\">";
-                echo '<a class="btn btn-primary editLink" href="edit.php?id='.$beer["beerid"].'">EDIT this beer</a>';
+                echo '<a class="btn btn-primary editLink" href="edit.php?id='.$beer["beerid"].'">EDIT beer-'.$beer["beerid"].'</a>';
                 echo "<input class=\"btn btn-warning deactivate-beer\" type=\"submit\" name=\"deactivate\" value=\"DEACTIVATE beer-".$beer["beerid"]."\">";
                 echo "</td>\n";
 
@@ -197,7 +196,7 @@
                 foreach ($inactiveBeers as $beer) {
                   echo "<tr>\n";
                   echo "<td class=\"buttons\">";
-                  echo '<a class="btn btn-primary editLink" href="edit.php?id='.$beer["beerid"].'">EDIT this beer</a>';
+                  echo '<a class="btn btn-primary editLink" href="edit.php?id='.$beer["beerid"].'">EDIT beer-'.$beer["beerid"].'</a>';
                   echo "<input class=\"btn btn-success activate-beer\" type=\"submit\" name=\"activate\" value=\"ACTIVATE beer-".$beer["beerid"]."\">";
                   echo "<input class=\"btn btn-danger delete-beer\" type=\"submit\" name=\"delete\" value=\"DELETE beer-".$beer["beerid"]."\">";
                   echo "</td>\n";
@@ -317,7 +316,7 @@
 
     <p class="lastUpd">Code last updated: <?php echo date ("F d Y H:i", getlastmod()); ?></p>
     <h3>Go back to <a href="/index.php">LeavenBrewing</a></h3>
-    <p>&nbsp;</p>
+    <img class="devil" src="../menu/img/devil.gif">
 
     <?php
       } // close MagicKey check
