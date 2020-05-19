@@ -2,9 +2,9 @@
   session_start();
 ?>
 <!doctype html>
-<!-- ############
-  Beer form 2.2
-##############-->
+<!-- #####################
+  BeerMS - Beer form 3.0
+#########################-->
 <html lang="en">
   <head>
     <link href="https://www.leavenbrewing.com/favicon.ico" rel="shortcut icon">
@@ -38,6 +38,7 @@
       </div>
     <?php
     }
+    // ################################
     // Check and process the form
     $image = null;
     $name = null;
@@ -113,14 +114,17 @@
           echo "Error: " . $sql . "<br>" . $conn->error;
         }
       }
+    // End process form
+    // ################################
     ?>
     <div class="lefty">
       <h1>Manage your beer list</h1>
       <ul class="howto">
-        <li>The <span class="beerShortDescription">yellow field</span> is what will show on the digital menu</li>
+        <li>The <span class="beerShortDescription">yellow field</span> is what will show on the digital menu (max 60 chars).</li>
         <li><strong>Active</strong> beers will appear on both site and menu, <strong>Inactive</strong> beers will <strong>not appear</strong>.</li>
         <li>To <strong>DELETE</strong> a beer completely, you must first <strong>DEACTIVATE</strong> it.</li>
       </ul>
+      <button type="button" class="btn btn-info btn-lg add-btn" data-toggle="modal" data-target="#myModal">ADD a new beer</button>
     </div>
     <div id="BeerMS">
       <form action="index.php" method="POST"><input class="btn btn-danger" type="submit" name="logout" value="LOG OUT of BeerMS"></form><br />
@@ -154,55 +158,61 @@
           }
         }
         ?>
-        <!-- print the active beers -->
-        <table border="1">
-          <tr>
-            <td width="50%" valign="top"><h3 class="beerSectionHeader activeHeader">Active Beers</h3>
-            <button type="button" class="btn btn-info btn-lg add-btn" data-toggle="modal" data-target="#myModal">ADD a new beer</button>
+        <!-- print the beers -->
+        <div id="BeerContainer">
+          <div id="BeerActive">
+            <h3 class="beerSectionHeader activeHeader">Active Beers</h3>
             <div class="clear"></div>
+            <table id="ActiveBeerTable">
               <?php
               foreach ($activeBeers as $beer) {
-                echo "<div class=\"row\">";
-                echo "<div class=\"col-md-3\">";
+                echo "<tr>\n";
+                echo "<td class=\"buttons\">";
                 echo '<a class="btn btn-primary editLink" href="edit.php?id='.$beer["beerid"].'">EDIT this beer</a>';
                 echo "<input class=\"btn btn-warning deactivate-beer\" type=\"submit\" name=\"deactivate\" value=\"DEACTIVATE beer-".$beer["beerid"]."\">";
-                echo "</div>";
-                echo "<div class=\"col-md-9 beerList\">";
+                echo "</td>\n";
+
+                echo "<td class=\"activeBeerDesc\">";
+                echo "<div class=\"beerList\">";
                 echo "<img height=\"70\" src=\"../img/beers".$beer["beerimage"].".png\" alt=\"glass\"/>";
                 echo "<h3>".$beer["beername"]."</h3>";
                 echo "<h4>".$beer["beerabv"]."</h4>";
                 echo "<p class=\"beerDescription\">".$beer["beerdesc"]."</p>";
                 echo "<p class=\"beerShortDescription\">MENU description:<br/>".$beer["beershortdesc"]."</p>";
-                echo "</div>";
-                echo "</div>";
+                echo "</td>\n";
+                echo "</tr>\n";
+              }
+              echo "</table>\n"
+              ?>
+              <img class="hiImg" src="theZen.jpg">
+            </div>
+            <div id="BeerInactive">
+              <h3 class="beerSectionHeader">Inactive Beers</h3>
+              <table id="InactiveBeerTable">
+                <?php
+                foreach ($inactiveBeers as $beer) {
+                  echo "<tr>\n";
+                  echo "<td class=\"buttons\">";
+                  echo '<a class="btn btn-primary editLink" href="edit.php?id='.$beer["beerid"].'">EDIT this beer</a>';
+                  echo "<input class=\"btn btn-success activate-beer\" type=\"submit\" name=\"activate\" value=\"ACTIVATE beer-".$beer["beerid"]."\">";
+                  echo "<input class=\"btn btn-danger delete-beer\" type=\"submit\" name=\"delete\" value=\"DELETE beer-".$beer["beerid"]."\">";
+                  echo "</td>\n";
+                  
+                  echo "<td class=\"inactiveBeerDesc\">";
+                  echo "<div class=\"beerList\">";
+                  echo "<img height=\"70\" src=\"../img/beers".$beer["beerimage"].".png\" alt=\"glass\"/>";
+                  echo "<h3>".$beer["beername"]."</h3>";
+                  echo "<h4>".$beer["beerabv"]."</h4>";
+                  echo "<p class=\"beerDescription\">".$beer["beerdesc"]."</p>";
+                  echo "<p class=\"beerShortDescription\">MENU description:<br/>".$beer["beershortdesc"]."</p>";
+                  echo "</td>\n";
+                  echo "</tr>\n";
+                }
+                echo "</table>";
               }
               ?>
-                <img class="hiImg" src="theZen.jpg">
-              </td>
-              <td valign="top">
-              <h3 class="beerSectionHeader">Inactive Beers</h3>
-              <?php
-              foreach ($inactiveBeers as $beer) {
-                echo "<div class=\"row inactiveRow\">";
-                echo "<div class=\"col-md-3\">";
-                echo '<a class="btn btn-primary editLink" href="edit.php?id='.$beer["beerid"].'">EDIT this beer</a>';
-                echo "<input class=\"btn btn-success activate-beer\" type=\"submit\" name=\"activate\" value=\"ACTIVATE beer-".$beer["beerid"]."\">";
-                echo "<input class=\"btn btn-danger delete-beer\" type=\"submit\" name=\"delete\" value=\"DELETE beer-".$beer["beerid"]."\">";
-                echo "</div>";
-                echo "<div class=\"col-md-9 beerList\">";
-                echo "<img height=\"70\" src=\"../img/beers".$beer["beerimage"].".png\" alt=\"glass\"/>";
-                echo "<h3>".$beer["beername"]."</h3>";
-                echo "<h4>".$beer["beerabv"]."</h4>";
-                echo "<p class=\"beerDescription\">".$beer["beerdesc"]."</p>";
-                echo "<p class=\"beerShortDescription\">MENU description:<br/>".$beer["beershortdesc"]."</p>";
-                echo "</div>";
-                echo "</div>";
-              }
-            }
-            ?>
-          </td>
-        </tr>
-      </table>
+          </div>
+        </div>
 
     <?php
       $conn->close();
