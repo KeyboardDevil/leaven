@@ -331,7 +331,7 @@
       $("#AddImageDiv").append('<input type="hidden" name="newBeerImage" value="'+beerString+'">');
     });
     $(".egg").click(function eggIt() {
-      $(".beerMSLogo").attr("src","../img/404logo.png");
+      $(".beerMSLogo").attr("src","../../img/404logo.png");
     });
   </script>
 
