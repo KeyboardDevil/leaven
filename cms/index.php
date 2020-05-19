@@ -7,6 +7,8 @@
 #########################-->
 <html lang="en">
   <head>
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+    <META HTTP-EQUIV="EXPIRES" CONTENT="0">
     <link href="https://www.leavenbrewing.com/favicon.ico" rel="shortcut icon">
     <title>Update the Beer List</title>
     <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -40,6 +42,7 @@
     }
     // ################################
     // Check and process the form
+    // ################################
     $image = null;
     $name = null;
     $abv = null;
@@ -60,7 +63,7 @@
           $setActive = false;
         }          
       }
-      //##############
+      // ###############
       // DEACTIVATE beer
       if (isset($_POST["deactivate"])) {
         $deactivate = $_POST["deactivate"];
@@ -74,7 +77,7 @@
           echo "Error: " . $deactivateSql . "<br>" . $conn->error;
         }
       }
-      //##############
+      // ###############
       // DELETE beer
       if (isset($_POST["delete"])) {
         $delete = $_POST["delete"];
@@ -88,7 +91,7 @@
           echo "Error: " . $deleteSql . "<br>" . $conn->error;
         }
       }
-      //##############
+      // ###############
       // ACTIVATE beer
       if (isset($_POST["activate"])) {
         $activate = $_POST["activate"];
@@ -102,7 +105,7 @@
           echo "Error: " . $activateSql . "<br>" . $conn->error;
         }
       }
-      //##############
+      // ###############
       // ADD a new beer
       if ($image!='' && $name!='' && $abv!='' && $description!='') {
         $stmt = $conn->prepare("INSERT INTO beers (image, name, abv, description, shortdescription, active) VALUES (?, ?, ?, ?, ?, ?)");
@@ -114,6 +117,7 @@
           echo "Error: " . $sql . "<br>" . $conn->error;
         }
       }
+    // ################################
     // End process form
     // ################################
     ?>
@@ -233,11 +237,9 @@
           e.preventDefault();
         }
       });
-      
     </script>
 
-    <!-- add new beer modal -->
-    <!-- Modal -->
+    <!-- ADD NEW BEER modal -->
     <div id="myModal" class="modal fade" role="dialog">
       <div class="modal-dialog">
       <!-- Modal content-->
