@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <title>Menu</title>
   <link rel="stylesheet" href="style.css">
+  <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+  <META HTTP-EQUIV="EXPIRES" CONTENT="0">
 </head>
 
 <body>
