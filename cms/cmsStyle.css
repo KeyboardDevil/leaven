@@ -95,9 +95,11 @@ input, select, textarea {
   font-size: 1.em;
   color:#000;
 }
+.buttons .btn {
+  width: 190px;
+}
 .btn {
   color:black;
-  width: 190px;
 }
 .add-btn {
   margin: 10px;
