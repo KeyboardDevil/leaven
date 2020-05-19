@@ -218,3 +218,6 @@ th {
   margin: 0;
   width: 120px;
 }
+.egg {
+  cursor: help;
+}

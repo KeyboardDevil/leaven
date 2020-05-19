@@ -127,12 +127,13 @@
         <li>The <span class="beerShortDescription">yellow field</span> is what will show on the digital menu (max 60 chars).</li>
         <li><strong>Active</strong> beers will appear on both site and menu, <strong>Inactive</strong> beers will <strong>not appear</strong>.</li>
         <li>To <strong>DELETE</strong> a beer completely, you must first <strong>DEACTIVATE</strong> it.</li>
+        <li class="egg">This line is probably an Easter Egg.</li>
       </ul>
       <button type="button" class="btn btn-info btn-lg add-btn" data-toggle="modal" data-target="#myModal">ADD a new beer</button>
     </div>
     <div id="BeerMS">
       <form action="index.php" method="POST"><input class="btn btn-danger" type="submit" name="logout" value="LOG OUT of BeerMS"></form><br />
-      <img src="beerMS.gif" alt="Powered by BeerMS">
+      <img class="beerMSLogo" src="beerMS.gif" alt="Powered by BeerMS">
     </div>
     <div class="clear"></div>
     <form method="post" action="index.php">
@@ -328,6 +329,9 @@
       img = '<img src="../img/beers'+beerString+'.png">'+' <strong>'+beerString+'</strong>';
       $("#AddImageDiv").html(img);
       $("#AddImageDiv").append('<input type="hidden" name="newBeerImage" value="'+beerString+'">');
+    });
+    $(".egg").click(function eggIt() {
+      $(".beerMSLogo").attr("src","../img/404logo.png");
     });
   </script>
 
