@@ -33,6 +33,7 @@ table {
 }
 #BeerActive, #BeerInactive {
   margin: 10px;
+  width: 50%;
 }
 #InactiveBeerTable tr,
 #ActiveBeerTable tr {
