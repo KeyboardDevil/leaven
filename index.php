@@ -244,6 +244,7 @@
           <p class="about-text">We aim to have 5 flagships which will be on at all times, and 5 rotational beers that will lend themselves to a more seasonal flair.</p>
 
           <h4>What's on Tap?</h4>
+          <a href="https://www.beerms.com/" class="beerMS">Powered by BeerMS</a>
           <!-- let's render some beers -->
           <?php
             // DB connection

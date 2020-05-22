@@ -590,6 +590,16 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 /* Beer Section
 --------------------------------*/
+.beerMS {
+  color: blue;
+  float: right;
+  font-size: 12px;
+}
+@media (max-width:760px) {
+  .beerMS {
+    float: unset;
+  }
+}
 #beer {
   background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url("../img/beer-bg.jpg") fixed center center;
   background-size: cover;
