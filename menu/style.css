@@ -114,12 +114,11 @@ h3 {
   bottom: 0;
   left: 890px;
 }
-#DevilLogo {
+#BeerMSLogo {
   position: absolute;
   z-index: 99;
   right: 20px;
   bottom: 90px;
-  opacity: 0.5;
 }
 #Offline {
   position: absolute;

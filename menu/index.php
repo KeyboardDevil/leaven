@@ -69,7 +69,7 @@
       }
     }
     if ($screenID == 2) {
-      echo '<img src="img/devil.gif" id="DevilLogo">';
+      echo '<img src="img/poweredBy.gif" id="BeerMSLogo">';
     }
   }
   ?>

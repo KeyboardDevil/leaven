@@ -31,7 +31,7 @@
     if (!isset( $_SESSION['MagicKey'] )) {
     ?>
       <div class="warning">
-        <img src="beerMSlogin.gif" class="beerMSLogin"> 
+        <img src="beerMSlogin.gif" class="beerMSLogo"> 
         <img src="leavenLoginLogo.gif">
         <h1>Please enter password to continue.</h1>
         <form method="post" action="index.php">
