@@ -21,6 +21,10 @@
     display:none;
   }
 }
+.beerMSLogin {
+  width: 200px;
+  margin-right: 100px;
+}
 #BeerContainer {
   display: flex;
 }
