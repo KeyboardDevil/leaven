@@ -127,3 +127,12 @@ h3 {
   left: 10px;
   z-index: 99;
 }
+/* ADVERTISEMENTS */
+.adSpace {
+  text-align: center;
+}
+.adSpace p {
+  font-size: 2em;
+  margin: auto;
+  width: 80%;
+}

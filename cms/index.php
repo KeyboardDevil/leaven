@@ -37,6 +37,8 @@
         <form method="post" action="index.php">
           <input type="password" name="password" size="10"> <input type="submit" name="submit" value="Log In" class="btn btn-success btn-login">
         </form>
+        <p class="howto">Or<br>
+        <a href="../menu/">Go to the Menu!</a></p>
       </div>
     <?php
     }
@@ -123,6 +125,7 @@
     ?>
     <div class="lefty">
       <h1>Manage your beer list</h1>
+      <a href="settings.php" class="howto"><img src="settings.png"> Custom Settings</a>
       <ul class="howto">
         <li>The <span class="beerShortDescription">yellow field</span> is what will show on the digital menu (max 60 chars).</li>
         <li><strong>Active</strong> beers will appear on both site and menu, <strong>Inactive</strong> beers will <strong>not appear</strong>.</li>
