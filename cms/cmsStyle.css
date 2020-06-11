@@ -297,7 +297,7 @@ input:checked + .slider:before {
   border-radius: 12px;
   padding: 15px;
   width: 500px;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 #SettingsForm .btn {
   margin: 20px;

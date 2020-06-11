@@ -51,6 +51,7 @@
           $marketingScreen = intval($_POST["marketingScreen"]);
           $marketingTitle = htmlentities($_POST["marketingTitle"]);
           $marketingContent = $_POST["marketingContent"];
+          $marketingContent = str_replace('"',"'",$marketingContent);
           $marketingContent = str_replace("\n",'<br>',$marketingContent);
           $activateMarkSql = 'UPDATE settings SET marketingToggle=1, marketingTiming='.$marketingTiming.', marketingScreen='.$marketingScreen.', marketingTitle="'.$marketingTitle.'", marketingContent="'.$marketingContent.'"';
           if ($conn->query($activateMarkSql) === TRUE) {
@@ -90,10 +91,12 @@
     // Get DB values
     $_TOGGLEMenu = false;
     $_TOGGLEMarketing = false;
+    $_TOGGLEStlye = false;
     $marketingTiming=0;
     $marketingScreen=0;
     $marketingTitle='';
     $marketingContent='';
+    $styleBackground = '';
     $sql = 'SELECT menuTimingToggle, menuTiming, marketingToggle, marketingScreen, marketingTiming, marketingTitle, marketingContent FROM settings';
     $dbOutput = $conn->query($sql);
     if ($dbOutput) {
@@ -114,14 +117,17 @@
     }
     $strMenuChecked = '';
     $strMarkChecked = '';
+    $strStyleChecked = '';
     if($_TOGGLEMenu) { $strMenuChecked = " checked"; }
     if($_TOGGLEMarketing) { $strMarkChecked = " checked"; }
+    if($_TOGGLEStlye) { $strStyleChecked = " checked"; }
     ?>
+
     <div class="form-group">
       <label class="switch">
         <input id="MenuSelection" type="checkbox" name="menu"<?php echo ($strMenuChecked); ?>>
         <span class="slider round"></span>
-      </label><span class="settingLabels">Customize menu refresh rate</span>
+      </label><span class="settingLabels">Menu refresh rate</span>
       <div id="RefreshSettings">
         <span class="settingLabels">Refresh menu every:</span>
         <select name="menuTiming">
@@ -138,11 +144,11 @@
         <input id="MarketingSelection" type="checkbox" name="marketing"<?php echo ($strMarkChecked); ?>>
         <span class="slider round"></span>
       </label><span class="settingLabels">Enable Marketing messages</span> <img class="helpIcon" src="help.gif">
-      <p class="helpMsg">Enabling this feature will replace your menu, for the selected amount of time, with custom content. You can use this to advertise events, brewery swag or for special annoucements. HTML is allowed in Marketing Content.</p>
+      <p class="helpMsg">Enabling this feature will replace your menu, on the selected screen for the selected amount of time, with custom content. You can use this to advertise events, brewery swag or for special annoucements. HTML is allowed in Marketing Content.</p>
       <div id="MarketingSettings">
         <span class="settingLabels">Show marketing for:</span>
         <select name="marketingTiming">
-          <option value="5000"<?php if($marketingTiming==5000){echo(' selected');} ?>>5 SECONDS</option>
+          <option value="10000"<?php if($marketingTiming==10000){echo(' selected');} ?>>10 SECONDS</option>
           <option value="60000"<?php if($marketingTiming==60000){echo(' selected');} ?>>60 seconds</option>
           <option value="90000"<?php if($marketingTiming==90000){echo(' selected');} ?>>90 seconds</option>
           <option value="120000"<?php if($marketingTiming==180000){echo(' selected');} ?>>120 seconds</option>
@@ -155,6 +161,132 @@
         <input class="form-control" type="text" name="marketingTitle" value="<?php echo ($marketingTitle); ?>">
         <span class="settingLabels">Marketing Content</span>
         <textarea class="form-control" rows="8" name="marketingContent"><?php echo ($marketingContent); ?></textarea>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="switch">
+        <input id="StyleSelection" type="checkbox" name="style"<?php echo ($strStyleChecked); ?>>
+        <span class="slider round"></span>
+      </label><span class="settingLabels">Menu Color Settings</span>
+      <div id="StyleSettings">
+        <table>
+          <tr>
+            <td><span class="settingLabels">Background Color:</span></td>
+            <td>
+            <select name="styleBackground">
+            <option value="#FFFFFF" style="background-color: White;"<?php if($styleBackground=='#FFFFFF'){echo(' selected');} ?>>White</option>
+            <option value="#000000" style="background-color: Black;color: #FFFFFF;"<?php if($styleBackground=='000000'){echo(' selected');} ?>>Black</option>
+            <option value="#808080" style="background-color: Gray;"<?php if($styleBackground=='#808080'){echo(' selected');} ?>>Gray</option>
+            <option value="#A9A9A9" style="background-color: DarkGray;"<?php if($styleBackground=='#A9A9A9'){echo(' selected');} ?>>DarkGray</option>
+            <option value="#D3D3D3" style="background-color: LightGrey;"<?php if($styleBackground=='#D3D3D3'){echo(' selected');} ?>>LightGray</option>
+            <option value="#7FFFD4" style="background-color: Aquamarine;"<?php if($styleBackground=='#7FFFD4'){echo(' selected');} ?>>Aquamarine</option>
+            <option value="#0000FF" style="background-color: Blue;"<?php if($styleBackground=='#0000FF'){echo(' selected');} ?>>Blue</option>
+            <option value="#000080" style="background-color: Navy;color: #FFFFFF;"<?php if($styleBackground=='#000080'){echo(' selected');} ?>>Navy</option>
+            <option value="#800080" style="background-color: Purple;color: #FFFFFF;"<?php if($styleBackground=='#800080'){echo(' selected');} ?>>Purple</option>
+            <option value="#FF1493" style="background-color: DeepPink;"<?php if($styleBackground=='#FF1493'){echo(' selected');} ?>>DeepPink</option>
+            <option value="#EE82EE" style="background-color: Violet;"<?php if($styleBackground=='#EE82EE'){echo(' selected');} ?>>Violet</option>
+            <option value="#FFC0CB" style="background-color: Pink;"<?php if($styleBackground=='#FFC0CB'){echo(' selected');} ?>>Pink</option>
+            <option value="#006400" style="background-color: DarkGreen;color: #FFFFFF;"<?php if($styleBackground=='#006400'){echo(' selected');} ?>>DarkGreen</option>
+            <option value="#008000" style="background-color: Green;color: #FFFFFF;"<?php if($styleBackground=='#008000'){echo(' selected');} ?>>Green</option>
+            <option value="#9ACD32" style="background-color: YellowGreen;"<?php if($styleBackground=='#9ACD32'){echo(' selected');} ?>>YellowGreen</option>
+            <option value="#FFFF00" style="background-color: Yellow;"<?php if($styleBackground=='#FFFF00'){echo(' selected');} ?>>Yellow</option>
+            <option value="#FFA500" style="background-color: Orange;"<?php if($styleBackground=='#FFA500'){echo(' selected');} ?>>Orange</option>
+            <option value="#FF0000" style="background-color: Red;"<?php if($styleBackground=='#FF0000'){echo(' selected');} ?>>Red</option>
+            <option value="#A52A2A" style="background-color: Brown;"<?php if($styleBackground=='#A52A2A'){echo(' selected');} ?>>Brown</option>
+            <option value="#DEB887" style="background-color: BurlyWood;"<?php if($styleBackground=='#DEB887'){echo(' selected');} ?>>BurlyWood</option>
+            <option value="#F5F5DC" style="background-color: Beige;"<?php if($styleBackground=='#F5F5DC'){echo(' selected');} ?>>Beige</option>
+            </select><br/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+          <span class="settingLabels">Beer Title Color:</span></td>
+          <td>
+          <select name="menuTitleColor">
+          <option value="#FFFFFF" style="background-color: White;"<?php if($styleBackground=='#FFFFFF'){echo(' selected');} ?>>White</option>
+            <option value="#000000" style="background-color: Black;color: #FFFFFF;"<?php if($styleBackground=='000000'){echo(' selected');} ?>>Black</option>
+            <option value="#808080" style="background-color: Gray;"<?php if($styleBackground=='#808080'){echo(' selected');} ?>>Gray</option>
+            <option value="#A9A9A9" style="background-color: DarkGray;"<?php if($styleBackground=='#A9A9A9'){echo(' selected');} ?>>DarkGray</option>
+            <option value="#D3D3D3" style="background-color: LightGrey;"<?php if($styleBackground=='#D3D3D3'){echo(' selected');} ?>>LightGray</option>
+            <option value="#7FFFD4" style="background-color: Aquamarine;"<?php if($styleBackground=='#7FFFD4'){echo(' selected');} ?>>Aquamarine</option>
+            <option value="#0000FF" style="background-color: Blue;"<?php if($styleBackground=='#0000FF'){echo(' selected');} ?>>Blue</option>
+            <option value="#000080" style="background-color: Navy;color: #FFFFFF;"<?php if($styleBackground=='#000080'){echo(' selected');} ?>>Navy</option>
+            <option value="#800080" style="background-color: Purple;color: #FFFFFF;"<?php if($styleBackground=='#800080'){echo(' selected');} ?>>Purple</option>
+            <option value="#FF1493" style="background-color: DeepPink;"<?php if($styleBackground=='#FF1493'){echo(' selected');} ?>>DeepPink</option>
+            <option value="#EE82EE" style="background-color: Violet;"<?php if($styleBackground=='#EE82EE'){echo(' selected');} ?>>Violet</option>
+            <option value="#FFC0CB" style="background-color: Pink;"<?php if($styleBackground=='#FFC0CB'){echo(' selected');} ?>>Pink</option>
+            <option value="#006400" style="background-color: DarkGreen;color: #FFFFFF;"<?php if($styleBackground=='#006400'){echo(' selected');} ?>>DarkGreen</option>
+            <option value="#008000" style="background-color: Green;color: #FFFFFF;"<?php if($styleBackground=='#008000'){echo(' selected');} ?>>Green</option>
+            <option value="#9ACD32" style="background-color: YellowGreen;"<?php if($styleBackground=='#9ACD32'){echo(' selected');} ?>>YellowGreen</option>
+            <option value="#FFFF00" style="background-color: Yellow;"<?php if($styleBackground=='#FFFF00'){echo(' selected');} ?>>Yellow</option>
+            <option value="#FFA500" style="background-color: Orange;"<?php if($styleBackground=='#FFA500'){echo(' selected');} ?>>Orange</option>
+            <option value="#FF0000" style="background-color: Red;"<?php if($styleBackground=='#FF0000'){echo(' selected');} ?>>Red</option>
+            <option value="#A52A2A" style="background-color: Brown;"<?php if($styleBackground=='#A52A2A'){echo(' selected');} ?>>Brown</option>
+            <option value="#DEB887" style="background-color: BurlyWood;"<?php if($styleBackground=='#DEB887'){echo(' selected');} ?>>BurlyWood</option>
+            <option value="#F5F5DC" style="background-color: Beige;"<?php if($styleBackground=='#F5F5DC'){echo(' selected');} ?>>Beige</option>
+          </select><br/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+          <span class="settingLabels">Beer Style Color:</span></td>
+          <td>
+          <select name="menuStyleColor">
+          <option value="#FFFFFF" style="background-color: White;"<?php if($styleBackground=='#FFFFFF'){echo(' selected');} ?>>White</option>
+            <option value="#000000" style="background-color: Black;color: #FFFFFF;"<?php if($styleBackground=='000000'){echo(' selected');} ?>>Black</option>
+            <option value="#808080" style="background-color: Gray;"<?php if($styleBackground=='#808080'){echo(' selected');} ?>>Gray</option>
+            <option value="#A9A9A9" style="background-color: DarkGray;"<?php if($styleBackground=='#A9A9A9'){echo(' selected');} ?>>DarkGray</option>
+            <option value="#D3D3D3" style="background-color: LightGrey;"<?php if($styleBackground=='#D3D3D3'){echo(' selected');} ?>>LightGray</option>
+            <option value="#7FFFD4" style="background-color: Aquamarine;"<?php if($styleBackground=='#7FFFD4'){echo(' selected');} ?>>Aquamarine</option>
+            <option value="#0000FF" style="background-color: Blue;"<?php if($styleBackground=='#0000FF'){echo(' selected');} ?>>Blue</option>
+            <option value="#000080" style="background-color: Navy;color: #FFFFFF;"<?php if($styleBackground=='#000080'){echo(' selected');} ?>>Navy</option>
+            <option value="#800080" style="background-color: Purple;color: #FFFFFF;"<?php if($styleBackground=='#800080'){echo(' selected');} ?>>Purple</option>
+            <option value="#FF1493" style="background-color: DeepPink;"<?php if($styleBackground=='#FF1493'){echo(' selected');} ?>>DeepPink</option>
+            <option value="#EE82EE" style="background-color: Violet;"<?php if($styleBackground=='#EE82EE'){echo(' selected');} ?>>Violet</option>
+            <option value="#FFC0CB" style="background-color: Pink;"<?php if($styleBackground=='#FFC0CB'){echo(' selected');} ?>>Pink</option>
+            <option value="#006400" style="background-color: DarkGreen;color: #FFFFFF;"<?php if($styleBackground=='#006400'){echo(' selected');} ?>>DarkGreen</option>
+            <option value="#008000" style="background-color: Green;color: #FFFFFF;"<?php if($styleBackground=='#008000'){echo(' selected');} ?>>Green</option>
+            <option value="#9ACD32" style="background-color: YellowGreen;"<?php if($styleBackground=='#9ACD32'){echo(' selected');} ?>>YellowGreen</option>
+            <option value="#FFFF00" style="background-color: Yellow;"<?php if($styleBackground=='#FFFF00'){echo(' selected');} ?>>Yellow</option>
+            <option value="#FFA500" style="background-color: Orange;"<?php if($styleBackground=='#FFA500'){echo(' selected');} ?>>Orange</option>
+            <option value="#FF0000" style="background-color: Red;"<?php if($styleBackground=='#FF0000'){echo(' selected');} ?>>Red</option>
+            <option value="#A52A2A" style="background-color: Brown;"<?php if($styleBackground=='#A52A2A'){echo(' selected');} ?>>Brown</option>
+            <option value="#DEB887" style="background-color: BurlyWood;"<?php if($styleBackground=='#DEB887'){echo(' selected');} ?>>BurlyWood</option>
+            <option value="#F5F5DC" style="background-color: Beige;"<?php if($styleBackground=='#F5F5DC'){echo(' selected');} ?>>Beige</option>
+          </select><br/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+          <span class="settingLabels">Beer Description Color:</span></td>
+          <td>
+          <select name="menuDescColor">
+          <option value="#FFFFFF" style="background-color: White;"<?php if($styleBackground=='#FFFFFF'){echo(' selected');} ?>>White</option>
+            <option value="#000000" style="background-color: Black;color: #FFFFFF;"<?php if($styleBackground=='000000'){echo(' selected');} ?>>Black</option>
+            <option value="#808080" style="background-color: Gray;"<?php if($styleBackground=='#808080'){echo(' selected');} ?>>Gray</option>
+            <option value="#A9A9A9" style="background-color: DarkGray;"<?php if($styleBackground=='#A9A9A9'){echo(' selected');} ?>>DarkGray</option>
+            <option value="#D3D3D3" style="background-color: LightGrey;"<?php if($styleBackground=='#D3D3D3'){echo(' selected');} ?>>LightGray</option>
+            <option value="#7FFFD4" style="background-color: Aquamarine;"<?php if($styleBackground=='#7FFFD4'){echo(' selected');} ?>>Aquamarine</option>
+            <option value="#0000FF" style="background-color: Blue;"<?php if($styleBackground=='#0000FF'){echo(' selected');} ?>>Blue</option>
+            <option value="#000080" style="background-color: Navy;color: #FFFFFF;"<?php if($styleBackground=='#000080'){echo(' selected');} ?>>Navy</option>
+            <option value="#800080" style="background-color: Purple;color: #FFFFFF;"<?php if($styleBackground=='#800080'){echo(' selected');} ?>>Purple</option>
+            <option value="#FF1493" style="background-color: DeepPink;"<?php if($styleBackground=='#FF1493'){echo(' selected');} ?>>DeepPink</option>
+            <option value="#EE82EE" style="background-color: Violet;"<?php if($styleBackground=='#EE82EE'){echo(' selected');} ?>>Violet</option>
+            <option value="#FFC0CB" style="background-color: Pink;"<?php if($styleBackground=='#FFC0CB'){echo(' selected');} ?>>Pink</option>
+            <option value="#006400" style="background-color: DarkGreen;color: #FFFFFF;"<?php if($styleBackground=='#006400'){echo(' selected');} ?>>DarkGreen</option>
+            <option value="#008000" style="background-color: Green;color: #FFFFFF;"<?php if($styleBackground=='#008000'){echo(' selected');} ?>>Green</option>
+            <option value="#9ACD32" style="background-color: YellowGreen;"<?php if($styleBackground=='#9ACD32'){echo(' selected');} ?>>YellowGreen</option>
+            <option value="#FFFF00" style="background-color: Yellow;"<?php if($styleBackground=='#FFFF00'){echo(' selected');} ?>>Yellow</option>
+            <option value="#FFA500" style="background-color: Orange;"<?php if($styleBackground=='#FFA500'){echo(' selected');} ?>>Orange</option>
+            <option value="#FF0000" style="background-color: Red;"<?php if($styleBackground=='#FF0000'){echo(' selected');} ?>>Red</option>
+            <option value="#A52A2A" style="background-color: Brown;"<?php if($styleBackground=='#A52A2A'){echo(' selected');} ?>>Brown</option>
+            <option value="#DEB887" style="background-color: BurlyWood;"<?php if($styleBackground=='#DEB887'){echo(' selected');} ?>>BurlyWood</option>
+            <option value="#F5F5DC" style="background-color: Beige;"<?php if($styleBackground=='#F5F5DC'){echo(' selected');} ?>>Beige</option>
+          </select><br/>
+          </td>
+        </tr>
+        </table>
       </div>
     </div>
     
@@ -172,7 +304,8 @@
     ?>
 
     <script>
-      if (!$("#MenuSelection")[0].checked) {$('#RefreshSettings').hide();}
+      if (!$("#StyleSelection")[0].checked) {$('#StyleSettings').hide();}
+      $('#StyleSelection').click(function showMenu() {$('#StyleSettings').slideToggle();});if (!$("#StyleSelection")[0].checked) {$('#StyleSettings').hide();}
       $('#MenuSelection').click(function showMenu() {$('#RefreshSettings').slideToggle();});
       if (!$("#MarketingSelection")[0].checked) {$('#MarketingSettings').hide();}
       $('#MarketingSelection').click(function showMarketing() {$('#MarketingSettings').slideToggle();});
@@ -185,7 +318,6 @@
         $('.helpMsg').css('visibility', 'hidden');
       });
     </script>
-
 
   </body>
 </html>
