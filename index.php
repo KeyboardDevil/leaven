@@ -179,7 +179,7 @@
           <!--<p class="section-description"></p>-->
           <h3>We are <span id="KJ">KJ</span> and <span id="Jillian">Jillian</span> and we make beer!</h3>
           <div id="LeavenVideo">
-            <iframe width="350" src="https://www.youtube.com/embed/Ao3Nl5mHc0k?rel=0&amp;showinfo=0" allowfullscreen></iframe>
+            <iframe width="350" src="https://www.youtube.com/embed/eTdu0iUQnEs?rel=0&amp;showinfo=0" allowfullscreen></iframe>
           </div>
           <p class="about-text">It was pointed out to me the other night that what we're creating is something truly unique, and individual to us. Now, I am the first person to admit that a opening a brewery is not novel, brewing a citra-hopped pale ale is nothing extraordinary (although it is very delicious), and our concrete bar tops are nothing you haven't seen before.</p>
           <p class="about-text"><strong>However</strong>, the makeup of who is behind Leaven Brewing is what makes this place, our place (soon to be your place) a really neat, individual, independent of other projects kind of place. </p>
@@ -274,7 +274,7 @@
     </div>
   </section>
 
-<!--  Events Section-->
+<!--  Events Section
 <section id="events">
   <div class="container">
     <div class="row">
@@ -283,15 +283,13 @@
           <p class="about-text">Those gosh darn <a href="404.php">kids</a> and their social media... Always uploading things on the inter webs, and book of faces. We have a lot going on here at Leaven Brewing, we’ll keep you informed on our Facebook and Instagram. Food trucks? We got those. Music? We got that too! Events? Those happen!</p>
         </div>
     </div>
-    <!-- Google cal -->
     <div class="row">
       <div class="col-md-12">
-        <!-- fargin iFrames?! What year is this? Come on, Google! -->
         <iframe id="googCal" src="https://calendar.google.com/calendar/embed?src=leavenbrewing.com_m4li75ha83d3choc7rb85dtmv0%40group.calendar.google.com&ctz=America%2FNew_York&showPrint=0&showTabs=0&showCalendars=0" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!--
 	Javascript is awesome - Adrian sucks, although less now that the git pull works.
@@ -305,7 +303,7 @@
           <h2 class="section-title">Contact Us</h2>
           <div class="section-title-divider"></div>
           <div id="ContactBump">
-            <p class="about-text"><img class="linkIcon" src="img/blog.svg" alt="Facebook">Read our new <a class="bodyLink" href="/blog/">Blog!</a></p>
+            <!--<p class="about-text"><img class="linkIcon" src="img/blog.svg" alt="Facebook">Read our new <a class="bodyLink" href="/blog/">Blog!</a></p>-->
             <p class="about-text"><img class="linkIcon" src="img/facebook.svg" alt="Facebook">Find us on <a class="bodyLink" href="https://www.facebook.com/leavenbrewing/">Facebook!</a></p>
             <p class="about-text"><img class="linkIcon" src="img/instagram.svg" alt="Instagram">Stalk us on <a class="bodyLink" href="https://www.instagram.com/leavenbrewing/">Instagram</a></p>
             <p class="about-text"><img class="linkIcon" src="img/twitter.svg" alt="Twitter">Watch us on <a class="bodyLink" href="https://twitter.com/LeavenBrewing">Twitter</a></p>
