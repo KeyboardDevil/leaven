@@ -149,7 +149,7 @@
           <li><a href="#about">Our Story</a></li>
           <li><a href="#brewery">The Brewery</a></li>
           <li><a href="#beer">Our Beer</a></li>
-          <li><a href="#events">Events</a></li>
+          <!--<li><a href="#events">Events</a></li>-->
           <li><a href="#contact">Contact Us</a></li>
           <li><a href="https://www.facebook.com/leavenbrewing/"><img alt="Facebook" class="linkIcon" src="img/facebook.svg"></a></li>
           <li><a href="https://www.instagram.com/leavenbrewing/"><img alt="Instagram" class="linkIcon" src="img/instagram.svg"></a></li>
