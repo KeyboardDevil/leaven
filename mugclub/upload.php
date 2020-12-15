@@ -18,41 +18,46 @@
 
 <body>
   <?php
-  $target_dir = "uploads/";
-  $target_file = $target_dir . basename($_FILES["EmailPDF"]["name"]);
-  $uploadOk = 1;
-  $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    require 'beersDB.php';
+    $target_dir = "uploads/";
+    $target_file = $target_dir . basename($_FILES["EmailPDF"]["name"]);
+    $uploadOk = 1;
+    $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    $date = $_POST["EmailDate"];
+    $title = $_POST["EmailSubj"];
 
-  // Check if file already exists
-  if (file_exists($target_file)) {
-    echo "<p class=\"error\">Sorry, that file name already exists. RENAME your email.</p>";
-    $uploadOk = 0;
-  }
+    if (isset($date) && isset($title)) {
+      // Check if file already exists
+      if (file_exists($target_file)) {
+        echo "<p class=\"error\">Sorry, that file name already exists. RENAME your email.</p>";
+        $uploadOk = 0;
+      }
 
-  // Allow certain file formats
-  if($fileType != "pdf") {
-    echo "<p class=\"error\">Sorry, only PDF files are allowed.</p>";
-    $uploadOk = 0;
-  }
+      // Allow certain file formats
+      if($fileType != "pdf") {
+        echo "<p class=\"error\">Sorry, only PDF files are allowed.</p>";
+        $uploadOk = 0;
+      }
 
-  // Check if $uploadOk is set to 0 by an error
-  if ($uploadOk == 0) {
-    echo "<p class=\"error\">Your file was not uploaded.</p>";
-  // if everything is ok, try to upload file
-  } else {
-    if (move_uploaded_file($_FILES["EmailPDF"]["tmp_name"], $target_file)) {
-      echo "The file ". htmlspecialchars( basename( $_FILES["EmailPDF"]["name"])). " has been uploaded.";
-    } else {
-      echo "Sorry, there was an error uploading your file.";
+      // Check if $uploadOk is set to 0 by an error
+      if ($uploadOk == 0) {
+        echo "<p class=\"error\">Your file was not uploaded.</p>";
+      // if everything is ok, try to upload file
+      } else {
+        if (move_uploaded_file($_FILES["EmailPDF"]["tmp_name"], $target_file)) {
+          echo "The file ". htmlspecialchars( basename( $_FILES["EmailPDF"]["name"])). " has been uploaded.";
+        } else {
+          echo "Sorry, there was an error uploading your file.";
+        }
+      }
+      // update db
+      $updateSQL = 'INSERT into uploads (date, title, file)
+                    values ('.$date.','.$title.','.$target_file.');';
+      if ($conn->query($updateSQL) === TRUE) {
+      } else {
+        echo "Error: " . $updateSQL . "<br>" . $conn->error;
+      }
     }
-  }
-  // update db
-  $updateSQL = 'INSERT into uploads (date, title, file)
-                values ('.$date.','.$title.','.$file_name.');';
-  if ($conn->query($updateSQL) === TRUE) {
-  } else {
-    echo "Error: " . $updateSQL . "<br>" . $conn->error;
-  }
   ?>
 
 </body>
