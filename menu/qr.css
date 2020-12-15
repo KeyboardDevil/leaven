@@ -11,6 +11,10 @@ body {
   font-family: Futura-Round;
   text-transform: uppercase;
 }
+#QrTitle {
+  width: 100%;
+  margin-bottom: 30px;
+}
 .beer {
   margin: 30px 0;
 }
@@ -20,17 +24,14 @@ h1, h2, h3 {
 h1 {
   font-family: Kapra-Neue;
   color: white;
-  font-size: 60px;
+  font-size: 150px;
 }
 h2 {
   font-family: Futura-Round;
-  font-size: 20px;
+  font-size: 52px;
   color: white;
 }
 h3 {
   color: #f7c118;
-  font-size: 20px;
-}
-#BeerMSLogo {
-  width: 80px;
+  font-size: 38px;
 }
