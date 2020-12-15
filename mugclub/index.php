@@ -34,9 +34,29 @@
       </div>
     <?php
     }
-    else { //user logged in! ?>
+    else { //user logged in!
+      require '../cms/beersDB.php';
+      // get emails
+      $sql = 'SELECT date, title, filename FROM uploads';
+      $dbOutput = $conn->query($sql);
+      ?>
       <div id="Members">
         <h1>You are logged in!</h1>
+        <h2>Download past Mug Club emails</h2>
+        <ul>
+        <?php
+        if ($dbOutput -> num_rows > 0) {
+          $activeBeers = array();
+          $inactiveBeers = array();
+          while($row = $dbOutput ->fetch_assoc()) {
+            $dbDate = $row["date"];
+            $dbTitle = $row["title"];
+            $dbFile = $row["filename"];
+            echo '<li><a href="uploads/'.$dbfile.'"></a>'.$dbDate.' - '.$dbTitle.'</li>';
+          }
+        }
+        ?>  
+        </ul>
         <form action="index.php" method="POST" name="LogOut">
           <input type="submit" name="logOut" class="button" value="Log OUT">
         </form>
