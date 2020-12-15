@@ -3,7 +3,7 @@
 ?>
 <!doctype html>
 <!-- #####################
-  Mug Club 1.0 ADMIN upload
+  Mug Club 1.1 ADMIN upload
 #########################-->
 <html lang="en">
 <head>
