@@ -18,7 +18,7 @@
 
 <body>
   <?php
-    require 'beersDB.php';
+    require '../cms/beersDB.php';
     $target_dir = "uploads/";
     $target_file = $target_dir . basename($_FILES["EmailPDF"]["name"]);
     $uploadOk = 1;
