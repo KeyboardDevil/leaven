@@ -55,7 +55,7 @@
         }
       }
       // update db
-      $updateSQL = 'INSERT INTO uploads (date, title, file) VALUES ("'.$date.'","'.$title.'","'.$file_name.'");';
+      $updateSQL = 'INSERT INTO uploads (date, title, filename) VALUES ("'.$date.'","'.$title.'","'.$file_name.'");';
       echo "<h3>SQL:</h3> ".$updateSQL;
       if ($conn->query($updateSQL) === TRUE) {
       } else {
