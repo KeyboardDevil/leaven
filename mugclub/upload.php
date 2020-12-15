@@ -20,6 +20,7 @@
   <?php
     require '../cms/beersDB.php';
     $target_dir = "uploads/";
+    $file_name = basename($_FILES["EmailPDF"]["name"]);
     $target_file = $target_dir . basename($_FILES["EmailPDF"]["name"]);
     $uploadOk = 1;
     $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -54,8 +55,7 @@
         }
       }
       // update db
-      $updateSQL = 'INSERT into uploads (date, title, file)
-                    values ('.$date.','.$title.','.$target_file.');';
+      $updateSQL = 'INSERT INTO uploads (date, title, file) VALUES ("'.$date.'","'.$title.'","'.$file_name.'");';
       echo "<h3>SQL:</h3> ".$updateSQL;
       if ($conn->query($updateSQL) === TRUE) {
       } else {
