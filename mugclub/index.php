@@ -52,7 +52,7 @@
             $dbDate = $row["date"];
             $dbTitle = $row["title"];
             $dbFile = $row["filename"];
-            echo '<li><a href="uploads/'.$dbfile.'"></a>'.$dbDate.' - '.$dbTitle.'</li>';
+            echo '<li><a href="uploads/'.$dbfile.'">'.$dbDate.' - '.$dbTitle.'</a></li>';
           }
         }
         ?>  
