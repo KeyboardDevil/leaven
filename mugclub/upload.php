@@ -27,6 +27,7 @@
     $title = $_POST["EmailSubj"];
 
     if (isset($date) && isset($title)) {
+      echo "<h3>Date and Title:</h3> ".$date." / ".$title;
       // Check if file already exists
       if (file_exists($target_file)) {
         echo "<p class=\"error\">Sorry, that file name already exists. RENAME your email.</p>";
@@ -38,12 +39,14 @@
         echo "<p class=\"error\">Sorry, only PDF files are allowed.</p>";
         $uploadOk = 0;
       }
+      else { echo "<h3>File is a PDF</h3>"; }
 
       // Check if $uploadOk is set to 0 by an error
       if ($uploadOk == 0) {
         echo "<p class=\"error\">Your file was not uploaded.</p>";
       // if everything is ok, try to upload file
       } else {
+        echo "<h3>Move the file</h3> ".$target_file;
         if (move_uploaded_file($_FILES["EmailPDF"]["tmp_name"], $target_file)) {
           echo "The file ". htmlspecialchars( basename( $_FILES["EmailPDF"]["name"])). " has been uploaded.";
         } else {
@@ -53,6 +56,7 @@
       // update db
       $updateSQL = 'INSERT into uploads (date, title, file)
                     values ('.$date.','.$title.','.$target_file.');';
+      echo "<h3>SQL:</h3> ".$updateSQL;
       if ($conn->query($updateSQL) === TRUE) {
       } else {
         echo "Error: " . $updateSQL . "<br>" . $conn->error;
