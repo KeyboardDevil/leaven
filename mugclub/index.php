@@ -46,8 +46,6 @@
         <ul>
         <?php
         if ($dbOutput -> num_rows > 0) {
-          $activeBeers = array();
-          $inactiveBeers = array();
           while($row = $dbOutput ->fetch_assoc()) {
             $dbDate = $row["date"];
             $dbTitle = $row["title"];
