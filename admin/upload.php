@@ -18,7 +18,6 @@
     $uploadType = $_POST["UploadType"];
     echo ("<h3>Upload type: ".$uploadType."</h3>");
     require '../cms/beersDB.php';
-    echo ("<h3>Past the require</h3>");
     $target_dir = "uploads/";
     if ($uploadType=="email") {$fileBase="EmailPDF";}
     if ($uploadType=="menu") {$fileBase="MenuPDF";}
@@ -56,23 +55,11 @@
     // if everything is ok, try to upload file
     } else {
       echo "<h3>Move the file: ".$target_file."</h3>";
-      echo "<h3>File: ".$_FILES["MenuPDF"]["name"]."</h3>";
-      if ($uploadType == 'email') {
-        if (move_uploaded_file($_FILES["EmailPDF"], $target_file)) {
-          echo "The file ". htmlspecialchars( basename( $_FILES["EmailPDF"]["name"])). " has been uploaded.";
-        } else {
-          echo "Sorry, there was an error uploading your file.";
-        }
-      }
-      else if ($uploadType == 'menu') {
-        if (move_uploaded_file($_FILES["MenuPDF"], $target_file)) {
-          echo "The file ". htmlspecialchars( basename( $_FILES["MenuPDF"]["name"])). " has been uploaded.";
-        } else {
-          echo "Sorry, there was an error uploading your file.";
-        }
-      }
-      else {
-        echo "Upload TYPE not found. Uh oh!";
+      echo "<h3>File: ".$_FILES[$fileBase]["name"]."</h3>";
+      if (move_uploaded_file($_FILES[$fileBase], $target_file)) {
+        echo "The file ". htmlspecialchars( basename( $_FILES["EmailPDF"]["name"])). " has been uploaded.";
+      } else {
+        echo "Sorry, there was an error uploading your file.";
       }
     }
     // update db
