@@ -56,7 +56,7 @@
     } else {
       echo "<h3>Move the file: ".$target_file."</h3>";
       echo "<h3>File: ".$_FILES[$fileBase]["name"]."</h3>";
-      if (move_uploaded_file($_FILES[$fileBase], $target_file)) {
+      if (move_uploaded_file($file_name, $target_file)) {
         echo "The file ". htmlspecialchars( basename( $_FILES["EmailPDF"]["name"])). " has been uploaded.";
       } else {
         echo "Sorry, there was an error uploading your file.";
