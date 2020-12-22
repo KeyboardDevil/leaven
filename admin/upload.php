@@ -16,15 +16,19 @@
 <body>
   <?php
     $uploadType = $_POST["UploadType"];
-    echo ("Upload type: ".$uploadType);
+    echo ("<h3>Upload type: ".$uploadType."</h3>");
     require '../cms/beersDB.php';
-    echo ("Past the require");
+    echo ("<h3>Past the require</h3>");
     $target_dir = "uploads/";
-    $file_name = basename($_FILES["EmailPDF"]["name"]);
-    $target_file = $target_dir . basename($_FILES["EmailPDF"]["name"]);
+    if ($uploadType=="email") {$fileBase="EmailPDF";}
+    if ($uploadType=="menu") {$fileBase="MenuPDF";}
+    echo ("<h3>File Base: ".$fileBase."</h3>");
+    $file_name = basename($_FILES[$fileBase]["name"]);
+    $target_file = $target_dir . basename($_FILES[$fileBase]["name"]);
     $uploadOk = 1;
     $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     if ($uploadType == "email") {
+      echo ("<h3>This is an EMAIL</h3>");
       $date = $_POST["EmailDate"];
       $title = $_POST["EmailSubj"];
     }

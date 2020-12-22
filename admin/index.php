@@ -74,7 +74,7 @@
       <div class="UploadSection">
         <h2>Upload a new TacoNotTaco Menu</h2>
         <form action="upload.php" method="post" name="UploadMenu" enctype="multipart/form-data">
-        <input type="hidden" name="UploadType" value="menu">
+          <input type="hidden" name="UploadType" value="menu">
           <input type="file" name="MenuPDF" id="MenuPDF">
           <input class="button" type="submit" value="Upload a new TNT Menu">
         </form>
