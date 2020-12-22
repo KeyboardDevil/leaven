@@ -11,16 +11,14 @@
   <META HTTP-EQUIV="EXPIRES" CONTENT="0">
   <link href="https://www.leavenbrewing.com/favicon.ico" rel="shortcut icon">
   <title>Leaven Brewing Admin Upload</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
-  <link href="mugclub.css" rel="stylesheet">
 </head>
 
 <body>
   <?php
-    require '../cms/beersDB.php';
-    // what is this?
     $uploadType = $_POST["UploadType"];
+    echo ("Upload type: ".$uploadType);
+    require '../cms/beersDB.php';
+    echo ("Past the require");
     $target_dir = "uploads/";
     $file_name = basename($_FILES["EmailPDF"]["name"]);
     $target_file = $target_dir . basename($_FILES["EmailPDF"]["name"]);
