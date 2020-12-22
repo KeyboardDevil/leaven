@@ -55,7 +55,8 @@
       echo "<p class=\"error\">Your file was not uploaded.</p>";
     // if everything is ok, try to upload file
     } else {
-      echo "<h3>Move the file</h3> ".$target_file;
+      echo "<h3>Move the file: ".$target_file."</h3>";
+      echo "<h3>File: ".$_FILES["MenuPDF"]."</h3>";
       if ($uploadType == 'email') {
         if (move_uploaded_file($_FILES["EmailPDF"], $target_file)) {
           echo "The file ". htmlspecialchars( basename( $_FILES["EmailPDF"]["name"])). " has been uploaded.";
