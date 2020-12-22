@@ -3,14 +3,14 @@
 ?>
 <!doctype html>
 <!-- #####################
-  Mug Club 1.1 ADMIN upload
+  Mug Club 1.0 ADMIN upload
 #########################-->
 <html lang="en">
 <head>
   <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
   <META HTTP-EQUIV="EXPIRES" CONTENT="0">
   <link href="https://www.leavenbrewing.com/favicon.ico" rel="shortcut icon">
-  <title>Leaven Brewing MUG CLUB Upload</title>
+  <title>Leaven Brewing Admin Upload</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
   <link href="mugclub.css" rel="stylesheet">
@@ -19,13 +19,17 @@
 <body>
   <?php
     require '../cms/beersDB.php';
+    // what is this?
+    $uploadType = $_POST["UploadType"];
     $target_dir = "uploads/";
     $file_name = basename($_FILES["EmailPDF"]["name"]);
     $target_file = $target_dir . basename($_FILES["EmailPDF"]["name"]);
     $uploadOk = 1;
     $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-    $date = $_POST["EmailDate"];
-    $title = $_POST["EmailSubj"];
+    if ($uploadType == "email") {
+      $date = $_POST["EmailDate"];
+      $title = $_POST["EmailSubj"];
+    }
 
     if (isset($date) && isset($title)) {
       echo "<h3>Date and Title:</h3> ".$date." / ".$title;
@@ -48,14 +52,31 @@
       // if everything is ok, try to upload file
       } else {
         echo "<h3>Move the file</h3> ".$target_file;
-        if (move_uploaded_file($_FILES["EmailPDF"]["tmp_name"], $target_file)) {
-          echo "The file ". htmlspecialchars( basename( $_FILES["EmailPDF"]["name"])). " has been uploaded.";
-        } else {
-          echo "Sorry, there was an error uploading your file.";
+        if ($uploadType == 'email') {
+          if (move_uploaded_file($_FILES["EmailPDF"]["tmp_name"], $target_file)) {
+            echo "The file ". htmlspecialchars( basename( $_FILES["EmailPDF"]["name"])). " has been uploaded.";
+          } else {
+            echo "Sorry, there was an error uploading your file.";
+          }
+        }
+        else if ($uploadType == 'menu') {
+          if (move_uploaded_file($_FILES["MenuPDF"]["tmp_name"], $target_file)) {
+            echo "The file ". htmlspecialchars( basename( $_FILES["MenuPDF"]["name"])). " has been uploaded.";
+          } else {
+            echo "Sorry, there was an error uploading your file.";
+          }
+        }
+        else {
+          echo "Upload TYPE not found. Uh oh!";
         }
       }
       // update db
-      $updateSQL = 'INSERT INTO uploads (date, title, filename) VALUES ("'.$date.'","'.$title.'","'.$file_name.'");';
+      if ($uploadType == "email") {
+        $updateSQL = 'INSERT INTO uploads (date, title, filename,uploadType) VALUES ("'.$date.'","'.$title.'","'.$file_name.'","email");';
+      }
+      if ($uploadType == "menu") {
+        $updateSQL = 'INSERT INTO uploads (menu,uploadType) VALUES ("'.$file_name.'","menu");';
+      }
       echo "<h3>SQL:</h3> ".$updateSQL;
       if ($conn->query($updateSQL) === TRUE) {
       } else {

@@ -17,7 +17,7 @@
 </head>
 
 <body id="Members">
-  <?php require 'memLogin.php';
+  <?php require '../login.php';
     if($loginInvalid){echo('<h1>That\'s not right!</h1><img src="img/magicWord.gif" width="400">');
   }
   else { ?>
