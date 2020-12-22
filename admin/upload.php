@@ -25,7 +25,7 @@
     echo ("<h3>File Base: ".$fileBase."</h3>");
     $file_name = basename($_FILES[$fileBase]["name"]);
     $target_file = $target_dir . basename($_FILES[$fileBase]["name"]);
-    echo ("<h3>Target File:</h3> ".$target_file);
+    echo ("<h3>Target File: ".$target_file."</h3>");
     $uploadOk = 1;
     $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     if ($uploadType == "email") {
@@ -57,14 +57,14 @@
     } else {
       echo "<h3>Move the file</h3> ".$target_file;
       if ($uploadType == 'email') {
-        if (move_uploaded_file($_FILES["EmailPDF"]["tmp_name"], $target_file)) {
+        if (move_uploaded_file($_FILES["EmailPDF"], $target_file)) {
           echo "The file ". htmlspecialchars( basename( $_FILES["EmailPDF"]["name"])). " has been uploaded.";
         } else {
           echo "Sorry, there was an error uploading your file.";
         }
       }
       else if ($uploadType == 'menu') {
-        if (move_uploaded_file($_FILES["MenuPDF"]["tmp_name"], $target_file)) {
+        if (move_uploaded_file($_FILES["MenuPDF"], $target_file)) {
           echo "The file ". htmlspecialchars( basename( $_FILES["MenuPDF"]["name"])). " has been uploaded.";
         } else {
           echo "Sorry, there was an error uploading your file.";
