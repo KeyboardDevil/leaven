@@ -19,7 +19,7 @@
     echo php_ini_loaded_file();
     echo ("<h3>Upload type: ".$uploadType."</h3>");
     require '../cms/beersDB.php';
-    $target_dir = "/uploads/";
+    $target_dir = "";
     if ($uploadType=="email") {$fileBase="EmailPDF";}
     if ($uploadType=="menu") {$fileBase="MenuPDF";}
     echo ("<h3>File Base: ".$fileBase."</h3>");
