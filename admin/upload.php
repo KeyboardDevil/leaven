@@ -23,6 +23,7 @@
     if ($uploadType=="menu") {$fileBase="MenuPDF";}
     echo ("<h3>File Base: ".$fileBase."</h3>");
     $file_name = basename($_FILES[$fileBase]["name"]);
+    echo ("<h3>File Name: ".$file_name."</h3>");
     $target_file = $target_dir . basename($_FILES[$fileBase]["name"]);
     echo ("<h3>Target File: ".$target_file."</h3>");
     $uploadOk = 1;
