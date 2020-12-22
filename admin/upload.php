@@ -40,50 +40,50 @@
         echo "<p class=\"error\">Sorry, that file name already exists. RENAME your email.</p>";
         $uploadOk = 0;
       }
+    }
 
-      // Allow certain file formats
-      if($fileType != "pdf") {
-        echo "<p class=\"error\">Sorry, only PDF files are allowed.</p>";
-        $uploadOk = 0;
-      }
-      else { echo "<h3>File is a PDF</h3>"; }
+    // Allow certain file formats
+    if($fileType != "pdf") {
+      echo "<p class=\"error\">Sorry, only PDF files are allowed.</p>";
+      $uploadOk = 0;
+    }
+    else { echo "<h3>File is a PDF</h3>"; }
 
-      // Check if $uploadOk is set to 0 by an error
-      if ($uploadOk == 0) {
-        echo "<p class=\"error\">Your file was not uploaded.</p>";
-      // if everything is ok, try to upload file
-      } else {
-        echo "<h3>Move the file</h3> ".$target_file;
-        if ($uploadType == 'email') {
-          if (move_uploaded_file($_FILES["EmailPDF"]["tmp_name"], $target_file)) {
-            echo "The file ". htmlspecialchars( basename( $_FILES["EmailPDF"]["name"])). " has been uploaded.";
-          } else {
-            echo "Sorry, there was an error uploading your file.";
-          }
-        }
-        else if ($uploadType == 'menu') {
-          if (move_uploaded_file($_FILES["MenuPDF"]["tmp_name"], $target_file)) {
-            echo "The file ". htmlspecialchars( basename( $_FILES["MenuPDF"]["name"])). " has been uploaded.";
-          } else {
-            echo "Sorry, there was an error uploading your file.";
-          }
-        }
-        else {
-          echo "Upload TYPE not found. Uh oh!";
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+      echo "<p class=\"error\">Your file was not uploaded.</p>";
+    // if everything is ok, try to upload file
+    } else {
+      echo "<h3>Move the file</h3> ".$target_file;
+      if ($uploadType == 'email') {
+        if (move_uploaded_file($_FILES["EmailPDF"]["tmp_name"], $target_file)) {
+          echo "The file ". htmlspecialchars( basename( $_FILES["EmailPDF"]["name"])). " has been uploaded.";
+        } else {
+          echo "Sorry, there was an error uploading your file.";
         }
       }
-      // update db
-      if ($uploadType == "email") {
-        $updateSQL = 'INSERT INTO uploads (date, title, filename,uploadType) VALUES ("'.$date.'","'.$title.'","'.$file_name.'","email");';
+      else if ($uploadType == 'menu') {
+        if (move_uploaded_file($_FILES["MenuPDF"]["tmp_name"], $target_file)) {
+          echo "The file ". htmlspecialchars( basename( $_FILES["MenuPDF"]["name"])). " has been uploaded.";
+        } else {
+          echo "Sorry, there was an error uploading your file.";
+        }
       }
-      if ($uploadType == "menu") {
-        $updateSQL = 'INSERT INTO uploads (menu,uploadType) VALUES ("'.$file_name.'","menu");';
+      else {
+        echo "Upload TYPE not found. Uh oh!";
       }
-      echo "<h3>SQL:</h3> ".$updateSQL;
-      if ($conn->query($updateSQL) === TRUE) {
-      } else {
-        echo "Error: " . $updateSQL . "<br>" . $conn->error;
-      }
+    }
+    // update db
+    if ($uploadType == "email") {
+      $updateSQL = 'INSERT INTO uploads (date, title, filename,uploadType) VALUES ("'.$date.'","'.$title.'","'.$file_name.'","email");';
+    }
+    if ($uploadType == "menu") {
+      $updateSQL = 'INSERT INTO uploads (menu,uploadType) VALUES ("'.$file_name.'","menu");';
+    }
+    echo "<h3>SQL:</h3> ".$updateSQL;
+    if ($conn->query($updateSQL) === TRUE) {
+    } else {
+      echo "Error: " . $updateSQL . "<br>" . $conn->error;
     }
   ?>
 
