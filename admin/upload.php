@@ -25,6 +25,7 @@
     echo ("<h3>File Base: ".$fileBase."</h3>");
     $file_name = basename($_FILES[$fileBase]["name"]);
     $target_file = $target_dir . basename($_FILES[$fileBase]["name"]);
+    echo ("<h3>Target File:</h3> ".$target_file);
     $uploadOk = 1;
     $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     if ($uploadType == "email") {
@@ -78,7 +79,7 @@
       $updateSQL = 'INSERT INTO uploads (date, title, filename,uploadType) VALUES ("'.$date.'","'.$title.'","'.$file_name.'","email");';
     }
     if ($uploadType == "menu") {
-      $updateSQL = 'INSERT INTO uploads (menu,uploadType) VALUES ("'.$file_name.'","menu");';
+      $updateSQL = 'INSERT INTO uploads (date,title,filename,uploadType) VALUES ("none","none","'.$file_name.'","menu");';
     }
     echo "<h3>SQL:</h3> ".$updateSQL;
     if ($conn->query($updateSQL) === TRUE) {
