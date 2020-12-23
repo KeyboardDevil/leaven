@@ -23,7 +23,7 @@
     }
     .button {
       border-radius: 5px;
-      background-color: #EF8354;
+      background-color: #1B98E0;
       padding: 8px 15px 8px 15px;
       cursor: pointer;
       width: 100%;
@@ -31,16 +31,27 @@
       color: black;
     }
     .button:hover {
-      background-color: #f6976e;
+      background-color: #E8F1F2;
+    }
+    .uploadFile {
+      border-radius: 5px;
+      background-color: #EB5160;
+      padding: 8px 15px 8px 15px;
+      cursor: pointer;
+      margin: 12px 0;
+      color: white;
     }
     h1, h2, h3 {
       margin: .5em 0 .4em;
     }
+    .warning {
+      color: yellow;
+      font-weight: bold;
+    }
     .UploadSection {
       background-color: #0A2239;
-      border: 5px solid black;
       border-radius: 15px;
-      color: #CDF7F6;
+      color: white;
       margin: 15px;
       padding: 5px 10px;
       width: 30%;
@@ -68,10 +79,10 @@
       <p>Only PDF files are allowed. Each section works independently, you can upload a menu <strong>or</strong> an email.</p>
       <div class="UploadSection">
         <h2>Upload a new TacoNotTaco Menu</h2>
-        <p>WARNING: uploading a new menu will overwrite the old one! <strong>There can be only one</strong>.</p>
+        <p>WARNING: uploading a new menu <span class="warning">will overwrite</span> the old one!</p>
         <form action="upload.php" method="post" name="UploadMenu" enctype="multipart/form-data">
           <input type="hidden" name="UploadType" value="menu">
-          <input type="file" name="MenuPDF" id="MenuPDF">
+          <input class="uploadFile" type="file" name="MenuPDF" id="MenuPDF">
           <input class="button" type="submit" value="Upload a new TNT Menu">
         </form>
       </div>
@@ -90,7 +101,7 @@
             </tr>
             <tr>
               <td><label for="EmailPDF">Email PDF</label></td>
-              <td><input type="file" name="EmailPDF" id="EmailPDF"></td>
+              <td><input class="uploadFile" type="file" name="EmailPDF" id="EmailPDF"></td>
             </tr>
             </table>
             <input class="button" type="submit" value="Upload a MugClub Email"></td>
