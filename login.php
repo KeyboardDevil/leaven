@@ -21,7 +21,7 @@ if (isset($_POST["password"])) {
 if (isset($_POST["adminPass"])) {
 	$adminPass = $_POST["adminPass"];
 	$strHash = hash('sha256', $adminPass);
-	$strHashCheck = 'a3ca38ef0e8554b39ce6fd34b011f9aa197cda1f17e2b08b1816142c4bc67199';
+	$strHashCheck = 'e722be612d2a0cc7ba92b7eefadeec45650ab30b42ee36072c27b8364f34d53f';
 	if ($strHash == $strHashCheck) {
     $_SESSION['admin'] = "hellsyeah";
   }
