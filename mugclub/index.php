@@ -46,12 +46,14 @@
         <ul>
         <?php
         if ($dbOutput -> num_rows > 0) {
+          echo '<ul>';
           while($row = $dbOutput ->fetch_assoc()) {
             $dbDate = $row["date"];
             $dbTitle = $row["title"];
             $dbFile = $row["filename"];
             echo '<li><a href="'.$dbFile.'">'.$dbDate.' - '.$dbTitle.'</a></li>';
           }
+          echo '</ul>';
         }
         ?>  
         </ul>
