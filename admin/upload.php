@@ -37,7 +37,7 @@
 <body>
   <div id="UploadResults">
     <?php
-      if (isset($_SESSION['admin'])) {
+      if (isset($_SESSION['admin']) && isset($_POST["UploadType"])) {
         require '../cms/beersDB.php';
         $uploadType = $_POST["UploadType"];
         $basename = '';
@@ -47,6 +47,7 @@
         if ($uploadType == 'menu') {$imagePath = 'MenuPDF';}
         if ($uploadType =='email') {$imagePath = 'EmailPDF';}
         $target_dir = "../tnt/";
+        if ($uploadType=="email"){$target_dir = "../mugclub/";}
         $target_file = $target_dir . basename($_FILES[$imagePath]["name"]);
         $uploadOk = 1;
         if ($_FILES[$imagePath]["name"]=='') {$uploadOk=0;}
@@ -64,7 +65,8 @@
           echo "<a href=\"index.php\">Try Again!</a>";
         // if everything is ok, try to upload file
         } else {
-          $basename = "menu.pdf";
+          if ($uploadType=="menu"){$basename = "menu.pdf";}
+          if ($uploadType=="email"){$basename = random_int(690,6969).$_FILES[$imagePath]["name"];}
           $source = $_FILES[$imagePath]["tmp_name"];
           $destination = $target_dir.$basename;
           if (move_uploaded_file( $source, $destination )) {
@@ -76,19 +78,21 @@
         
         // update db
         if ($uploadOk != 0) {
+          echo "<h2>File Uploaded!</h2><a href=\"index.php\">Return to Admin page</a>";
           if ($uploadType == "email") {
             $updateSQL = 'INSERT INTO uploads (date, title, filename,uploadType) VALUES ("'.$date.'","'.$title.'","'.$basename.'","email");';
-          }
-          if ($uploadType == "menu") {
-            $updateSQL = 'INSERT INTO uploads (date,title,filename,uploadType) VALUES ("none","none","'.$basename.'","menu");';
-          }
-          //echo "<h3>SQL:</h3> ".$updateSQL;
-          if ($conn->query($updateSQL) === TRUE) {
-            echo "<h2>File Uploaded!</h2><a href=\"index.php\">Return to Admin page</a>";
-          } else {
-            echo "Error: " . $updateSQL . "<br>" . $conn->error;
+            
+            if ($conn->query($updateSQL) === TRUE) {
+              //echo "<h2>File Uploaded!</h2><a href=\"index.php\">Return to Admin page</a>";
+            } else {
+              echo "Error: " . $updateSQL . "<br>" . $conn->error;
+            }
           }
         }
+      }
+      else {
+        // not authenticated, send em home
+        echo '<script>window.location.href="../index.php";</script>';
       }
     ?>
   </div>

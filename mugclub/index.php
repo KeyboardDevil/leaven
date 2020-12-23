@@ -13,7 +13,7 @@
   <title>Leaven Brewing MUG CLUB</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet"> 
-  <link href="mugclub.css" rel="stylesheet">
+  
 </head>
 
 <body id="Members">
@@ -50,7 +50,7 @@
             $dbDate = $row["date"];
             $dbTitle = $row["title"];
             $dbFile = $row["filename"];
-            echo '<li><a href="uploads/'.$dbfile.'">'.$dbDate.' - '.$dbTitle.'</a></li>';
+            echo '<li><a href="'.$dbFile.'">'.$dbDate.' - '.$dbTitle.'</a></li>';
           }
         }
         ?>  
