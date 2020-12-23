@@ -15,6 +15,8 @@
 
 <body>
   <?php
+  error_reporting(E_ALL);
+  ini_set('display_errors',1);
     if (isset($_SESSION['admin'])) {
       $uploadType = $_POST["UploadType"];
       echo ("<h3>Upload type: ".$uploadType."</h3>");
@@ -37,11 +39,8 @@
 
       if (isset($date) && isset($title)) {
         echo "<h3>Date and Title:</h3> ".$date." / ".$title;
-        // Check if file already exists
-        if (file_exists($target_file)) {
-          echo "<p class=\"error\">Sorry, that file name already exists. RENAME your email.</p>";
-          $uploadOk = 0;
-        }
+        // Create unique file
+        // TODO
       }
 
       // Allow certain file formats
