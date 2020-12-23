@@ -15,62 +15,50 @@
 
 <body>
   <?php
-  error_reporting(E_ALL);
-  ini_set('display_errors',1);
     if (isset($_SESSION['admin'])) {
-      $uploadType = $_POST["UploadType"];
-      echo ("<h3>Upload type: ".$uploadType."</h3>");
       require '../cms/beersDB.php';
+      $uploadType = $_POST["UploadType"];
+      $basename = '';
+      $imagePath = '';
+      if (isset($_POST["EmailDate"])) {$date = $_POST["EmailDate"];}
+      if (isset($_POST["EmailSubj"])) {$title = $_POST["EmailSubj"];}
+      if ($uploadType == 'menu') {$imagePath = 'MenuPDF';}
+      if ($uploadType =='email') {$imagePath = 'EmailPDF';}
       $target_dir = "uploads/";
-      if ($uploadType=="email") {$fileBase="EmailPDF";}
-      if ($uploadType=="menu") {$fileBase="MenuPDF";}
-      echo ("<h3>File Base: ".$fileBase."</h3>");
-      $file_name = basename($_FILES[$fileBase]["name"]);
-      echo ("<h3>File Name: ".$file_name."</h3>");
-      $target_file = $target_dir . basename($_FILES[$fileBase]["name"]);
-      echo ("<h3>Target File: ".$target_file."</h3>");
+      $target_file = $target_dir . basename($_FILES[$imagePath]["name"]);
       $uploadOk = 1;
-      $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-      if ($uploadType == "email") {
-        echo ("<h3>This is an EMAIL</h3>");
-        $date = $_POST["EmailDate"];
-        $title = $_POST["EmailSubj"];
-      }
-
-      if (isset($date) && isset($title)) {
-        echo "<h3>Date and Title:</h3> ".$date." / ".$title;
-        // Create unique file
-        // TODO
-      }
-
+      $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    
       // Allow certain file formats
-      if($fileType != "pdf") {
-        echo "<p class=\"error\">Sorry, only PDF files are allowed.</p>";
+      if($imageFileType != '' && $imageFileType != "pdf") {
+        echo "<p>PDFs only!</p>";
         $uploadOk = 0;
       }
-      else { echo "<h3>File is a PDF</h3>"; }
-
+    
       // Check if $uploadOk is set to 0 by an error
       if ($uploadOk == 0) {
         echo "<p class=\"error\">Your file was not uploaded.</p>";
+        echo "<a href=\"index.php\">Try Again!</a>";
       // if everything is ok, try to upload file
       } else {
-        echo "<h3>Move the file: ".$target_file."</h3>";
-        echo "<h3>File: ".$_FILES[$fileBase]["name"]."</h3>";
-        if (move_uploaded_file($file_name, $target_file)) {
-          echo "The file ". htmlspecialchars( basename( $_FILES[$fileBase]["name"])). " has been uploaded.";
+        $basename = "menu.pdf";
+        $source = $_FILES[$imagePath]["tmp_name"];
+        $destination = $target_dir.$basename;
+        if (move_uploaded_file( $source, $destination )) {
         } else {
-          echo "Sorry, there was an error uploading your file.";
+          echo "<p class=\"error\">Sorry, there was an error uploading your file. Please try again.</p>";
+          echo "<a href=\"index.php\">Try Again!</a>";
         }
       }
+      
       // update db
       if ($uploadType == "email") {
-        $updateSQL = 'INSERT INTO uploads (date, title, filename,uploadType) VALUES ("'.$date.'","'.$title.'","'.$file_name.'","email");';
+        $updateSQL = 'INSERT INTO uploads (date, title, filename,uploadType) VALUES ("'.$date.'","'.$title.'","'.$basename.'","email");';
       }
       if ($uploadType == "menu") {
-        $updateSQL = 'INSERT INTO uploads (date,title,filename,uploadType) VALUES ("none","none","'.$file_name.'","menu");';
+        $updateSQL = 'INSERT INTO uploads (date,title,filename,uploadType) VALUES ("none","none","'.$basename.'","menu");';
       }
-      echo "<h3>SQL:</h3> ".$updateSQL;
+      //echo "<h3>SQL:</h3> ".$updateSQL;
       if ($conn->query($updateSQL) === TRUE) {
       } else {
         echo "Error: " . $updateSQL . "<br>" . $conn->error;

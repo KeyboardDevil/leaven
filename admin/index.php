@@ -15,18 +15,31 @@
     body {
       font-family: sans-serif;
       font-size: 1.25em;
+      background-image: url('uploadBack.gif');
+      background-repeat: no-repeat;
     }
     input {
       font-size: 1.2em;
+    }
+    .button {
+      border-radius: 5px;
+      background-color: #EF8354;
+      padding: 8px 15px 8px 15px;
+      cursor: pointer;
+      width: 100%;
+      margin: 12px 0;
+    }
+    .button:hover {
+      background-color: #f6976e;
     }
     h1, h2, h3 {
       margin: .5em 0 .4em;
     }
     .UploadSection {
-      background-color: #104C91;
-      border: 5px solid #1F8AC0;
+      background-color: #0A2239;
+      border: 5px solid black;
       border-radius: 15px;
-      color: #EFC9AF;
+      color: #CDF7F6;
       margin: 15px;
       padding: 5px 10px;
       width: 550px;
@@ -50,6 +63,7 @@
     }
     else { //user logged in! ?>
       <h1>Upload Stuff!</h1>
+      <p>Only PDF files are allowed.</p>
       <div class="UploadSection">
         <h2>Upload a MugClub Email</h2>
         <form action="upload.php" method="post" name="UploadEmail" enctype="multipart/form-data">
@@ -73,6 +87,7 @@
       </div>
       <div class="UploadSection">
         <h2>Upload a new TacoNotTaco Menu</h2>
+        <p>WARNING: uploading a new menu will overwrite the old one!  <strong>There can be only one</strong>.</p>
         <form action="upload.php" method="post" name="UploadMenu" enctype="multipart/form-data">
           <input type="hidden" name="UploadType" value="menu">
           <input type="file" name="MenuPDF" id="MenuPDF">
