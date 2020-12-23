@@ -65,6 +65,15 @@
       <h1>Upload Stuff!</h1>
       <p>Only PDF files are allowed.</p>
       <div class="UploadSection">
+        <h2>Upload a new TacoNotTaco Menu</h2>
+        <p>WARNING: uploading a new menu will overwrite the old one!  <strong>There can be only one</strong>.</p>
+        <form action="upload.php" method="post" name="UploadMenu" enctype="multipart/form-data">
+          <input type="hidden" name="UploadType" value="menu">
+          <input type="file" name="MenuPDF" id="MenuPDF">
+          <input class="button" type="submit" value="Upload a new TNT Menu">
+        </form>
+      </div>
+      <div class="UploadSection">
         <h2>Upload a MugClub Email</h2>
         <form action="upload.php" method="post" name="UploadEmail" enctype="multipart/form-data">
           <input type="hidden" name="UploadType" value="email">
@@ -81,17 +90,8 @@
               <td><label for="EmailPDF">Email PDF</label></td>
               <td><input type="file" name="EmailPDF" id="EmailPDF"></td>
             </tr>
-            <tr><td colspan="2"><input class="button" type="submit" value="Upload a MugClub Email"></tr>
+            <tr><td colspan="2"><!--<input class="button" type="submit" value="Upload a MugClub Email">--><span class="button">COMING SOON</span></tr>
             </table>
-        </form>
-      </div>
-      <div class="UploadSection">
-        <h2>Upload a new TacoNotTaco Menu</h2>
-        <p>WARNING: uploading a new menu will overwrite the old one!  <strong>There can be only one</strong>.</p>
-        <form action="upload.php" method="post" name="UploadMenu" enctype="multipart/form-data">
-          <input type="hidden" name="UploadType" value="menu">
-          <input type="file" name="MenuPDF" id="MenuPDF">
-          <input class="button" type="submit" value="Upload a new TNT Menu">
         </form>
       </div>
       <div class="UploadSection">

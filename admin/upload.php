@@ -46,9 +46,10 @@
         if (isset($_POST["EmailSubj"])) {$title = $_POST["EmailSubj"];}
         if ($uploadType == 'menu') {$imagePath = 'MenuPDF';}
         if ($uploadType =='email') {$imagePath = 'EmailPDF';}
-        $target_dir = "uploads/";
+        $target_dir = "../tnt/";
         $target_file = $target_dir . basename($_FILES[$imagePath]["name"]);
         $uploadOk = 1;
+        if ($_FILES[$imagePath]["name"]=='') {$uploadOk=0;}
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
       
         // Allow certain file formats
@@ -74,16 +75,19 @@
         }
         
         // update db
-        if ($uploadType == "email") {
-          $updateSQL = 'INSERT INTO uploads (date, title, filename,uploadType) VALUES ("'.$date.'","'.$title.'","'.$basename.'","email");';
-        }
-        if ($uploadType == "menu") {
-          $updateSQL = 'INSERT INTO uploads (date,title,filename,uploadType) VALUES ("none","none","'.$basename.'","menu");';
-        }
-        //echo "<h3>SQL:</h3> ".$updateSQL;
-        if ($conn->query($updateSQL) === TRUE) {
-        } else {
-          echo "Error: " . $updateSQL . "<br>" . $conn->error;
+        if ($uploadOk != 0) {
+          if ($uploadType == "email") {
+            $updateSQL = 'INSERT INTO uploads (date, title, filename,uploadType) VALUES ("'.$date.'","'.$title.'","'.$basename.'","email");';
+          }
+          if ($uploadType == "menu") {
+            $updateSQL = 'INSERT INTO uploads (date,title,filename,uploadType) VALUES ("none","none","'.$basename.'","menu");';
+          }
+          //echo "<h3>SQL:</h3> ".$updateSQL;
+          if ($conn->query($updateSQL) === TRUE) {
+            echo "<h2>File Uploaded!</h2><a href=\"index.php\">Return to Admin page</a>";
+          } else {
+            echo "Error: " . $updateSQL . "<br>" . $conn->error;
+          }
         }
       }
     ?>

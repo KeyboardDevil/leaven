@@ -12,14 +12,10 @@
   <META HTTP-EQUIV="EXPIRES" CONTENT="0">
   <link href="https://www.leavenbrewing.com/favicon.ico" rel="shortcut icon">
   <title>TacoNotTaco @ Leaven Brewing</title>
-  <link href="tnt.css" rel="stylesheet">
 </head>
 
 <body>
-
-  <h1>TNT Menu</h1>
-  Just redirect to the latest PDF.
-  <p>"phpMenu.pdf?c=<?php echo ($shesBusty); ?>"</p>
-
+  <script>
+    window.location.href="menu.pdf?c=<?php echo ($shesBusty); ?>"</script>
 </body>
 </html>
