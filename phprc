@@ -2,3 +2,4 @@
 zend_extension=opcache.so
 ; }}} That's all from DreamHost
 file_uploads = On
+session.gc_maxlifetime = 900

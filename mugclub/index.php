@@ -12,24 +12,62 @@
   <link href="https://www.leavenbrewing.com/favicon.ico" rel="shortcut icon">
   <title>Leaven Brewing MUG CLUB</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet"> 
-  
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@500&family=Bangers&display=swap" rel="stylesheet">
+  <style>
+    h1 {
+      font-family: 'Bangers', cursive;
+      font-size: 5em;
+      text-shadow: 2px 2px 5px #b91313;
+      margin: 5px;
+    }
+    body {
+      background: url('img/mugBack.gif') no-repeat fixed center;
+      margin: 50px;
+      font-family: 'Prompt', sans-serif;
+    }
+    .button {
+      border-radius: 5px;
+      background-color: #1B98E0;
+      padding: 8px 15px 8px 15px;
+      cursor: pointer;
+      color: black;
+      font-size: 1.2em;
+      margin: 0 10px;
+    }
+    .button:hover {
+      background-color: #23a9f6;
+    }
+    input {
+      font-size: 1.6em;
+    }
+    #LogOut {
+      display: block;
+      position: absolute;
+      right: 50px;
+      top: 50px;
+    }
+  </style>
 </head>
 
-<body id="Members">
-  <?php require '../login.php';
-    if($loginInvalid){echo('<h1>That\'s not right!</h1><img src="img/magicWord.gif" width="400">');
-  }
-  else { ?>
-    <h1>Member Login</h1>
-    <img src="img/lbmcLogo.gif">
-  <?php } ?>
+<body>
+  <?php require '../login.php'; ?>
+  
+  <!-- <img src="img/lbmcLogo.gif"> -->
+  
   <?php
     if (!isset($_SESSION['lbmc'])) { ?>
-      <div id="Login"> 
-        <p>WELCOME Mug Club Member! Log in here for all of the super-secret member goodness.</p>
+      <div id="Login">
+      <?php 
+      if($loginInvalid){
+        echo('<h1>That\'s not right!</h1><img src="img/magicWord.gif" width="400">');
+        echo ('<style>body{background: url("img/nerdyBack.jpg") fixed top no-repeat;</style>');
+      }
+      else { 
+        echo "<h1>WELCOME Mug Club Member!</h1>";
+      }?>
+        <p>Looks like you need to <strong>log in</strong> for all of the super-secret member goodness.</p>
         <form action="index.php" method="POST" name="logIn">
-          <input type="text" name="password"> <input type="submit" class="button" name="passSubmit" value="Log In!">
+          <input type="text" name="password"><input type="submit" class="button" name="passSubmit" value="Log In!">
         </form>
       </div>
     <?php
@@ -57,13 +95,13 @@
         }
         ?>  
         </ul>
-        <form action="index.php" method="POST" name="LogOut">
+        <form id="LogOut" action="index.php" method="POST" name="LogOut">
           <input type="submit" name="logOut" class="button" value="Log OUT">
         </form>
       </div>
     <?php
     } ?>
-    <img src="img/MembersOnly.png" id="MembersOnly">
+    <!-- <img src="img/MembersOnly.png" id="MembersOnly"> -->
 
 </body>
 </html>
