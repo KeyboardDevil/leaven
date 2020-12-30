@@ -179,7 +179,7 @@
           <!--<p class="section-description"></p>-->
           <h3>We are <span id="KJ">KJ</span> and <span id="Jillian">Jillian</span> and we make beer! <?php
               $whatDayIsIt = time() - strtotime("2017-07-11");
-              echo "Today is <a target=\"_blank\" href=\"https://www.instagram.com/leavenbrewing/\">day: ".(round($whatDayIsIt / (60 * 60 * 24))-1)."</a></h3>";
+              echo "Today is <a target=\"_blank\" href=\"https://www.instagram.com/leavenbrewing/\">day: ".(round($whatDayIsIt / (60 * 60 * 24)))."</a></h3>";
             ?></h3>
           <div id="LeavenVideo">
             <iframe width="350" src="https://www.youtube.com/embed/eTdu0iUQnEs?rel=0&amp;showinfo=0" allowfullscreen></iframe>
