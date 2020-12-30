@@ -123,7 +123,28 @@
               <td><input class="uploadFile" type="file" name="EmailPDF" id="EmailPDF"></td>
             </tr>
             </table>
-            <input class="button" type="submit" value="Upload a MugClub Email"></td>
+            <input class="button" type="submit" value="Upload a MugClub Email">
+            <hr>
+            <h2>Manage Emails</h2>
+            <?php
+              require '../cms/beersDB.php';
+              $sql = 'SELECT date, title, filename FROM uploads';
+              $dbOutput = $conn->query($sql);
+            ?>
+            <ul>
+            <?php
+            if ($dbOutput -> num_rows > 0) {
+              echo '<ul>';
+              while($row = $dbOutput ->fetch_assoc()) {
+                $dbDate = $row["date"];
+                $dbTitle = $row["title"];
+                $dbFile = $row["filename"];
+                echo '<li class="'.$dbFile.'">'.$dbDate.' - '.$dbTitle.'</li>';
+              }
+              echo '</ul>';
+            }
+            ?>
+          </ul>
         </form>
       </div>
       <div class="UploadSection">

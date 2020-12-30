@@ -93,7 +93,7 @@
           }
           echo '</ul>';
         }
-        ?>  
+        ?>
         </ul>
         <form id="LogOut" action="index.php" method="POST" name="LogOut">
           <input type="submit" name="logOut" class="button" value="Log OUT">
