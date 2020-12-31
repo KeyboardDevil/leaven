@@ -270,7 +270,7 @@
       <div class="modal-body">
       <div class="add-section">
           <p class="add-header">Digital Menu Description</p>
-          <textarea name="newBeerShortDescription" rows="1" cols="80"></textarea>
+          <textarea name="newBeerShortDescription" rows="1" maxlength="60" cols="70"></textarea>
         </div>
       </div>
       <div class="flex-it">
@@ -315,13 +315,13 @@
 </div>
 </form>
 
-    <p class="lastUpd">Code last updated: <?php echo date ("F d Y H:i", getlastmod()); ?></p>
-    <h3>Go back to <a href="/index.php">LeavenBrewing</a></h3>
-    <img class="devil" src="../menu/img/devil.gif">
+  <p class="lastUpd">Code last updated: <?php echo date ("F d Y H:i", getlastmod()); ?></p>
+  <h3>Go back to <a href="/index.php">LeavenBrewing</a></h3>
+  <img class="devil" src="../menu/img/devil.gif">
 
-    <?php
-      } // close MagicKey check
-    ?>
+  <?php
+    } // close MagicKey check
+  ?>
   <script>
     $( ".addImage" ).click(function doStuff() {
       var img = document.createElement("IMG");
@@ -333,6 +333,10 @@
     $(".egg").click(function eggIt() {
       $(".beerMSLogo").attr("src","https://www.leavenbrewing.com/img/404Logo.png");
     });
+    // kill the POST for refresh
+    if ( window.history.replaceState ) {
+      window.history.replaceState( null, null, window.location.href );
+    }
   </script>
 
   </body>

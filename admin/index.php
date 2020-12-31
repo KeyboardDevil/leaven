@@ -164,5 +164,12 @@
     <?php
     } ?>
 
+  <script>
+  // kill the POST for refresh
+  if ( window.history.replaceState ) {
+    window.history.replaceState( null, null, window.location.href );
+  }
+  </script>
+
 </body>
 </html>
