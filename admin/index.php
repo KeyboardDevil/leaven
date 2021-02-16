@@ -150,7 +150,7 @@
       <div class="UploadSection">
         <h2>Edit Beers!</h2>
         <p>Edit the BeerMS Menu</p>
-        <form action="../cms/index.php" method="POST" name="LogOut">
+        <form action="https://www.beerms.com/cms/" method="POST" name="redirect">
           <input class="button" type="submit" value="Go to BeerMS">
         </form>
       </div>

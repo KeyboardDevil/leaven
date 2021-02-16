@@ -596,8 +596,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------*/
 .beerMS {
   color: blue;
-  float: right;
   font-size: 12px;
+  display: block;
+  text-align: right;
 }
 @media (max-width:760px) {
   .beerMS {
@@ -653,16 +654,12 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .beerList {
-	margin-bottom: 35px;
+	margin-bottom: 15px;
 }
 
 .beerList img {
 	float: left;
 	padding-right: 8px;
-}
-.beerDescription {
-	/*clear:both;*/
-	margin-left: 100px;
 }
 @media (max-width:768px) {
 	.beerDescription {

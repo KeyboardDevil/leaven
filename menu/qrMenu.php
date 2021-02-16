@@ -17,19 +17,17 @@
   $rowCount = $dbOutput->num_rows;
 
   echo '<img id="QrTitle" src="img/qrTitle.png">';
-  if ($rowCount > 0) {
-    while ($row = $dbOutput->fetch_assoc()) {
-      $dbName = $row["name"];
-      $dbAbv = $row["abv"];
-      $dbDesc = $row["description"];
-      echo "<div class=\"beer\">\n";
-      echo "<h1>$dbName</h1>\n";
-      echo "<h2>$dbAbv</h2>\n";
-      echo "<h3>$dbDesc</h3>\n";
-      echo "</div>\n";
+  // Call BeerMS for the list
+  $response = file_get_contents('https://www.beerms.com/thebeer/?uid=0731ff47');
+  $beers = json_decode($response);
+  foreach ($beers as $beer) {
+    echo "<div class=\"beer\">\n";
+    echo "<h1>".$beer->name."</h1>\n";
+    echo "<h2>".$beer->abv."% ABV</h2>\n";
+    echo "<h3>".$beer->description."</h3>\n";
+    echo "</div>\n";
     }
-    echo '<img src="img/poweredBy.gif" id="BeerMSLogo">';
-  }
+    echo '<a href="https://www.beerms.com"><img src="img/poweredBy.gif" id="BeerMSLogo"></a>';
   ?>
 </body>
 

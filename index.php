@@ -246,30 +246,21 @@
           <img id="OktoberEggImg" src="img/oktoberEgg.png"><p class="about-text">We make beer we like to drink, but don't worry...  We'll make beer <span id="Tears">you like</span> to drink too. We always thought it was a fun process brewing new beers, trading different styles in and out to create a set of flagships. The goal here at Leaven is to become a neighborhood brewery with a <span id="OktoberEgg">hyper-local</span> mindset. At this time we have no intention of distribution (KJ did enough of that at previous locations.) We're here to make beer for you, Riverview! Join us at the bar, tell us the styles you like. Let's start a great conversation about beer and figure out our core beers <strong>together</strong>.</p>
           <p class="about-text">We aim to have 5 flagships which will be on at all times, and 5 rotational beers that will lend themselves to a more seasonal flair.</p>
 
-          <h4>What's on Tap?</h4>
+          <h3>What's on Tap, RIGHT NOW?</h3>
           <a href="https://www.beerms.com/" class="beerMS">Powered by BeerMS</a>
-          <!-- let's render some beers -->
           <?php
-            // DB connection
-            require 'cms/beersDB.php';
-            // Get the current list
-            $sql = 'SELECT * FROM beers WHERE active=1';
-            $dbOutput = $conn->query($sql);
-            if ($dbOutput -> num_rows > 0) {
-              while($row = $dbOutput ->fetch_assoc()) {
-                $dbImage = $row["image"];
-                $dbName = $row["name"];
-                $dbAbv = $row["abv"];
-                $dbDesc = $row["description"];
-                echo "<div class=\"row\">";
-                echo"<div class=\"col-md-12 beerList\">";
-                echo "<img src=\"img/beers$dbImage.png\" alt=\"glass\"/>";
-                echo "<h3 class=\"beerTitle\">$dbName</h3>";
-                echo "<h5>$dbAbv</h5>";
-                echo "<p class=\"beerDescription\">$dbDesc</p>";
-                echo "</div>";
-                echo "</div>";
-              }
+            // Call BeerMS for the list!
+            $response = file_get_contents('https://www.beerms.com/thebeer/?uid=0731ff47');
+            $beers = json_decode($response);
+            foreach ($beers as $beer) {
+              echo "<div class=\"row\">\n";
+              echo "<div class=\"col-md-12 beerList\">\n";
+              //echo "<img src=\"img/beers$beer->image.png\" alt=\"glass\"/>\n";
+              echo "<h4 class=\"beerTitle\">$beer->name</h4>\n";
+              echo "<h5>$beer->style - $beer->abv% ABV</h5>\n";
+              echo "<p class=\"beerDescription\">$beer->description</p>\n";
+              echo "</div>\n";
+              echo "</div>\n";
             }
           ?>
         </div>
