@@ -14,3 +14,6 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteRule ^order.*$ https://store.arryved.com/preOrder?locationId=BBORAn6n [R=301,L]
+RewriteRule ^orders.*$ https://store.arryved.com/preOrder?locationId=BBORAn6n [R=301,L]
+RewriteRule ^crowler.*$ https://store.arryved.com/preOrder?locationId=BBORAn6n [R=301,L]
+RewriteRule ^crowlers.*$ https://store.arryved.com/preOrder?locationId=BBORAn6n [R=301,L]
