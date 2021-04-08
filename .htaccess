@@ -9,3 +9,5 @@ ErrorDocument 404 /404.php
     Order allow,deny
     Deny from all
 </Files>
+
+Redirect 301 /orders https://store.arryved.com/preOrder?locationId=BBORAn6n
