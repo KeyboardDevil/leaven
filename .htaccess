@@ -10,5 +10,5 @@ ErrorDocument 404 /404.php
     Deny from all
 </Files>
 
-Redirect 301 /order https://store.arryved.com/preOrder?locationId=BBORAn6n
-Redirect 301 /orders https://store.arryved.com/preOrder?locationId=BBORAn6n
+RewriteEngine on
+RewriteRule ^(.\order*)$ https://store.arryved.com/preOrder?locationId=BBORAn6n [L,R=301]
