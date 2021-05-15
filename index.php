@@ -3,7 +3,7 @@
 <head>
   <style>
     /* for good measure */
-    .angryBirds, #kjEgg, #kjDance {
+    .angryBirds, #kjEgg {
       position:absolute;
       display: none;
       z-index: 999;
@@ -315,8 +315,6 @@
       </div>
     </div>
   </section>
-  
-  <img src="img/kjDance.jpg" id="kjDance" />
 
 <!--  Footer-->
   <footer id="footer">
@@ -352,15 +350,6 @@
   Get out of my source code and go find the eggs on your own!!
   -->
   <script>
-    // KJ footer
-    $( ".copyright" ).dblclick(function(){
-      $( "#kjDance" ).animate({
-        left: "+=30%",
-        bottom: "+=600",
-        height: "toggle"
-      }, 3000, function() {
-      });
-    });
     // KJ header
     $("#LBlogo").dblclick(function(){
       $("#kjEgg").slideDown('5000');
