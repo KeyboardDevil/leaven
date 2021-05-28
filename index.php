@@ -377,6 +377,8 @@
       $("#OktoberEggImg").fadeIn("slow").delay(5000).fadeOut("slow");
       
     });
+    // custom console messages
+    console.log("%c\nWell, well... Looking for Easter Eggs?\nYou'll need to look a little harder!\n\n", "background: red; color: yellow; font-size: x-large");
   </script>
 
 </body>
