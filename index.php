@@ -65,7 +65,7 @@
   <!-- Rich snippet data -->
   <script type="application/ld+json">
   {
-    "@context": "http://schema.org",
+    "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Leaven Brewing - Transforming Grain for the Better",
     "url": "https://www.leavenbrewing.com",
