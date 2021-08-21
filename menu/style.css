@@ -56,9 +56,13 @@ h1 {
   font-size: 155px;
   text-transform: uppercase;
   margin-bottom: 20px;
-  max-height: 150px;
+  height: 150px;
   width: 100%;
   overflow: hidden;
+}
+.smallFont {
+  font-size: 90px;
+  line-height: 2em;
 }
 h2 {
   font-family: Futura-Round;

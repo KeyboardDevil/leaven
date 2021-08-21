@@ -53,8 +53,12 @@
           if ($renderRow) {
             echo "<div class=\"row\">\n";
           }
+          $TitleClass = '';
+          if (mb_strlen($dbName)>24) {
+            $TitleClass='smallFont';
+          }
           echo "<div class=\"beer\">\n";
-          echo "<h1>$dbName</h1>\n";
+          echo '<h1 class="'.$TitleClass.'">'.$dbName.'</h1>';
           echo "<h2>$dbAbv</h2>\n";
           echo "<h3>$dbShortDesc</h3>\n";
           echo "</div>\n";
