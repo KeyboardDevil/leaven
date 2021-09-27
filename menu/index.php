@@ -54,7 +54,7 @@
             echo "<div class=\"row\">\n";
           }
           $TitleClass = '';
-          if (mb_strlen($dbName)>24) {
+          if (strlen($dbName)>19) {
             $TitleClass='smallFont';
           }
           echo "<div class=\"beer\">\n";
