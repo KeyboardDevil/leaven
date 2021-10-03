@@ -83,7 +83,7 @@
     <div class="footerPanel">
       <span class="footerSmall">facebook / instagram</span> <span class="menuBig">&nbsp; @Leavenbrewing</span>
     </div>
-    <img class="footerLogo" src="img/logoNew.png">
+    <img class="footerLogo" src="img/logoHal.png">
     <div class="footerPanel">
       <span class="menuBig">#Leavenbrewing</span>
     </div>
