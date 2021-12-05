@@ -3,7 +3,7 @@
 <head>
   <style>
     /* for good measure */
-    .angryBirds, #kjEgg, #kjDance {
+    .angryBirds, #kjEgg {
       position:absolute;
       display: none;
       z-index: 999;
@@ -51,6 +51,14 @@
   MMMMMMMMMMMMMMMMMMMMNmmmmmmy/::/sdMMMMMMMMMMMMMMMM
   MMMMMMMMMMMMMMMMMMMMMMNNmNdddddNMMMMMMMMMMMMMMMMMM
   -->
+  <!-- Global site tag (GA 4) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-13KBJT54JL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-13KBJT54JL');
+  </script>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-3474776-4"></script>
   <script>
@@ -59,13 +67,14 @@
     gtag('js', new Date());
     gtag('config', 'UA-3474776-4');
   </script>
+
   <title>Leaven Brewing</title>
   <link rel="alternate" href="https://www.leavenbrewing.com" hreflang="en-us" />
   
   <!-- Rich snippet data -->
   <script type="application/ld+json">
   {
-    "@context": "http://schema.org",
+    "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Leaven Brewing - Transforming Grain for the Better",
     "url": "https://www.leavenbrewing.com",
@@ -243,7 +252,7 @@
           <h2 class="section-title">Our Beer</h2>
           <div class="section-title-divider"></div>
           <h3 class="about-title">We make beer we like to drink, but don't worry... We'll make beer you like to drink too.</h3>
-          <img id="OktoberEggImg" src="img/oktoberEgg.png"><p class="about-text">We make beer we like to drink, but don't worry...  We'll make beer <span id="Tears">you like</span> to drink too. We always thought it was a fun process brewing new beers, trading different styles in and out to create a set of flagships. The goal here at Leaven is to become a neighborhood brewery with a <span id="OktoberEgg">hyper-local</span> mindset. At this time we have no intention of distribution (KJ did enough of that at previous locations.) We're here to make beer for you, Riverview! Join us at the bar, tell us the styles you like. Let's start a great conversation about beer and figure out our core beers <strong>together</strong>.</p>
+          <img id="OktoberEggImg" src="img/oktoberEgg.png"><p class="about-text">We make beer we like to drink, but don't worry...  We'll make beer <span id="Tears">you like</span> to drink too. We always thought it was a fun process brewing new beers, trading different styles in and out to create a set of flagships. The goal here at Leaven is to become a neighborhood brewery with a <span id="OktoberEgg">hyper-local</span> mindset.  We're here to make beer for you, Riverview! Join us at the bar, tell us the styles you like. Let's start a great conversation about beer and figure out our core beers <strong>together</strong>.</p>
           <p class="about-text">We aim to have 5 flagships which will be on at all times, and 5 rotational beers that will lend themselves to a more seasonal flair.</p>
 
           <h3>What's on Tap, RIGHT NOW?</h3>
@@ -306,8 +315,6 @@
       </div>
     </div>
   </section>
-  
-  <img src="img/kjDance.jpg" id="kjDance" />
 
 <!--  Footer-->
   <footer id="footer">
@@ -343,15 +350,6 @@
   Get out of my source code and go find the eggs on your own!!
   -->
   <script>
-    // KJ footer
-    $( ".copyright" ).dblclick(function(){
-      $( "#kjDance" ).animate({
-        left: "+=30%",
-        bottom: "+=600",
-        height: "toggle"
-      }, 3000, function() {
-      });
-    });
     // KJ header
     $("#LBlogo").dblclick(function(){
       $("#kjEgg").slideDown('5000');
@@ -379,6 +377,8 @@
       $("#OktoberEggImg").fadeIn("slow").delay(5000).fadeOut("slow");
       
     });
+    // custom console messages
+    console.log("%c\nWell, well... Looking for Easter Eggs?\nYou'll need to look a little harder!\n\n", "background: red; color: yellow; font-size: x-large");
   </script>
 
 </body>
