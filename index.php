@@ -59,14 +59,6 @@
     gtag('js', new Date());
     gtag('config', 'G-13KBJT54JL');
   </script>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-3474776-4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-3474776-4');
-  </script>
 
   <title>Leaven Brewing</title>
   <link rel="alternate" href="https://www.leavenbrewing.com" hreflang="en-us" />
