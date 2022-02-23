@@ -1,9 +1,8 @@
 <?php
-function updateRepo($LOCAL_REPO)
-{
+function updateRepo($LOCAL_REPO) {
     // If there is already a repo, just run a git pull to grab the latest changes
-    $output = null
-    $return_val = null
+    $output = null;
+    $return_val = null;
     exec("cd {$LOCAL_REPO} && git pull origin master 2>&1", $output, $return_val);
     echo "<br />output: $output";
     file_put_contents("webhook.log", "\n#############################\ngit pull origin master output:\n$output", FILE_APPEND);
