@@ -229,7 +229,7 @@
           <ul>
             <li>Monday - Thursday 3:00 - 10:00 PM</li>
             <li>Friday &amp; Saturday 12:00 PM - Midnight</li>
-            <li>Sunday 12:00 PM - 8:00 PM</li>
+            <li>Sunday 12:00 PM - 10:00 PM</li>
           </ul>
         </div>
       </div>
