@@ -5,7 +5,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <!-- Site by Frank - www.KeyboardDevil.com -->
   <title>Leaven Brewing: Uncle Ryan Facts</title>
-  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-3.6.4.min.js"></script>
   <script src="lib/bootstrap/js/bootstrap.min.js"></script>
   <link rel="alternate" href="https://www.leavenbrewing.com" hreflang="en-us" />
   <link href="https://www.leavenbrewing.com/favicon.ico" rel="shortcut icon">

@@ -126,7 +126,7 @@
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
-  <script src="https://www.leavenbrewing.com/lib/jquery/jquery.min.js"></script>
+  <script src="https://www.leavenbrewing.com/lib/jquery/jquery-3.6.4.min.js"></script>
   <script src="https://www.leavenbrewing.com/lib/bootstrap/js/bootstrap.min.js"></script>
   <script src="https://www.leavenbrewing.com/lib/superfish/hoverIntent.js"></script>
   <script src="https://www.leavenbrewing.com/lib/superfish/superfish.min.js"></script>
