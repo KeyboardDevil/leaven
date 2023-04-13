@@ -23,39 +23,6 @@
 </head>
   
 <body>
-  <?php
-    $adrianVotes = 0;
-    $frankVotes = 0;
-    $strFire = '';
-    // DATABASE magic
-    require 'cms/beersDB.php';
-    // FORM check
-    if (isset($_GET["fire"])) {
-      $strFire = htmlspecialchars($_GET["fire"]);
-      $sqlUpdate = "UPDATE fired SET votes=votes+1 WHERE name='".$strFire."'";
-      if ($conn->query($sqlUpdate) === TRUE) {
-        echo "<script>window.location.href='https://www.leavenbrewing.com/index.php'</script>";
-      } else {
-          echo "<h2>Oh shit, this thing is REALLY broken now " . $conn->error . "</h2>";
-      }
-    } // end UPDATE
-    // set counters for view
-    $sqlSelect = 'SELECT id, name, votes FROM fired';
-    $dbOutput = $conn->query($sqlSelect);
-    if ($dbOutput -> num_rows > 0) {
-      while($row = $dbOutput ->fetch_assoc()) {
-        $name = $row["name"];
-        if ($name == "adrian") {
-          $adrianVotes = $row["votes"];
-        }
-        else {
-          $frankVotes = $row["votes"];
-        }
-      }
-    } // end DB
-    $conn->close();
-  ?>
-
   <!--  Header Section-->
   <header id="header">
     <div class="container">
@@ -92,14 +59,10 @@
             <form id="VoteForm" name="FireVote" method="post" action="https://www.leavenbrewing.com/404.php">
               <input type="hidden" name="voted" value="true">
               <span class="fireChoice" id="adrian">FIRE Adrian!<img src="https://www.leavenbrewing.com/img/arrowAdrian.gif" alt="Fire Adrian!"></span>
-              <?php
-                echo '<span class="numVotes">Current Votes: <span class="voteCount">'.$adrianVotes.'</span></span>';
-              ?>
+              
               <a href="https://www.leavenbrewing.com/404.php?fire=adrian"><img alt="Fire Adrian!" class="fireHim" name="adrian" src="https://www.leavenbrewing.com/img/adrian.jpg"></a>
               <a href="https://www.leavenbrewing.com/404.php?fire=frank"><img alt="Fire Frank!" class="fireHim" name="frank" src="https://www.leavenbrewing.com/img/frank.jpg"></a>
-              <?php
-                echo '<span class="numVotes">Current Votes: <span class="voteCount">'.$frankVotes.'</span></span>';
-              ?>
+              
               <span class="fireChoice" id="frank">FIRE Frank!<img src="https://www.leavenbrewing.com/img/arrowFrank.gif"></span>
             </form>
           </div>
