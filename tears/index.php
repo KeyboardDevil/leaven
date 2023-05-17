@@ -8,7 +8,7 @@
   <!-- Site by Frank - www.KeyboardDevil.com -->
   <!-- Poem by Mike - @Miguelblanco510 -->
   <title>Leaven Brewing: Tears for Beers</title>
-  <script src="../lib/jquery/jquery-3.6.4.min.js"></script>
+  <script src="../lib/jquery/jquery-3.7.0.min.js"></script>
   <script src="lib/bootstrap/js/bootstrap.min.js"></script>
   <link rel="alternate" href="https://www.leavenbrewing.com" hreflang="en-us" />	
 

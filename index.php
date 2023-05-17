@@ -328,7 +328,7 @@
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
-  <script src="lib/jquery/jquery-3.6.4.min.js"></script>
+  <script src="lib/jquery/jquery-3.7.0.min.js"></script>
   <script src="lib/bootstrap/js/bootstrap.min.js"></script>
   <script src="lib/superfish/hoverIntent.js"></script>
   <script src="lib/superfish/superfish.min.js"></script>
@@ -350,13 +350,14 @@
     $("#Jillian").click(function(){
       for(i=1; i<5; i++) {
         strID = "#Bird"+i;
+        $(strID).show();
         $(strID).width("80px");
         $(strID).height("85px");
         $(strID).animate({right:'1000px',height:'+=400px',width:'+=400px'},'slow');
         $(strID).fadeOut();
       }
       // Kill the link treatment
-      $("#Jillian").prop("id",null);
+      //$("#Jillian").prop("id",null);
     });
     // Ryan egg
     $("#UncleRyanEgg").click(function(){
