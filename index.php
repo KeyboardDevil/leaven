@@ -337,7 +337,6 @@
   <script src="lib/stickyjs/sticky.js"></script>
   <script src="lib/easing/easing.js"></script>
   <script src="js/custom.js"></script>
-  <script src="contactform/contactform.js"></script>
   <!--
   Get out of my source code and go find the eggs on your own!!
   -->

@@ -60,8 +60,8 @@
               <input type="hidden" name="voted" value="true">
               <span class="fireChoice" id="adrian">FIRE Adrian!<img src="https://www.leavenbrewing.com/img/arrowAdrian.gif" alt="Fire Adrian!"></span>
               
-              <a href="https://www.leavenbrewing.com/404.php?fire=adrian"><img alt="Fire Adrian!" class="fireHim" name="adrian" src="https://www.leavenbrewing.com/img/adrian.jpg"></a>
-              <a href="https://www.leavenbrewing.com/404.php?fire=frank"><img alt="Fire Frank!" class="fireHim" name="frank" src="https://www.leavenbrewing.com/img/frank.jpg"></a>
+              <a href="https://www.leavenbrewing.com#fire=adrian"><img alt="Fire Adrian!" class="fireHim" name="adrian" src="https://www.leavenbrewing.com/img/adrian.jpg"></a>
+              <a href="https://www.leavenbrewing.com#fire=frank"><img alt="Fire Frank!" class="fireHim" name="frank" src="https://www.leavenbrewing.com/img/frank.jpg"></a>
               
               <span class="fireChoice" id="frank">FIRE Frank!<img src="https://www.leavenbrewing.com/img/arrowFrank.gif"></span>
             </form>
@@ -98,7 +98,6 @@
   <script src="https://www.leavenbrewing.com/lib/stickyjs/sticky.js"></script>
   <script src="https://www.leavenbrewing.com/lib/easing/easing.js"></script>
   <script src="https://www.leavenbrewing.com/js/custom.js"></script>
-  <script src="https://www.leavenbrewing.com/contactform/contactform.js"></script>
   <script>
     $('.fireHim').hover(function() {
       $(this).css( "opacity","1" );
