@@ -247,7 +247,7 @@
           <img id="OktoberEggImg" src="img/oktoberEgg.png"><p class="about-text">We make beer we like to drink, but don't worry...  We'll make beer <span id="Tears">you like</span> to drink too. We always thought it was a fun process brewing new beers, trading different styles in and out to create a set of flagships. The goal here at Leaven is to become a neighborhood brewery with a <span id="OktoberEgg">hyper-local</span> mindset.  We're here to make beer for you, Riverview! Join us at the bar, tell us the styles you like. Let's start a great conversation about beer and figure out our core beers <strong>together</strong>.</p>
           <p class="about-text">We aim to have 5 flagships which will be on at all times, and 5 rotational beers that will lend themselves to a more seasonal flair.</p>
 
-          <h3>What's on Tap, RIGHT NOW?</h3>
+          <h3 id="BeerList">What's on Tap, RIGHT NOW?</h3>
           <a href="https://www.beerms.com/" class="beerMS">Powered by BeerMS</a>
           <?php
             // Call BeerMS for the list!
