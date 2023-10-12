@@ -244,7 +244,7 @@
           <h2 class="section-title">Our Beer</h2>
           <div class="section-title-divider"></div>
           <h3 class="about-title">We make beer we like to drink, but don't worry... We'll make beer you like to drink too.</h3>
-          <img id="OktoberEggImg" src="img/oktoberEgg.png"><p class="about-text">We make beer we like to drink, but don't worry...  We'll make beer <span id="Tears">you like</span> to drink too. We always thought it was a fun process brewing new beers, trading different styles in and out to create a set of flagships. The goal here at Leaven is to become a neighborhood brewery with a <span id="OktoberEgg">hyper-local</span> mindset.  We're here to make beer for you, Riverview! Join us at the bar, tell us the styles you like. Let's start a great conversation about beer and figure out our core beers <strong>together</strong>.</p>
+          <img id="OktoberEggImg" src="img/oktoberEgg.png"><p class="about-text">We make beer we like to drink, but don't worry...  We'll make beer you like to drink too. We always thought it was a fun process brewing new beers, trading different styles in and out to create a set of flagships. The goal here at Leaven is to become a neighborhood brewery with a <span id="OktoberEgg">hyper-local</span> mindset.  We're here to make beer for you, Riverview! Join us at the bar, tell us the styles you like. Let's start a great conversation about beer and figure out our core beers <strong>together</strong>.</p>
           <p id="BeerList" class="about-text">We aim to have 5 flagships which will be on at all times, and 5 rotational beers that will lend themselves to a more seasonal flair.</p>
 
           <h3>What's on Tap, RIGHT NOW?</h3>
@@ -298,9 +298,9 @@
           <h2 class="section-title">Contact Us</h2>
           <div class="section-title-divider"></div>
           <div id="ContactBump">
+            <p class="about-text">Give us a call at: <tel>(813)677-7023</tel></p>
             <p class="about-text"><img class="linkIcon" src="img/facebook.svg" alt="Facebook">Find us on <a class="bodyLink" href="https://www.facebook.com/leavenbrewing/">Facebook!</a></p>
             <p class="about-text"><img class="linkIcon" src="img/instagram.svg" alt="Instagram">Stalk us on <a class="bodyLink" href="https://www.instagram.com/leavenbrewing/">Instagram</a></p>
-            <p class="about-text"><img class="linkIcon" src="img/twitter.svg" alt="Twitter">Watch us on <a class="bodyLink" href="https://twitter.com/LeavenBrewing">Twitter</a></p>
             <p class="about-text"><img class="linkIcon" src="img/email.svg" alt="Email">Go "old school" and <a href="mailto:hello@leavenbrewing.com" class="bodyLink">send us an email</a></p>
           </div>
         </div>
@@ -357,13 +357,6 @@
       }
       // Kill the link treatment
       //$("#Jillian").prop("id",null);
-    });
-    // Ryan egg
-    $("#UncleRyanEgg").click(function(){
-      window.location.href='ryanFacts.php';
-    });
-    $("#Tears").click(function(){
-      window.location.href='tears/';
     });
     $("#OktoberEgg").click(function(){
       $("#OktoberEggImg").fadeIn("slow").delay(5000).fadeOut("slow");
