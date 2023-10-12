@@ -198,7 +198,7 @@
         </div>
         <div class="col-md-12 signature"><br />
           <h2>We are Leaven Brewing.</h2>
-          (and <span id="UncleRyanEgg">we're super excited</span> to meet you)
+          (and we're super excited to meet you)
         </div>
       </div>
     </div>
