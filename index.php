@@ -266,7 +266,7 @@
           ?>
           <h3>Find our Beer NEAR YOU!</h3>
           <p>Looking for Leaven 'in the wild'? Here's where you can find our beer.</p>
-          <iframe width="70%" height="500" src="https://dsdlink.com/aspx1/Home?DashboardID=175197&SupplierID=35116&BrandID=332367" frameborder="0" allowfullscreen  ></iframe>
+          <iframe width="90%" height="500" src="https://dsdlink.com/aspx1/Home?DashboardID=175197&SupplierID=35116&BrandID=332367" frameborder="0" allowfullscreen  ></iframe>
         </div>
       </div>
     </div>
