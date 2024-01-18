@@ -154,7 +154,7 @@
           <li><a href="#contact">Contact Us</a></li>
           <li><a href="https://www.facebook.com/leavenbrewing/"><img alt="Facebook" class="linkIcon" src="img/facebook.svg"></a></li>
           <li><a href="https://www.instagram.com/leavenbrewing/"><img alt="Instagram" class="linkIcon" src="img/instagram.svg"></a></li>
-          <li><a href="https://twitter.com/LeavenBrewing"><img alt="Twitter" class="linkIcon" src="img/twitter.svg"></a></li>
+          <!--<li><a href="https://twitter.com/LeavenBrewing"><img alt="Twitter" class="linkIcon" src="img/twitter.svg"></a></li>-->
           <li><a href="https://www.youtube.com/channel/UC-OMppWbRU2JTrLifhE8oFw"><img alt="YouTube" class="linkIcon" src="img/youtube.svg"></a></li>
         </ul>
       </nav>
@@ -266,7 +266,7 @@
           ?>
           <h3>Find our Beer NEAR YOU!</h3>
           <p>Looking for Leaven 'in the wild'? Here's where you can find our beer.</p>
-          <iframe width="90%" height="500" src="https://dsdlink.com/aspx1/Home?DashboardID=175197&SupplierID=35116&BrandID=332367" frameborder="0" allowfullscreen  ></iframe>
+          <iframe class="gMaps" src="https://dsdlink.com/aspx1/Home?DashboardID=175197&SupplierID=35116&BrandID=332367" frameborder="0" allowfullscreen  ></iframe>
         </div>
       </div>
     </div>
