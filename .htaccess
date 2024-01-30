@@ -15,6 +15,7 @@ RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteRule ^order.*$ https://commerce.arryved.com/location/BBORAn6n [R=301,L]
 RewriteRule ^orders.*$ https://commerce.arryved.com/location/BBORAn6n [R=301,L]
+RewriteRule ^distro.*$ https://www.beerms.com/menu/distro.php?uid=0731ff47 [R=301,L]
 RewriteRule ^crowler.*$ https://commerce.arryved.com/location/BBORAn6n [R=301,L]
 RewriteRule ^crowlers.*$ https://commerce.arryved.com/location/BBORAn6n [R=301,L]
 RewriteRule ^togo.*$ https://commerce.arryved.com/location/BBORAn6n [R=301,L]
