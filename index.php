@@ -102,7 +102,7 @@
   <?php
     // Random bg image for hero
     $heroNumber = rand(1,12);
-    echo '<style>#hero { background: url(img/hero-bg'.$heroNumber.'.jpg) top center fixed;}</style>';
+    echo '<style>#hero { background: url(img/hero-bg'.$heroNumber.'.jpg?c=84) top center fixed;}</style>';
   ?>
 </head>
 
