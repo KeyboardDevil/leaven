@@ -148,7 +148,7 @@
         <ul class="nav-menu">
           <li class="menu-active"><a href="#hero">Home</a></li>
           <li><a href="#about">Our Story</a></li>
-          <li><a href="#brewery">The Brewery</a></li>
+          <li><a href="#brewery">Locations</a></li>
           <li><a href="#beer">Our Beer</a></li>
           <li><a href="https://www.beerms.com/menu/qr/?type=f&uid=0731ff47" target="_blank">Food</a></li>
           <li><a href="#contact">Contact Us</a></li>
@@ -209,7 +209,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="section-title">Brewery</h2>
+          <h2 class="section-title">Leaven Locations</h2>
           <div class="section-title-divider"></div>
           <h3>Here's where we make the beer!  Come on in and try a sip!</h3>
         </div>
@@ -223,7 +223,7 @@
           <iframe class="gMaps" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4988.62079217155!2d-82.31784807280489!3d27.856288575925834!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x88007e466424b17d!2sLeaven+Brewing+Co.!5e0!3m2!1sen!2sus!4v1515555022902" style="border:0" allowfullscreen></iframe>
         </div>
         <div class="col-md-7">
-          <p class="about-text call-out">So come on in and join us for a pint!  You can find us right in the heart of Riverview at:</p>
+          <p class="about-text call-out">Riverview Location</p>
           <p class="about-text call-out big-address"><i class="fa fa-map-marker"></i>11238 Boyette Rd, Riverview, FL 33569</p>
           <h3>Brewery Hours:</h3>
           <ul>
@@ -231,6 +231,13 @@
             <li>Friday &amp; Saturday 12:00 PM - Midnight</li>
             <li>Sunday 12:00 PM - 10:00 PM</li>
           </ul>
+        </div>
+        <div class="col-md-7">
+          <p class="about-text call-out">Plant City Location Opening Soon!</p>
+          <p class="about-text call-out big-address"><i class="fa fa-map-marker"></i>202 E Reynolds St, Plant City, FL</p>
+        </div>
+        <div class="col-md-5">
+          <iframe class="gMaps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3522.251708503737!2d-82.12500782427365!3d28.016781611775503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88dd368361ce35c3%3A0x3de64abff38a311d!2s202%20E%20Reynolds%20St%2C%20Plant%20City%2C%20FL%2033563!5e0!3m2!1sen!2sus!4v1754340267153!5m2!1sen!2sus" style="border:0;" allowfullscreen=""></iframe>
         </div>
       </div>
     </div>
@@ -243,9 +250,12 @@
         <div class="col-md-12">
           <h2 class="section-title">Our Beer</h2>
           <div class="section-title-divider"></div>
-          <h3 class="about-title">We make beer we like to drink, but don't worry... We'll make beer you like to drink too.</h3>
-          <img id="OktoberEggImg" src="img/oktoberEgg.png"><p class="about-text">We make beer we like to drink, but don't worry...  We'll make beer you like to drink too. We always thought it was a fun process brewing new beers, trading different styles in and out to create a set of flagships. The goal here at Leaven is to become a neighborhood brewery with a <span id="OktoberEgg">hyper-local</span> mindset.  We're here to make beer for you, Riverview! Join us at the bar, tell us the styles you like. Let's start a great conversation about beer and figure out our core beers <strong>together</strong>.</p>
-          <p id="BeerList" class="about-text">We aim to have 5 flagships which will be on at all times, and 5 rotational beers that will lend themselves to a more seasonal flair.</p>
+          <!--<h3 class="about-title">We make beer we like to drink, but don't worry... We'll make beer you like to drink too.</h3>-->
+          <img id="OktoberEggImg" src="img/oktoberEgg.png">
+          <p class="about-text">Back in 2017 when Leaven was just an itty, bitty idea we claimed that we would brew authentic beer, true-to-style for genuine people. Eight years ago we were confident that the Leaven community would create a sense of belonging.<br>
+          Now that we’re here, we feel we’ve done just that and more! Leaven offers 12 beers on tap at all times, aiming to have a variety of styles. From our flagship, Cheeky Blonde Ale to our hazy Aging Hipster IPA, we think you’ll find somthing you’re seeking.<br>
+          Leaven is a <span id="OktoberEgg">neighborhood</span> brewery, where probably someone knows youre name!
+          </p>
 
           <h3>What's on Tap, RIGHT NOW?</h3>
           <a href="https://www.beerms.com/" class="beerMS">Powered by BeerMS</a>
