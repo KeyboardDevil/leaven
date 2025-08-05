@@ -155,7 +155,7 @@
           <li><a href="https://www.facebook.com/leavenbrewing/"><img alt="Facebook" class="linkIcon" src="img/facebook.svg"></a></li>
           <li><a href="https://www.instagram.com/leavenbrewing/"><img alt="Instagram" class="linkIcon" src="img/instagram.svg"></a></li>
           <!--<li><a href="https://twitter.com/LeavenBrewing"><img alt="Twitter" class="linkIcon" src="img/twitter.svg"></a></li>-->
-          <li><a href="https://www.youtube.com/channel/UC-OMppWbRU2JTrLifhE8oFw"><img alt="YouTube" class="linkIcon" src="img/youtube.svg"></a></li>
+          <li><a href="https://www.youtube.com/@leavenbrewing1830"><img alt="YouTube" class="linkIcon" src="img/youtube.svg"></a></li>
         </ul>
       </nav>
       <!-- #nav-menu-container -->
