@@ -256,9 +256,11 @@
           Now that we’re here, we feel we’ve done just that and more! Leaven offers 12 beers on tap at all times, aiming to have a variety of styles. From our flagship, Cheeky Blonde Ale to our hazy Aging Hipster IPA, we think you’ll find somthing you’re seeking.<br>
           Leaven is a <span id="OktoberEgg">neighborhood</span> brewery, where probably someone knows youre name!
           </p>
+          <h2>What's on Tap, right now?</h2>
+        </div>
 
-          <h3>What's on Tap, RIGHT NOW?</h3>
-          <a href="https://www.beerms.com/" class="beerMS">Powered by BeerMS</a>
+        <div class="col-md-6">
+          <h3>Leaven Riverview</h3>
           <?php
             // Call BeerMS for the list!
             $response = file_get_contents('https://www.beerms.com/thebeer/?uid=0731ff47');
@@ -274,9 +276,25 @@
               echo "</div>\n";
             }
           ?>
-          <!--<h3>Find our Beer NEAR YOU!</h3>
-          <p>Looking for Leaven 'in the wild'? Here's where you can find our beer.</p>
-          <iframe class="gMaps" src="https://dsdlink.com/aspx1/Home?DashboardID=175197&SupplierID=35116&BrandID=332367" frameborder="0" allowfullscreen  ></iframe>-->
+        </div>
+        <div class="col-md-6">
+          <h3>Leaven Plant City</h3>
+          <a href="https://www.beerms.com/" class="beerMS">Powered by BeerMS</a>
+          <?php
+            // Call BeerMS for the list!
+            $response = file_get_contents('https://www.beerms.com/thebeer/?uid=92488f4c');
+            $beers = json_decode($response);
+            foreach ($beers as $beer) {
+              echo "<div class=\"row\">\n";
+              echo "<div class=\"col-md-12 beerList\">\n";
+              //echo "<img src=\"img/beers$beer->image.png\" alt=\"glass\"/>\n";
+              echo "<h4 class=\"beerTitle\">$beer->name</h4>\n";
+              echo "<h5>$beer->style - $beer->abv% ABV</h5>\n";
+              echo "<p class=\"beerDescription\">$beer->description</p>\n";
+              echo "</div>\n";
+              echo "</div>\n";
+            }
+          ?>
         </div>
       </div>
     </div>
